@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="images/favicon.ico" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Rubik&display=swap');
+</style>
+<title>Сайты Ucoz.ru (я пошутил (не бейте))</title>
+</head>
+
+<body>
+<div class="wrp">
+<div class="blockwrap"><div class="block bgcontent" id="title">
+<div class="content titlecontent">Заголовок слайда</div>
+<div class="content buttonbar">
+    <button>
+    <div class="content">←</div>
+    </button>
+    <button id="lightMode" onclick="setLight()">
+    <div class="content">Здесь</div>
+    </button>
+    <button id="darkMode" onclick="setDark()">
+    <div class="content">Там</div>
+    </button>
+    <button>
+    <div class="content">→</div>
+    </button>
+</div>
+</div>
+
+<div class="block card bgtitle">
+<div class="content titlecontent">Изменение скорости анимаций</div>
+<div class="content textcontent bgcontent">
+    И ежу понятно.<br>
+	<div class="content buttonbar contentbar">
+    <input type="text" id="duration" value="150">
+	<button onclick="setDuration()"><div class="content">Изменить</div></button>
+	</div>
+</div>
+</div>
+
+<div class="block card bgtitle">
+<div class="content titlecontent">Изменение визуальных штук</div>
+<div class="content textcontent bgcontent">
+    Понемногу осваиваем жабаскрипт.<br>
+    Ежу, опять же, понятно.<br><br>
+	Изменение масштаба текста (потом будет):<br>
+	<div class="content buttonbar contentbar">
+    <input type="text" id="" value="Out of Order">
+	<button onclick=""><div class="content">Поменять</div></button>
+	</div>
+	Изменение ширины блоков (работает не идеально)<br>
+	<div class="content buttonbar contentbar">
+    <input type="text" id="bwidth" value="400">
+	<button onclick="setBlockWidth()"><div class="content">Сделать другим</div></button>
+	</div>
+	Изменение радиуса углов<br>
+	<div class="content buttonbar contentbar">
+    <input type="text" id="bradius" value="10">
+	<button onclick="setBlockBorderRadius()"><div class="content">Modifier</div></button>
+	</div>
+</div>
+</div>
+
+<div class="block card bgtitle">
+<div class="content titlebar buttonbar">
+<button>
+<div class="titlecontent">Кнопка в названии блока</div>
+</button>
+</div>
+<div class="content imagecontent"><img class="image" src="images/maestro.png" alt="Травмай"></div>
+</div>
+
+<div class="block card bgtitle">
+<div class="content titlecontent">d</div>
+<div class="content imagecontent"><img class="image" src="images/gofman.png" alt="Ещё лучше"></div>
+<div class="content actbar buttonbar">
+<button><div class="content">→</div></button>
+<button><div class="content">Кнопки для действий</div></button>
+</div>
+</div>
+ 
+<div class="block card bgtitle">
+<div class="content titlecontent">Список Изменений Да</div>
+<div class="content textcontent bgcontent">
+    <ul>
+        <li>Зделан рефакторинг, теперь наследство должно распределяться правильно (наверно).</li>
+        <li>Добавлено еще несколько <s>абсолютно никому не нужных</s> классов (главным образом кнопки).</li>
+        <li>Зачем оно всё надо — тоже хороший вопрос.</li>
+		<li>Очень Секретная Кривая Тёмная Тема.</li>
+    </ul>
+</div>
+<div class="content actbar buttonbar">
+<button><div class="content">→</div></button>
+<button><div class="content" onclick="window.location.href='https://google.com';">Гугл для гуглинга</div></button>
+</div>
+</div>
+   
+<div class="block card bgtitle">
+<div class="content titlecontent">Notes To Self</div>
+<div class="content textcontent bgcontent">
+    <ul>
+        <li>Запилить ещё один класс для центрирования кнопок в строке действий (зачем?).</li>
+        <li>Зробить оформление для этих списков (потом).</li>
+		<li>!! Узнать, как же сделать два скрипта на одну кнопку !!</li>
+        <li>Почитать про responsive design (вроде как не очень сложно).</li>
+		<li>Божественно вмешать ещё столбцы.</li>
+		<li>Сделать вычисление всех цветов из основных и акцентного (да, так можно).</li>
+    </ul>
+</div>
+</div>
+
+<div class="block card bgcontent">
+<div class="content textcontent">
+Зроблено у 2021 року (AKA я тупой и не додумался до этой идеи раньше).</div>
+</div>
+</div>
+</div>
+
+<script>
+var rt = document.querySelector(':root');
+function setDark() {
+  rt.style.setProperty('--bgcolor', 'rgb(10,10,10)');
+  rt.style.setProperty('--block-bgcolor', 'rgba(20,20,20,1)');
+  rt.style.setProperty('--block-contentcolor', 'rgba(31,31,31,1)');
+  rt.style.setProperty('--block-bordercolor', 'rgba(20,20,20,1)');
+  rt.style.setProperty('--accentcolor', 'rgba(120,140,200,1)');
+  rt.style.setProperty('--selcolor', '255');
+  rt.style.setProperty('--textcolor', 'rgba(245,245,245,1)');
+}
+function setLight() {
+  rt.style.setProperty('--bgcolor', 'rgb(250,240,240)');
+  rt.style.setProperty('--block-bgcolor', 'rgba(200,200,200,1)');
+  rt.style.setProperty('--block-contentcolor', 'rgba(255,255,255,1)');
+  rt.style.setProperty('--block-bordercolor', 'rgba(150,150,150,1)');
+  rt.style.setProperty('--accentcolor', 'rgba(120,140,200,1)');
+  rt.style.setProperty('--selcolor', '0');
+  rt.style.setProperty('--textcolor', 'rgba(5,5,5,1)');
+}
+function setDuration() {
+  var dur = document.getElementById("duration").value;
+  rt.style.setProperty('--animation-duration', dur + 'ms');
+}
+function setBlockWidth() {
+  var dur = document.getElementById("bwidth").value;
+  rt.style.setProperty('--block-width', dur + 'px');
+}
+function setBlockBorderRadius() {
+  var dur = document.getElementById("bradius").value;
+  rt.style.setProperty('--block-borderradius', dur + 'px');
+}
+</script>
+</body>
+</html>
