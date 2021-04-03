@@ -51,14 +51,14 @@
     <input type="text" id="" value="Out of Order">
 	<button onclick=""><div class="content">Поменять</div></button>
 	</div>
-	Изменение ширины блоков (работает не идеально)<br>
+	Изменение ширины блоков (в em)<br>
 	<div class="content buttonbar contentbar">
-    <input type="text" id="bwidth" value="400">
+    <input type="text" id="bwidth" value="25">
 	<button onclick="setBlockWidth()"><div class="content">Сделать другим</div></button>
 	</div>
-	Изменение радиуса углов<br>
+	Изменение радиуса углов (в em)<br>
 	<div class="content buttonbar contentbar">
-    <input type="text" id="bradius" value="10">
+    <input type="text" id="bradius" value="1">
 	<button onclick="setBlockBorderRadius()"><div class="content">Modifier</div></button>
 	</div>
 </div>
@@ -85,6 +85,12 @@
 <div class="block card bgtitle">
 <div class="content titlecontent">Список Изменений Да</div>
 <div class="content textcontent bgcontent">
+Версия 3, «Наш Ответ Твитору»
+    <ul>
+        <li>Теперь у нас есть проверка ширины!</li>
+        <li>Тёмная Тема (и анимация) включается автоматически</li>
+    </ul>
+Версия 2
     <ul>
         <li>Зделан рефакторинг, теперь наследство должно распределяться правильно (наверно).</li>
         <li>Добавлено еще несколько <s>абсолютно никому не нужных</s> классов (главным образом кнопки).</li>
@@ -114,7 +120,7 @@
 
 <div class="block card bgcontent">
 <div class="content textcontent">
-Зроблено у 2021 року (AKA я тупой и не додумался до этой идеи раньше).</div>
+Зроблено у 2021 року.<br> Licensed under <a href="https://mit-license.org/">the MIT License</a>.</div>
 </div>
 </div>
 </div>
@@ -145,11 +151,11 @@ function setDuration() {
 }
 function setBlockWidth() {
   var dur = document.getElementById("bwidth").value;
-  rt.style.setProperty('--block-width', dur + 'px');
+  rt.style.setProperty('--block-width', dur + 'em');
 }
 function setBlockBorderRadius() {
   var dur = document.getElementById("bradius").value;
-  rt.style.setProperty('--block-borderradius', dur + 'px');
+  rt.style.setProperty('--borderradius', dur + 'em');
 }
 </script>
 </body>
