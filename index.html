@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="icon" type="image/png" href="images/favicon.ico" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
 <style>
@@ -15,18 +15,29 @@
 <div class="blockwrap"><div class="block bgcontent" id="title">
 <div class="content titlecontent">Заголовок слайда</div>
 <div class="content buttonbar">
-    <button>
+    <button class="animated">
     <div class="content">←</div>
     </button>
-    <button id="lightMode" onclick="setLight()">
+    <button class="animated" id="lightMode" onclick="setLight()">
     <div class="content">Здесь</div>
     </button>
-    <button id="darkMode" onclick="setDark()">
+    <button class="animated" id="darkMode" onclick="setDark()">
     <div class="content">Там</div>
     </button>
-    <button>
+    <button class="animated">
     <div class="content">→</div>
     </button>
+</div>
+</div>
+
+<div class="block card bgtitle">
+<div class="content titlecontent">Изменение анимации кнопок</div>
+<div class="content textcontent bgcontent">
+    Изменение перспективы (в см)<br>
+	<div class="content buttonbar contentbar">
+    <input type="text" id="perspective" value="5">
+	<button class="animated" onclick="setPerspective()"><div class="content">Изменить</div></button>
+	</div>
 </div>
 </div>
 
@@ -36,7 +47,7 @@
     И ежу понятно.<br>
 	<div class="content buttonbar contentbar">
     <input type="text" id="duration" value="150">
-	<button onclick="setDuration()"><div class="content">Изменить</div></button>
+	<button class="animated" onclick="setDuration()"><div class="content">Измена</div></button>
 	</div>
 </div>
 </div>
@@ -49,24 +60,24 @@
 	Изменение масштаба текста (потом будет):<br>
 	<div class="content buttonbar contentbar">
     <input type="text" id="" value="Out of Order">
-	<button onclick=""><div class="content">Поменять</div></button>
+	<button class="animated" onclick=""><div class="content">Поменять</div></button>
 	</div>
 	Изменение ширины блоков (в em)<br>
 	<div class="content buttonbar contentbar">
     <input type="text" id="bwidth" value="25">
-	<button onclick="setBlockWidth()"><div class="content">Сделать другим</div></button>
+	<button class="animated" onclick="setBlockWidth()"><div class="content">Сделать другим</div></button>
 	</div>
 	Изменение радиуса углов (в em)<br>
 	<div class="content buttonbar contentbar">
     <input type="text" id="bradius" value="1">
-	<button onclick="setBlockBorderRadius()"><div class="content">Modifier</div></button>
+	<button class="animated" onclick="setBlockBorderRadius()"><div class="content">Modifier</div></button>
 	</div>
 </div>
 </div>
 
 <div class="block card bgtitle">
 <div class="content titlebar buttonbar">
-<button>
+<button class="animated">
 <div class="titlecontent">Кнопка в названии блока</div>
 </button>
 </div>
@@ -77,8 +88,8 @@
 <div class="content titlecontent">d</div>
 <div class="content imagecontent"><img class="image" src="images/gofman.png" alt="Ещё лучше"></div>
 <div class="content actbar buttonbar">
-<button><div class="content">→</div></button>
-<button><div class="content">Кнопки для действий</div></button>
+<button class="animated"><div class="content">→</div></button>
+<button class="animated"><div class="content">Кнопки для действий</div></button>
 </div>
 </div>
  
@@ -87,6 +98,7 @@
 <div class="content textcontent bgcontent">
 Версия 3, «Наш Ответ Твитору»
     <ul>
+        <li>Новая (немного глючная и, возможно, более ресурсоёмкая) анимация нажатия кнопки.</li>
         <li>Теперь у нас есть проверка ширины!</li>
         <li>Тёмная Тема (и анимация) включается автоматически</li>
     </ul>
@@ -99,8 +111,8 @@
     </ul>
 </div>
 <div class="content actbar buttonbar">
-<button><div class="content">→</div></button>
-<button><div class="content" onclick="window.location.href='https://google.com';">Гугл для гуглинга</div></button>
+<button class="animated"><div class="content">→</div></button>
+<button class="animated"><div class="content" onclick="window.location.href='https://google.com';">Гугл для гуглинга</div></button>
 </div>
 </div>
    
@@ -118,45 +130,12 @@
 </div>
 </div>
 
-<div class="block card bgcontent">
+<div class="block card bgcontent animated">
 <div class="content textcontent">
 Зроблено у 2021 року.<br> Licensed under <a href="https://mit-license.org/">the MIT License</a>.</div>
 </div>
 </div>
 </div>
-
-<script>
-var rt = document.querySelector(':root');
-function setDark() {
-  rt.style.setProperty('--bgcolor', 'rgb(10,10,10)');
-  rt.style.setProperty('--block-bgcolor', 'rgba(20,20,20,1)');
-  rt.style.setProperty('--block-contentcolor', 'rgba(31,31,31,1)');
-  rt.style.setProperty('--block-bordercolor', 'rgba(20,20,20,1)');
-  rt.style.setProperty('--accentcolor', 'rgba(120,140,200,1)');
-  rt.style.setProperty('--selcolor', '255');
-  rt.style.setProperty('--textcolor', 'rgba(245,245,245,1)');
-}
-function setLight() {
-  rt.style.setProperty('--bgcolor', 'rgb(250,240,240)');
-  rt.style.setProperty('--block-bgcolor', 'rgba(200,200,200,1)');
-  rt.style.setProperty('--block-contentcolor', 'rgba(255,255,255,1)');
-  rt.style.setProperty('--block-bordercolor', 'rgba(150,150,150,1)');
-  rt.style.setProperty('--accentcolor', 'rgba(120,140,200,1)');
-  rt.style.setProperty('--selcolor', '0');
-  rt.style.setProperty('--textcolor', 'rgba(5,5,5,1)');
-}
-function setDuration() {
-  var dur = document.getElementById("duration").value;
-  rt.style.setProperty('--animation-duration', dur + 'ms');
-}
-function setBlockWidth() {
-  var dur = document.getElementById("bwidth").value;
-  rt.style.setProperty('--block-width', dur + 'em');
-}
-function setBlockBorderRadius() {
-  var dur = document.getElementById("bradius").value;
-  rt.style.setProperty('--borderradius', dur + 'em');
-}
-</script>
+<script src='js/scripts.js'></script>
 </body>
 </html>

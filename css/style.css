@@ -59,6 +59,10 @@ and (min-width: 35em) {
 }
 /* other variables */
 :root {
+	--3d-scale: 1;
+	--xrot: 0deg;
+	--yrot: 0deg;
+	--perspective: 5cm;
 	--borderradius: 1em;
 	--input-textcolor: var(--textcolor);
 	--animation-duration: 150ms;
@@ -118,12 +122,13 @@ and (min-width: 35em) {
 	margin-top: 2px;
 	margin-bottom: 2px;
 	height: 40px;
-	transition: var(--animation-duration);
 }
 .buttonbar.titlebar {
+	--3d-scale: 0.5;
 	padding: 0px;
 }
 .buttonbar.actbar {
+	--3d-scale: 0.75;
 	flex-flow: row-reverse nowrap;
 	padding: 0px;
 }
@@ -133,6 +138,7 @@ and (min-width: 35em) {
 .buttonbar.contentbar > * {
 	border: solid 1px rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.4);
 }
+
 button {
 	display: flex;
 	justify-content: center;
@@ -151,9 +157,9 @@ button {
 button:hover {
 	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.05);
 }
-button:active {
+button:active,
+button:focus {
 	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
-	transform: scale(0.98);
 }
 input[type=text] {
 	box-sizing: border-box;
@@ -169,10 +175,17 @@ input[type=text]:hover {
 }
 input[type=text]:active {
 	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
-	transform: scale(0.98);
 }
 input[type=text]:focus {
 	border-width: 2px;
+}
+.animated {
+	perspective: 200px;
+    transition-duration: 300ms;
+}
+.animated:active {
+	transform: rotateX(calc(var(--3d-scale)*var(--xrot))) rotateY(calc(var(--3d-scale)*var(--yrot))) scale(0.975);
+	transition-duration: 100ms;
 }
 
 /* block types*/
