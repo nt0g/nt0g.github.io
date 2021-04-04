@@ -27,6 +27,7 @@
 @media (prefers-reduced-motion) {
 :root {
 	--animation-duration: 0ms !important;
+	--3d-scale: 0 !important;
 }
 }
 
@@ -180,12 +181,12 @@ input[type=text]:focus {
 	border-width: 2px;
 }
 .animated {
-	perspective: 200px;
-    transition-duration: 300ms;
+	perspective: var(--perspective);
+	transition: calc(3 * var(--animation-duration));
 }
 .animated:active {
 	transform: rotateX(calc(var(--3d-scale)*var(--xrot))) rotateY(calc(var(--3d-scale)*var(--yrot))) scale(0.975);
-	transition-duration: 100ms;
+	transition-duration: var(--animation-duration);
 }
 
 /* block types*/
