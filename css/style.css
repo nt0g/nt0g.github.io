@@ -185,7 +185,7 @@ input[type=text]:focus {
 	transition: calc(3 * var(--animation-duration));
 }
 .animated:active {
-	transform: rotateX(calc(var(--3d-scale)*var(--xrot))) rotateY(calc(var(--3d-scale)*var(--yrot))) scale(0.975);
+	transform: rotateX(calc(var(--3d-scale) * var(--xrot))) rotateY(calc(var(--3d-scale) * var(--yrot))) scale(0.975);
 	transition-duration: var(--animation-duration);
 }
 
