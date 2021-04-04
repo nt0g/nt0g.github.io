@@ -40,6 +40,10 @@ function setPerspective() {
   var x = document.getElementById("perspective").value;
   rt.style.setProperty('--perspective', x + 'cm');
 }
+function set3dscale() {
+  var x = document.getElementById("3dscale").value;
+  rt.style.setProperty('--3d-scale', x);
+}
 function clickEvent(click) {
 	var targ = click.target.getBoundingClientRect();
 	var hWid = targ.width / 2;
