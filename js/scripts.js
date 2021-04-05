@@ -47,6 +47,9 @@ function setSettingScale() {
 function setSettingTranslate() {
   rt.style.setProperty('--method', 'translateZ(-5px)');
 }
+function setSettingBoth() {
+  rt.style.setProperty('--method', 'translateZ(-5px) scale(0.975)');
+}
 function playAnimation() {
   document.querySelector(".pulsar").className = "pulsar";
   window.requestAnimationFrame(function(time) {

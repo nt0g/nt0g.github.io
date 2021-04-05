@@ -67,7 +67,7 @@ and (min-width: 35em) {
 	--yrot: 0deg;
 	--perspective: 5cm;
 	--borderwidth: 2px;
-	--borderradius: 1em;
+	--borderradius: 0.5em;
 	--input-textcolor: var(--textcolor);
 	--animation-duration: 150ms;
 	background: var(--bgcolor);
@@ -130,6 +130,7 @@ and (min-width: 35em) {
 	margin-top: 2px;
 	margin-bottom: 2px;
 	height: 40px;
+	border-radius: var(--borderradius);
 }
 
 .buttonbar.titlebar {
@@ -195,6 +196,7 @@ input[type=text] {
 	border-radius: calc(2 * var(--borderradius));
 	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.02);
 	width: 60px;
+	transition-duration: var(--animation-duration);
 }
 input[type=text]:hover {
 	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.05);
@@ -205,7 +207,7 @@ input[type=text]:focus {
 }
 .animated {
 	perspective: var(--perspective);
-	transition: calc(3 * var(--animation-duration));
+	transition-duration: calc(3 * var(--animation-duration));
 	user-select: none;
 }
 .animated:active {
@@ -223,7 +225,7 @@ input[type=text]:focus {
 	padding: 20px;
 	border-radius: var(--block-borderradius);
 	color: var(--textcolor);
-	transition: var(--animation-duration);
+	transition-duration: var(--animation-duration);
 }
 .content > input[type=text] {
 	font-size: 12pt;
@@ -262,7 +264,7 @@ button > .titlecontent {
 .imagecontent > .image {
 	width: var(--block-width);
 	clip-path: inset(0px round var(--block-borderradius));
-	transition: var(--animation-duration);
+	transition-duration: var(--animation-duration);
 }
 .bgcontent {
 	background-color: var(--block-contentcolor); 
