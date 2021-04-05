@@ -33,15 +33,24 @@
 <div class="block card bgtitle">
 <div class="content titlecontent">Изменение анимации кнопок</div>
 <div class="content textcontent bgcontent">
-    Изменение перспективы (в см)<br>
+    Изменение перспективы (в см):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="perspective" value="5">
-	<button class="animated" onclick="setPerspective()"><div class="content">Изменить</div></button>
-	</div> 
-	Изменение масштабов 3Д-шенья (меняйте и поймёте)<br>
+	<button class="animated" onclick="setPerspective()"><div class="content">→</div></button>
+	</div><br />
+	Изменение масштабов 3Д-шенья (меняйте и поймёте):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="3dscale" value="1">
-	<button class="animated" onclick="set3dscale()"><div class="content">Модифицировать</div></button>
+	<button class="animated" onclick="set3dscale()"><div class="content">→</div></button>
+	</div><br />
+	Метод 3Д-вдавливания:<br />
+	<div class="content buttonbar contentbar">
+	<button class="animated" onclick="setSettingScale()"><div class="content">Scale</div></button>
+	<button class="animated" onclick="setSettingTranslate()"><div class="content">TranslateZ</div></button>
+	<button class="animated"><div class="content">Тест</div></button>
+	</div><br />
+	<div class="content buttonbar contentbar">
+	<button class="animated" style="width:100%"><div class="content">Кнопка для проверки</div></button>
 	</div>
 </div>
 </div>
@@ -49,10 +58,12 @@
 <div class="block card bgtitle">
 <div class="content titlecontent">Изменение скорости анимаций</div>
 <div class="content textcontent bgcontent">
-    И ежу понятно.<br>
+    И ежу понятно.<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="duration" value="150">
-	<button class="animated" onclick="setDuration()"><div class="content">Измена</div></button>
+	<button class="animated" onclick="setDuration()"><div class="content">→</div></button>
+	<button class="animated" onclick="playAnimation()"><div class="content">▷</div></button>
+	<button class="animated"><div class="content"><div class="pulsar"></div></div></button>
 	</div>
 </div>
 </div>
@@ -60,22 +71,27 @@
 <div class="block card bgtitle">
 <div class="content titlecontent">Изменение визуальных штук</div>
 <div class="content textcontent bgcontent">
-    Понемногу осваиваем жабаскрипт.<br>
-    Ежу, опять же, понятно.<br><br>
-	Изменение масштаба текста (потом будет):<br>
+    Понемногу осваиваем жабаскрипт.<br />
+    Ежу, опять же, понятно.<br /><br />
+	Изменение масштаба текста (потом будет):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="" value="Out of Order">
-	<button class="animated" onclick=""><div class="content">Поменять</div></button>
-	</div>
-	Изменение ширины блоков (в em)<br>
+	<button class="animated" onclick=""><div class="content">→</div></button>
+	</div><br />
+	Изменение ширины блоков (в em):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="bwidth" value="25">
-	<button class="animated" onclick="setBlockWidth()"><div class="content">Сделать другим</div></button>
-	</div>
-	Изменение радиуса углов (в em)<br>
+	<button class="animated" onclick="setBlockWidth()"><div class="content">→</div></button>
+	</div><br />
+	Изменение радиуса углов (в em):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="bradius" value="1">
-	<button class="animated" onclick="setBlockBorderRadius()"><div class="content">Modifier</div></button>
+	<button class="animated" onclick="setBlockBorderRadius()"><div class="content">→</div></button>
+	</div><br />
+	Изменение ширины границ (в px):<br />
+	<div class="content buttonbar contentbar">
+    <input type="text" id="brdwidth" value="2">
+	<button class="animated" onclick="setBorderWidth()"><div class="content">→</div></button>
 	</div>
 </div>
 </div>
@@ -101,6 +117,11 @@
 <div class="block card bgtitle">
 <div class="content titlecontent">Список Изменений Да</div>
 <div class="content textcontent bgcontent">
+Версия 3.1
+    <ul>
+        <li>Больше ре фак то рин га.</li>
+        <li>Элементы панели «объединяются» в общий стиль.</li>
+    </ul>
 Версия 3, «Наш Ответ Твитору»
     <ul>
         <li>Новая (немного глючная и, возможно, более ресурсоёмкая) анимация нажатия кнопки.<br /><i>Also known as: 3Д кНоПаЧкИ!!</i></li>
@@ -140,7 +161,7 @@
 
 <div class="block card bgcontent animated">
 <div class="content textcontent">
-Зроблено в 2021 роцi переважно в блокнотi.<br> Licensed under <a href="https://mit-license.org/">the MIT License</a>.</div>
+Зроблено в 2021 роцi переважно в блокнотi.<br /> Licensed under <a href="https://mit-license.org/">the MIT License</a>.</div>
 </div>
 </div>
 </div>

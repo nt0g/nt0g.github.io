@@ -1,10 +1,3 @@
-window.onload = init;
-function init() {
-	if (window.Event) {
-	document.captureEvents(Event.MOUSEMOVE);
-	}
-	document.onmousemove = clickEvent;
-}
 var rt = document.querySelector(':root');
 function setDark() {
   rt.style.setProperty('--bgcolor', 'rgb(10,10,10)');
@@ -36,6 +29,10 @@ function setBlockBorderRadius() {
   var x = document.getElementById("bradius").value;
   rt.style.setProperty('--borderradius', x + 'em');
 }
+function setBorderWidth() {
+  var x = document.getElementById("brdwidth").value;
+  rt.style.setProperty('--borderwidth', x + 'px');
+}
 function setPerspective() {
   var x = document.getElementById("perspective").value;
   rt.style.setProperty('--perspective', x + 'cm');
@@ -44,7 +41,21 @@ function set3dscale() {
   var x = document.getElementById("3dscale").value;
   rt.style.setProperty('--3d-scale', x);
 }
-function clickEvent(click) {
+function setSettingScale() {
+  rt.style.setProperty('--method', 'scale(0.975)');
+}
+function setSettingTranslate() {
+  rt.style.setProperty('--method', 'translateZ(-5px)');
+}
+function playAnimation() {
+  document.querySelector(".pulsar").className = "pulsar";
+  window.requestAnimationFrame(function(time) {
+    window.requestAnimationFrame(function(time) {
+      document.querySelector(".pulsar").className = "pulsar pulse";
+    });
+  });
+}
+window.addEventListener('mousemove', click => {
 	var targ = click.target.getBoundingClientRect();
 	var hWid = targ.width / 2;
 	var hHei = targ.height / 2;
@@ -56,4 +67,4 @@ function clickEvent(click) {
 	var yAng = Math.round(yPer * 15);
 	rt.style.setProperty('--yrot', xAng + 'deg');
 	rt.style.setProperty('--xrot', yAng + 'deg');
-    }
+    })

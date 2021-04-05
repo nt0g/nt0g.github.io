@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url("pulsar.css");
 
 /* media queries */
 @media (prefers-color-scheme: dark) {
@@ -61,14 +62,20 @@ and (min-width: 35em) {
 /* other variables */
 :root {
 	--3d-scale: 1;
+	--method: scale(0.975);
 	--xrot: 0deg;
 	--yrot: 0deg;
 	--perspective: 5cm;
+	--borderwidth: 2px;
 	--borderradius: 1em;
 	--input-textcolor: var(--textcolor);
 	--animation-duration: 150ms;
 	background: var(--bgcolor);
 	transition: var(--animation-duration);
+}
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-moz-tap-highlight-color: rgba(0,0,0,0);
 }
 ::selection {
 	/*color: ;*/
@@ -92,7 +99,7 @@ and (min-width: 35em) {
 	max-width: calc(2 * var(--block-width));
 	display: flex;
 	flex-flow: column nowrap;
-	border-bottom: solid 1px var(--block-bordercolor);
+	border-bottom: solid var(--borderwidth) var(--block-bordercolor);
 	border-radius: var(--block-borderradius);
 	box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
 	margin-top: 10px;
@@ -124,6 +131,7 @@ and (min-width: 35em) {
 	margin-bottom: 2px;
 	height: 40px;
 }
+
 .buttonbar.titlebar {
 	--3d-scale: 0.5;
 	padding: 0px;
@@ -137,7 +145,24 @@ and (min-width: 35em) {
 	padding: 0px;
 }
 .buttonbar.contentbar > * {
-	border: solid 1px rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.4);
+	border: solid var(--borderwidth) rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.4);
+}
+.buttonbar.contentbar > *:first-child:not(:only-child) {
+	margin-right: 0px;
+	border-radius: var(--borderradius) 0px 0px var(--borderradius);
+	border-right-width: calc(0.5 * var(--borderwidth));
+}
+.buttonbar.contentbar > *:not(:first-child):not(:last-child):not(:only-child) {
+	margin-left: 0px;
+	margin-right: 0px;
+	border-radius: 0px;
+	border-right-width: calc(0.5 * var(--borderwidth));
+	border-left-width: calc(0.5 * var(--borderwidth));
+}
+.buttonbar.contentbar > *:last-child:not(:only-child) {
+	margin-left: 0px;
+	border-radius: 0px var(--borderradius) var(--borderradius) 0px;
+	border-left-width: calc(0.5 * var(--borderwidth));
 }
 
 button {
@@ -165,7 +190,7 @@ button:focus {
 input[type=text] {
 	box-sizing: border-box;
 	padding: 10px;
-	border: solid 1px rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.4);
+	border: solid var(--borderwidth) rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.4);
 	color: var(--textcolor);
 	border-radius: calc(2 * var(--borderradius));
 	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.02);
@@ -174,18 +199,17 @@ input[type=text] {
 input[type=text]:hover {
 	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.05);
 }
-input[type=text]:active {
-	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
-}
+input[type=text]:active,
 input[type=text]:focus {
-	border-width: 2px;
+	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
 }
 .animated {
 	perspective: var(--perspective);
 	transition: calc(3 * var(--animation-duration));
+	user-select: none;
 }
 .animated:active {
-	transform: rotateX(calc(var(--3d-scale) * var(--xrot))) rotateY(calc(var(--3d-scale) * var(--yrot))) scale(0.975);
+	transform: rotateX(calc(var(--3d-scale) * var(--xrot))) rotateY(calc(var(--3d-scale) * var(--yrot))) var(--method);
 	transition-duration: var(--animation-duration);
 }
 
