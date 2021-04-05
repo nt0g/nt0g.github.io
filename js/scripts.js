@@ -55,7 +55,9 @@ function playAnimation() {
     });
   });
 }
-window.addEventListener('mousemove', click => {
+let mouseClick = false;
+
+window.addEventListener('mousedown', click => {
 	var targ = click.target.getBoundingClientRect();
 	var hWid = targ.width / 2;
 	var hHei = targ.height / 2;
@@ -67,4 +69,27 @@ window.addEventListener('mousemove', click => {
 	var yAng = Math.round(yPer * 15);
 	rt.style.setProperty('--yrot', xAng + 'deg');
 	rt.style.setProperty('--xrot', yAng + 'deg');
-    })
+	mouseClick = true;
+});
+window.addEventListener('mousemove', click => {
+	if (mouseClick === true) {
+	var targ = click.target.getBoundingClientRect();
+	var hWid = targ.width / 2;
+	var hHei = targ.height / 2;
+	var xPos = click.clientX - targ.left - hWid;
+	var yPos = click.clientY - targ.top - hHei;
+	var xPer = xPos / hWid;
+	var yPer = -1 * yPos / hHei;
+	var xAng = Math.round(xPer * 15);
+	var yAng = Math.round(yPer * 15);
+	rt.style.setProperty('--yrot', xAng + 'deg');
+	rt.style.setProperty('--xrot', yAng + 'deg');
+	}
+});
+window.addEventListener('mouseup', click => {
+	if (mouseClick === true) {
+	rt.style.setProperty('--yrot', '0deg');
+	rt.style.setProperty('--xrot', '0deg');
+	mouseClick = false;
+	}
+});
