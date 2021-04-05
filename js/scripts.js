@@ -48,7 +48,7 @@ function setSettingTranslate() {
   rt.style.setProperty('--method', 'translateZ(-5px)');
 }
 function setSettingBoth() {
-  rt.style.setProperty('--method', 'translateZ(-5px) scale(0.975)');
+  rt.style.setProperty('--method', 'translateZ(-5px) scale(var(--zsca))');
 }
 function playAnimation() {
   document.querySelector(".pulsar").className = "pulsar";
@@ -67,8 +67,11 @@ function calculateAngles(event) {
 	var yPos = event.clientY - targ.top - hHei;
 	var xPer = xPos / hWid;
 	var yPer = -1 * yPos / hHei;
+	var zSca = ((Math.abs(xPer) + Math.abs(yPer)) / 2);
+	var zTes = 0.975 + 0.025 * zSca;
 	var xAng = Math.round(xPer * 15);
 	var yAng = Math.round(yPer * 15);
 	rt.style.setProperty('--yrot', xAng + 'deg');
 	rt.style.setProperty('--xrot', yAng + 'deg');
+	rt.style.setProperty('--zsca', zTes);
 };
