@@ -58,10 +58,7 @@ function playAnimation() {
     });
   });
 }
-
-window.addEventListener('touchmove', calculateAngles);
 window.addEventListener('mousemove', calculateAngles);
-
 function calculateAngles(event) {
 	var targ = event.target.getBoundingClientRect();
 	var hWid = targ.width / 2;
