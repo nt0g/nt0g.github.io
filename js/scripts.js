@@ -59,37 +59,10 @@ function playAnimation() {
   });
 }
 
-// thanks to Esailija from StackOverflow
-let pressed = false;
+window.addEventListener('touchmove', calculateAngles);
+window.addEventListener('mousemove', calculateAngles);
 
-window.addEventListener('touchstart', eventStart);
-window.addEventListener('mousedown', eventStart);
-
-window.addEventListener('touchmove', eventCont);
-window.addEventListener('mousemove', eventCont);
-
-window.addEventListener('touchend', eventEnd);
-window.addEventListener('mouseup', eventEnd);
-
-function eventStart(event) {
-	calculations(event);
-	pressed = true;
-};
-
-function eventCont(event) {
-	if (pressed === true) {
-	calculations(event);
-	}
-};
-function eventEnd(event) {
-	if (pressed === true) {
-		rt.style.setProperty('--yrot', '0deg');
-		rt.style.setProperty('--xrot', '0deg');
-		pressed = false;
-	}
-};
-
-function calculations(event) {
+function calculateAngles(event) {
 	var targ = event.target.getBoundingClientRect();
 	var hWid = targ.width / 2;
 	var hHei = targ.height / 2;
