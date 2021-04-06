@@ -18,46 +18,21 @@ function playAnimation() {
   });
 }
 
-function loadFile(filePath) {
-	var result = null;
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET","css/themes/" + filePath + ".txt", false);
-	xmlhttp.send();
-	if (xmlhttp.status==200) {
-		result = xmlhttp.responseText;
-	}
-	return result;
-};
-
-function setTheme(choice) {
-	var plain = loadFile(choice);
-	var array = [];
-	array = plain.split(/\n|\r/g);
-	array.forEach(function(entry) {
-		var sndarray = []
-		sndarray = entry.split(/\|/);
-		str11 = sndarray[0];
-		str21 = sndarray[1];
-		setSetting(0,0,str11,str21);
-	});
-};
-
-var queryDark = window.matchMedia('(prefers-color-scheme: dark)');
-function handleDChange(e) {
-  if (e.matches) {
-    console.log('Dark!');
-	setTheme('dark');
-  }
-};
-queryDark.addListener(handleDChange);
-handleDChange(queryDark);
-
-var queryLight = window.matchMedia('(prefers-color-scheme: light)');
-function handleLChange(e) {
-  if (e.matches) {
-    console.log('Light!');
-	setTheme('light');
-  }
-};
-queryLight.addListener(handleLChange);
-handleLChange(queryLight);
+function setDark() {
+  rt.style.setProperty('--bgcolor', 'rgb(10,10,10)');
+  rt.style.setProperty('--block-bgcolor', 'rgba(20,20,20,1)');
+  rt.style.setProperty('--block-contentcolor', 'rgba(31,31,31,1)');
+  rt.style.setProperty('--block-bordercolor', 'rgba(20,20,20,1)');
+  rt.style.setProperty('--accentcolor', 'rgba(120,140,200,1)');
+  rt.style.setProperty('--selcolor', '255');
+  rt.style.setProperty('--textcolor', 'rgba(245,245,245,1)');
+}
+function setLight() {
+  rt.style.setProperty('--bgcolor', 'rgb(250,240,240)');
+  rt.style.setProperty('--block-bgcolor', 'rgba(200,200,200,1)');
+  rt.style.setProperty('--block-contentcolor', 'rgba(255,255,255,1)');
+  rt.style.setProperty('--block-bordercolor', 'rgba(150,150,150,1)');
+  rt.style.setProperty('--accentcolor', 'rgba(120,140,200,1)');
+  rt.style.setProperty('--selcolor', '0');
+  rt.style.setProperty('--textcolor', 'rgba(5,5,5,1)');
+}
