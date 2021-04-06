@@ -21,7 +21,7 @@ function playAnimation() {
 function loadFile(filePath) {
 	var result = null;
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET","themes/" + filePath + ".txt", false);
+	xmlhttp.open("GET","css/themes/" + filePath + ".txt", false);
 	xmlhttp.send();
 	if (xmlhttp.status==200) {
 		result = xmlhttp.responseText;
