@@ -18,10 +18,10 @@
     <button class="animated">
     <div class="content">←</div>
     </button>
-    <button class="animated" id="lightMode" onclick="setLight()">
+    <button class="animated" id="lightMode" onclick="setTheme('light')">
     <div class="content">Здесь</div>
     </button>
-    <button class="animated" id="darkMode" onclick="setDark()">
+    <button class="animated" id="darkMode" onclick="setTheme('dark')">
     <div class="content">Там</div>
     </button>
     <button class="animated">
@@ -36,18 +36,18 @@
     Изменение перспективы (в см):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="perspective" value="5">
-	<button class="animated" onclick="setPerspective()"><div class="content">→</div></button>
+	<button class="animated" onclick="setSetting(1,'perspective','--perspective','cm')"><div class="content">→</div></button>
 	</div><br />
 	Изменение масштабов 3Д-шенья (меняйте и поймёте):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="3dscale" value="1">
-	<button class="animated" onclick="set3dscale()"><div class="content">→</div></button>
+	<button class="animated" onclick="setSetting(1,'3dscale','--3d-scale','')"><div class="content">→</div></button>
 	</div><br />
 	Метод 3Д-вдавливания:<br />
 	<div class="content buttonbar contentbar">
-	<button class="animated" onclick="setSettingScale()"><div class="content">Scale</div></button>
-	<button class="animated" onclick="setSettingTranslate()"><div class="content">TranslateZ</div></button>
-	<button class="animated" onclick="setSettingBoth()"><div class="content">Оба</div></button>
+	<button class="animated" onclick="setSetting(0,0,'--method','scale(0.975)')"><div class="content">Scale</div></button>
+	<button class="animated" onclick="setSetting(0,0,'--method','translateZ(-5px)')"><div class="content">TranslateZ</div></button>
+	<button class="animated" onclick="setSetting(0,0,'--method','translateZ(-5px) scale(var(--zsca))')"><div class="content">Оба</div></button>
 	</div><br />
 	<div class="content buttonbar contentbar">
 	<button class="animated" style="width:100%"><div class="content">Кнопка для проверки</div></button>
@@ -61,7 +61,7 @@
     И ежу понятно.<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="duration" value="150">
-	<button class="animated" onclick="setDuration()"><div class="content">→</div></button>
+	<button class="animated" onclick="setSetting(1,'duration','--animation-duration','ms')"><div class="content">→</div></button>
 	<button class="animated" onclick="playAnimation()"><div class="content">▷</div></button>
 	<button class="animated"><div class="content"><div class="pulsar"></div></div></button>
 	</div>
@@ -81,17 +81,17 @@
 	Изменение ширины блоков (в em):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="bwidth" value="25">
-	<button class="animated" onclick="setBlockWidth()"><div class="content">→</div></button>
+	<button class="animated" onclick="setSetting(1,'bwidth','--block-width','em')"><div class="content">→</div></button>
 	</div><br />
 	Изменение радиуса углов (в em):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="bradius" value="0.5">
-	<button class="animated" onclick="setBlockBorderRadius()"><div class="content">→</div></button>
+	<button class="animated" onclick="setSetting(1,'bradius','--borderradius','em')"><div class="content">→</div></button>
 	</div><br />
 	Изменение ширины границ (в px):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="brdwidth" value="2">
-	<button class="animated" onclick="setBorderWidth()"><div class="content">→</div></button>
+	<button class="animated" onclick="setSetting(1,'brdwidth','--borderwidth','px')"><div class="content">→</div></button>
 	</div>
 </div>
 </div>

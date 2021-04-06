@@ -1,0 +1,7 @@
+'--bgcolor'|'rgb(10,10,10)'
+'--block-bgcolor'|'rgba(20,20,20,1)'
+'--block-contentcolor'|'rgba(31,31,31,1)'
+'--block-bordercolor'|'rgba(20,20,20,1)'
+'--accentcolor'|'rgba(120,140,200,1)'
+'--selcolor'|'255'
+'--textcolor'|'rgba(245,245,245,1)'
