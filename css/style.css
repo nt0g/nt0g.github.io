@@ -38,6 +38,13 @@ and (min-width: 35em) {
 }
 /* other variables */
 :root {
+	--bgcolor: rgb(250,240,240);
+	--block-bgcolor: rgba(200,200,200,1);
+	--block-contentcolor: rgba(255,255,255,1);
+	--block-bordercolor: rgba(150,150,150,1);
+	--accentcolor: rgba(120,140,200,1);
+	--selcolor: 0;
+	--textcolor: rgba(5,5,5,1);
 	--3d-scale: 1;
 	--method: scale(0.975);
 	--xrot: 0deg;
