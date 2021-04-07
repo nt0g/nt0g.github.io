@@ -1,24 +1,21 @@
 var pressed = false;
 var mouseMoved = false;
 
-
 function calculations(event) {
-
-	var targ = event.target.getBoundingClientRect();
-	var hWid = targ.width / 2;
-	var hHei = targ.height / 2;
-	var xPos = event.clientX - targ.left - hWid;
-	var yPos = event.clientY - targ.top - hHei;
+	var bounds = event.target.getBoundingClientRect();
+	var hWid = bounds.width / 2;
+	var hHei = bounds.height / 2;
+	var xPos = event.clientX - bounds.left - hWid;
+	var yPos = event.clientY - bounds.top - hHei;
 	var xPer = xPos / hWid;
 	var yPer = -1 * yPos / hHei;
 	var zSca = ((Math.abs(xPer) + Math.abs(yPer)) / 2);
 	var zTes = 0.975 + 0.025 * zSca;
 	var xAng = Math.round(xPer * 15);
 	var yAng = Math.round(yPer * 15);
-
-	rt.style.setProperty('--yrot', xAng + 'deg');
-	rt.style.setProperty('--xrot', yAng + 'deg');
-	rt.style.setProperty('--zsca', zTes);
+	root.style.setProperty('--yrot', xAng + 'deg');
+	root.style.setProperty('--xrot', yAng + 'deg');
+	root.style.setProperty('--zsca', zTes.toFixed(2));
 };
 
 
@@ -32,13 +29,13 @@ function eventStart(event) {
 };
 function eventCont(event) {
 	if (pressed === true) {
-	calculations(event);
+		calculations(event);
 	}
 };
 function eventEnd(event) {
 	if (pressed === true) {
-		rt.style.setProperty('--yrot', '0deg');
-		rt.style.setProperty('--xrot', '0deg');
+		root.style.setProperty('--yrot', '0deg');
+		root.style.setProperty('--xrot', '0deg');
 		pressed = false;
 	}
 };
@@ -67,7 +64,7 @@ function touchHandler(event) {
 	}
 
 	var touch = event.changedTouches[0];
-	simulatedEvent.initMouseEvent(mouseEvent, true, true, window, 1,
+	simulatedEvent.initMouseEvent(mouseEvent, false, true, window, 1,
 	touch.screenX, touch.screenY,
 	touch.clientX, touch.clientY, false,
 	false, false, false, 0, null);
@@ -75,15 +72,19 @@ function touchHandler(event) {
 	event.preventDefault();
 }
 
-
 function startup() {
-	document.addEventListener('click', eventClick, false);
-	document.addEventListener('mousedown', eventStart, false);
-	document.addEventListener('mousemove', eventCont, false);
-	document.addEventListener('mouseup', eventEnd, false);
-    document.addEventListener("touchstart", touchHandler, true);
-    document.addEventListener("touchmove", touchHandler, true);
-    document.addEventListener("touchend", touchHandler, true);
-    document.addEventListener("touchcancel", touchHandler, true);
+	var cur =  document.querySelectorAll('.animated')
+    var index = 0, length = cur.length;
+    for ( ; index < length; index++) {
+		cur[index].addEventListener('click', eventClick, false);
+		cur[index].addEventListener('mousedown', eventStart, false);
+		cur[index].addEventListener('mousemove', eventCont, false);
+//		cur[index].addEventListener('mouseout', eventEnd, false);
+		cur[index].addEventListener('mouseup', eventEnd, false);
+		cur[index].addEventListener("touchstart", touchHandler, true);
+		cur[index].addEventListener("touchmove", touchHandler, true);
+		cur[index].addEventListener("touchend", touchHandler, true);
+		cur[index].addEventListener("touchcancel", touchHandler, true);
+	}
 }
 document.addEventListener("DOMContentLoaded", startup);

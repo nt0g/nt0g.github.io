@@ -1,0 +1,23 @@
+@charset "utf-8";
+:root {
+	--3d-scale: 1;
+	--method: scale(0.975);
+	--xrot: 0deg;
+	--yrot: 0deg;
+	--zsca: 1;
+	--perspective: 5cm;
+}
+
+.animated {
+	perspective: var(--perspective);
+	transition-duration: calc(3 * var(--animation-duration));
+	user-select: none;
+	touch-action: none;
+	transition-delay: calc(0.5 * var(--animation-duration)) !important;
+	transition-timing-function:var(--animation-interpolator) !important;
+}
+.animated:active {
+	transform: rotateX(calc(var(--3d-scale) * var(--xrot))) rotateY(calc(var(--3d-scale) * var(--yrot))) var(--method);
+	transition-duration: var(--animation-duration) !important;
+	transition-delay: 0s !important;
+}

@@ -11,7 +11,7 @@
 	height: 10px;
 	border: none;
 	border-radius: 20px;
-	background: rgba(0,125,255,1);
+	background: var(--accentcolor);
 	opacity: 0;
 }
 .pulse {

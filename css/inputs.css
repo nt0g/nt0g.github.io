@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* Form elements */
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	border: none;
+	border-radius: calc(2 * var(--borderradius));
+	color: var(--input-textcolor);
+	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0);
+	white-space: nowrap;
+	cursor: pointer;
+}
+button:hover {
+	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.05);
+}
+button:active,
+button:focus {
+	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
+}
+
+
+input[type=text] {
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius: calc(2 * var(--borderradius));
+	color: var(--textcolor);
+	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.02);
+	width: 60px;
+}
+input[type=text]:hover {
+	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.05);
+}
+input[type=text]:active,
+input[type=text]:focus {
+	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
+}
+
+
+input[type="range"]{
+	-webkit-appearance: none;
+	width: 100%;
+	height: var(--borderwidth);
+	outline: none !important;
+	appearance:none;
+	border:none;
+	border-radius: var(--block-borderradius);;
+}
+input[type="range"]::-moz-focus-outer {
+	border: 0;
+}
+input[type="range"]:hover {
+	outline:none;
+}
+
+/* Chrome */
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 10px;
+	height: 10px;
+	background: var(--block-contentcolor);
+	cursor: pointer;
+	border-radius: var(--block-borderradius);
+	border: solid var(--borderwidth) var(--accentcolor);
+	box-shadow: 0 1px 2px var(--block-bgcolor);
+}
+
+/* Moz */
+
+input[type="range"]::-moz-range-thumb {
+	width: 10px;
+	height: 10px;
+	background: var(--block-contentcolor);
+	cursor: pointer;
+	border-radius: var(--block-borderradius);
+	border: solid var(--borderwidth) var(--accentcolor);
+	outline: none;
+	box-shadow: 0 1px 2px var(--block-bgcolor);
+}
+input[type="range"]::-moz-range-progress {
+	background-color: var(--accentcolor);
+	height: var(--borderwidth);
+	border-radius: var(--block-borderradius);
+	border: none;
+}
+input[type="range"]::-moz-range-track {  
+	background-color: var(--block-bgcolor);
+	border-radius: var(--block-borderradius);
+	border: none;
+	height: var(--borderwidth);
+}
+
+
+.switch {
+	display: flex;
+	flex-flow: row-reverse;
+	position: relative;
+	margin: 10px;
+	margin-bottom: 0px;
+}
+.swinput {
+	display: none;
+}
+.swlabel {
+	display: block;
+	width: 30px;
+	height: 15px;
+	color: transparent;
+	user-select: none;
+	cursor: pointer;
+}
+.swlabel::before,
+.swlabel::after {
+	content: "";
+	display: block;
+	position: relative;
+}
+.swlabel::before {
+	top: 5px;
+	left: 6px;
+	width: 16px;
+	height: 4px;
+	background-color: var(--block-bgcolor);
+	border-radius: var(--borderradius);
+	transition: calc(3*var(--animation-duration)) var(--animation-interpolator);
+}
+.swlabel::after {
+	top: -22px;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	border: solid 2px var(--accentcolor);
+	border-radius: var(--borderradius);
+	background-color: var(--block-contentcolor);
+	box-shadow: 0 1px 2px var(--block-bgcolor);
+	transition: var(--animation-duration) var(--animation-interpolator);
+}
+.swinput:checked + .swlabel::before {
+  background-color: var(--accentcolor);
+}
+.swinput:checked + .swlabel::after {
+  left: 15px;
+}

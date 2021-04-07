@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+@keyframes animator {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.gradient {
+	position: relative;
+	border: 0px !important;
+}
+.gradient::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border-radius: inherit;
+	background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+	background-size: 300% 300%;
+	animation: animator 3s ease alternate infinite;
+	z-index: -1;
+}
+.gradient > .gradinside {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	background-color: var(--block-contentcolor);
+	top: var(--borderwidth);
+	left: var(--borderwidth);
+	height: calc(100% - var(--borderwidth) * 2);
+	width: calc(100% - var(--borderwidth) * 2);
+	border-radius: calc(0.5 * var(--borderradius));
+}
+.gradinside > .gradcontent {
+	padding: 0px;
+	font-size: 14pt;
+	font-family: Jost, "sans-serif";
+}
+.gradient:first-child:not(:only-child) > .gradinside {
+	border-radius: calc(0.5 * var(--borderradius)) 0px 0px calc(0.5 * var(--borderradius));
+}
+.gradient:not(:first-child):not(:last-child):not(:only-child) > .gradinside {
+	border-radius: 0px;
+}
+.gradient:last-child:not(:only-child) > .gradinside {
+	border-radius: 0px calc(0.5 * var(--borderradius)) calc(0.5 * var(--borderradius)) 0px;
+}
+.gradient:hover > .gradinside {
+	background-color: rgba(var(--opaque-selcolor),var(--opaque-selcolor),var(--opaque-selcolor),0.95);
+}
+.gradient:active > .gradinside,
+.gradient:focus > .gradinside {
+	background-color: rgba(var(--opaque-selcolor),var(--opaque-selcolor),var(--opaque-selcolor),0.9);
+}
