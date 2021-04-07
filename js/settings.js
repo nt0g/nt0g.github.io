@@ -25,6 +25,7 @@ function setDark() {
   rt.style.setProperty('--block-bordercolor', 'rgba(20,20,20,1)');
   rt.style.setProperty('--accentcolor', 'rgba(120,140,200,1)');
   rt.style.setProperty('--selcolor', '255');
+  rt.style.setProperty('--opaque-selcolor', '40');
   rt.style.setProperty('--textcolor', 'rgba(245,245,245,1)');
 }
 function setLight() {
@@ -34,5 +35,6 @@ function setLight() {
   rt.style.setProperty('--block-bordercolor', 'rgba(150,150,150,1)');
   rt.style.setProperty('--accentcolor', 'rgba(120,140,200,1)');
   rt.style.setProperty('--selcolor', '0');
+  rt.style.setProperty('--opaque-selcolor', '245');
   rt.style.setProperty('--textcolor', 'rgba(5,5,5,1)');
 }
