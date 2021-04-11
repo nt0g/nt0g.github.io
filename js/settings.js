@@ -1,5 +1,5 @@
 var root = document.querySelector(':root');
-var check = document.getElementById('switchTheme');
+let check = document.getElementById('switchTheme');
 
 function setSetting(variant,id,str1,str2) {
 	if (variant === 0) {

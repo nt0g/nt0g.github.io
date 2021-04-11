@@ -108,11 +108,11 @@ input[type="range"]::-moz-range-track {
 }
 .swlabel {
 	display: block;
-	width: 30px;
-	height: 15px;
 	color: transparent;
 	user-select: none;
 	cursor: pointer;
+	width: 25px;
+	height: 10px;
 }
 .swlabel::before,
 .swlabel::after {
@@ -121,17 +121,17 @@ input[type="range"]::-moz-range-track {
 	position: relative;
 }
 .swlabel::before {
-	top: 5px;
-	left: 6px;
-	width: 16px;
+	top: 3px;
+	left: 5px;
+	width: 15px;
 	height: 4px;
 	background-color: var(--block-bgcolor);
 	border-radius: var(--borderradius);
 	transition: calc(3*var(--animation-duration)) var(--animation-interpolator);
 }
 .swlabel::after {
-	top: -22px;
-	left: 0;
+	top: -6px;
+	left: 0px;
 	width: 10px;
 	height: 10px;
 	border: solid 2px var(--accentcolor);
@@ -144,5 +144,5 @@ input[type="range"]::-moz-range-track {
   background-color: var(--accentcolor);
 }
 .swinput:checked + .swlabel::after {
-  left: 15px;
+  left: 12px;
 }
