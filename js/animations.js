@@ -6,11 +6,3 @@ function pulse() {
     });
   });
 }
-function clickB() {
-  document.querySelector('.animated').className = "animated";
-  window.requestAnimationFrame(function(time) {
-    window.requestAnimationFrame(function(time) {
-      document.querySelector('.animated').className = "animated click";
-    });
-  });
-}

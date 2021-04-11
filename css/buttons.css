@@ -16,6 +16,9 @@
 	transition-delay: calc(0.5 * var(--animation-duration)) !important;
 	transition-timing-function:var(--animation-interpolator) !important;
 }
+.animated > * {
+	pointer-events: none;
+}
 .animated:active {
 	transform: rotateX(calc(var(--3d-scale) * var(--xrot))) rotateY(calc(var(--3d-scale) * var(--yrot))) var(--method);
 	transition-duration: var(--animation-duration) !important;
