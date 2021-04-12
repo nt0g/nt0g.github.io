@@ -16,9 +16,6 @@ function calculations(event) {
 	root.style.setProperty('--xrot', yAng + 'deg');
 	root.style.setProperty('--zsca', zTes.toFixed(2));
 }
-//function eventClick(event) {
-//	calculations(event);
-//}
 function eventStart(event) {
 	calculations(event);
 	down = true;
@@ -40,10 +37,8 @@ function startup() {
 	const cur =  document.querySelectorAll('.animated');
     let length = cur.length;
     for (index = 0; index < length; index++) {
-//		cur[index].addEventListener('click', eventClick, false);
 		cur[index].addEventListener('pointerdown', eventStart, false);
 		cur[index].addEventListener('pointermove', eventCont, false);
-//		cur[index].addEventListener('pointerout', eventOut, false);
 		cur[index].addEventListener('pointerup', eventEnd, false);
 	}
 }

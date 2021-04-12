@@ -15,7 +15,7 @@
 <div class="wrp">
 <div class="blockwrap"><div class="block bgcontent" id="title">
 	<form class="switch">
-	<input id="switchTheme" type="checkbox" class="swinput" onchange="changeTheme()" checked="false"/>
+	<input id="switchTheme" type="checkbox" class="swinput" onchange="changeTheme()" checked="true"/>
 	<label for="switchTheme" class="swlabel"></label>
 	</form>
 <div class="content animated titlecontent"><div class="colorwheel"></div><div style="text-align:left; padding-left:75px;line-height:1.2em;">Всякие <br />Посредственно <br />Интересные <br />Штуки</div></div>
@@ -30,6 +30,16 @@
     <button class="animated">
     <div class="content">Всякое</div>
     </button>
+</div>
+</div>
+
+<div class="block card bgtitle">
+<div class="content titlecontent">Очистка ло<i>кал</i>ьного хранилища</div>
+<div class="content textcontent bgcontent">
+    Чтоб чисто было.<br />
+	<div class="content buttonbar contentbar">
+	<button class="animated" onclick="localStorage.clear();"><div class="content">Очистить локальное хранилище</div></button>
+	</div>
 </div>
 </div>
 
@@ -136,6 +146,11 @@
 </button>
 </div>
 <div class="content textcontent bgcontent">
+Версия 3.5
+	<ul>
+        <li>Настройки сохраняются у клиента.</li>
+        <li>Кнопки исправно работают согласно ТЗ (надо же (ну почти (четвёртая переделка уже))).</li>
+    </ul>
 Версия 3.3
 	<ul>
         <li>Много разных штук</li>
@@ -197,6 +212,7 @@
 </div>
 </div>
 <script src='js/settings.js'></script>
+<script src='js/theming.js'></script>
 <script src='js/animations.js'></script>
 <script src='js/buttons4.js'></script>
 </body>

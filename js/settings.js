@@ -1,46 +1,39 @@
 var root = document.querySelector(':root');
-let check = document.getElementById('switchTheme');
 
 function setSetting(variant,id,str1,str2) {
 	if (variant === 0) {
 		root.style.setProperty(str1, str2);
+		saveSetting(variant,"",str1,str2,"");
 	} else if (variant === 1) {
-		let x = document.getElementById(id).value;
-		root.style.setProperty(str1, x + str2);
+		let set = document.getElementById(id).value;
+		root.style.setProperty(str1, set + str2);
+		saveSetting(variant,id,str1,str2,set);
 	}
 }
-function changeTheme() {
-if (check.checked === true) {
-	setDark();
+function saveSetting(variant,id,str1,str2,x) {
+	let arrSett = [variant, str1, str2, x];
+	localStorage.setItem(id, JSON.stringify(arrSett));
 }
-else {
-	setLight();
+function loadSetting(variant,str1,str2,prev) {
+	switch (variant) {
+	case 0:
+		root.style.setProperty(str1, str2);
+		break;
+	case 1:
+		root.style.setProperty(str1, prev + str2);
+		break;
+	case 'theme':
+		getTheme(str2);
+		break;
+	}
 }
-};
-function setDark() {
-  root.style.setProperty('--bgcolor', 'rgb(10,10,10)');
-  root.style.setProperty('--block-bgcolor', 'rgba(20,20,20,1)');
-  root.style.setProperty('--block-contentcolor', 'rgba(31,31,31,1)');
-  root.style.setProperty('--block-bordercolor', 'rgba(20,20,20,1)');
-  root.style.setProperty('--selcolor', '255');
-  root.style.setProperty('--opaque-selcolor', '40');
-  root.style.setProperty('--textcolor', 'rgba(245,245,245,1)');
+function initSettings() {
+	for (i = 0; i < localStorage.length; i++) {
+		let varName = localStorage.key(i);
+//		console.log(varName);
+		let argSet = JSON.parse(localStorage.getItem(varName));
+//		console.log(argSet);
+		loadSetting(...argSet);
+	} 
 }
-function setLight() {
-  root.style.setProperty('--bgcolor', 'rgb(250,240,240)');
-  root.style.setProperty('--block-bgcolor', 'rgba(200,200,200,1)');
-  root.style.setProperty('--block-contentcolor', 'rgba(255,255,255,1)');
-  root.style.setProperty('--block-bordercolor', 'rgba(150,150,150,1)');
-  root.style.setProperty('--selcolor', '0');
-  root.style.setProperty('--opaque-selcolor', '245');
-  root.style.setProperty('--textcolor', 'rgba(5,5,5,1)');
-}
-
-const inputs = [].slice.call(document.querySelectorAll('input'));
-inputs.forEach(input => input.addEventListener('change', handleUpdate));
-inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-function handleUpdate(e) {
-	if (this.id === 'hue') root.style.setProperty('--h', this.value);
-	if (this.id === 'sat') root.style.setProperty('--s', this.value + "%");
-	if (this.id === 'lig') root.style.setProperty('--l', this.value + "%");
-}
+document.addEventListener('DOMContentLoaded', initSettings);
