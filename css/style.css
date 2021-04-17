@@ -167,6 +167,9 @@ and (min-width: 35em) {
 	margin: 5px;
 	touch-action: none;
 }
+.contentbox .buttonbar > * {
+	margin: 0px;
+}
 
 /* block types*/
 .card {
