@@ -141,7 +141,7 @@ and (min-width: 35em) {
 }
 .buttonbar.contentbar > * {
 	border: solid var(--borderwidth) var(--accentcolor);
-	/*box-shadow: 0 1px 2px var(--block-bgcolor);*/
+	box-shadow: var(--glow);
 }
 .buttonbar.contentbar > *:first-child:not(:only-child) {
 	margin-right: 0px;
@@ -163,8 +163,9 @@ and (min-width: 35em) {
 
 .contentbox {
 	border: solid var(--borderwidth) var(--accentcolor);
-	box-shadow: 0 1px 2px var(--block-bgcolor);
+	box-shadow: var(--glow);
 	margin: 5px;
+	touch-action: none;
 }
 
 /* block types*/

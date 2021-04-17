@@ -18,5 +18,11 @@
 	--s: 40%;
 	--l: 60%;
 	--a: 1;
-	--accentcolor: hsla(var(--h), var(--s), var(--l), var(--a))
+	--accentcolor: hsla(var(--h), var(--s), var(--l), var(--a));
+	--glow: 0 1px 2px hsla(var(--h), var(--s), var(--l), 0.25);
+
+	--hm: var(--h);
+	--sm: var(--s);
+	--lm: var(--l);
+	--accentcolorm: hsla(var(--hm), var(--sm), var(--lm), var(--a));
 }

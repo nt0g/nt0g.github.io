@@ -1,5 +1,6 @@
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 let check = document.getElementById('switchTheme');
+
 function setThemeSetting(value) {
 	let arrVal = ['theme',0,value,0];
 	localStorage.setItem('theme', JSON.stringify(arrVal));
@@ -51,12 +52,17 @@ function getTheme(tValue) {
 		break;
 	}
 }
-
-const inputs = [].slice.call(document.querySelectorAll('input'));
-inputs.forEach(input => input.addEventListener('change', handleUpdate));
-inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-function handleUpdate(e) {
-	if (this.id === 'hue') root.style.setProperty('--h', this.value);
-	if (this.id === 'sat') root.style.setProperty('--s', this.value + "%");
-	if (this.id === 'lig') root.style.setProperty('--l', this.value + "%");
+function colorUpdate(e) {
+	if (this.id === 'hue') root.style.setProperty('--hm', this.value);
+	if (this.id === 'sat') root.style.setProperty('--sm', this.value + "%");
+	if (this.id === 'lig') root.style.setProperty('--lm', this.value + "%");
 }
+function setColor() {
+	setSetting(1,'hue','--h','');
+	setSetting(1,'sat','--s','%');
+	setSetting(1,'lig','--l','%');
+}
+
+const ranges = [].slice.call(document.querySelectorAll('.colorRange'));
+ranges.forEach(input => input.addEventListener('change', colorUpdate));
+ranges.forEach(input => input.addEventListener('pointermove', colorUpdate));

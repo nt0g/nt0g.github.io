@@ -23,6 +23,11 @@ button:focus {
 	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
 }
 
+.buttonactive {
+	text-decoration: underline var(--accentcolor) solid;
+	text-underline-offset: 6px;
+	text-decoration-thickness: var(--borderwidth);
+}
 
 input[type=text] {
 	box-sizing: border-box;
@@ -48,7 +53,7 @@ input[type="range"]{
 	outline: none !important;
 	appearance:none;
 	border:none;
-	border-radius: var(--block-borderradius);;
+	border-radius: var(--block-borderradius);
 }
 input[type="range"]::-moz-focus-outer {
 	border: 0;
@@ -67,7 +72,7 @@ input[type="range"]::-webkit-slider-thumb {
 	cursor: pointer;
 	border-radius: var(--borderradius);
 	border: solid var(--borderwidth) var(--accentcolor);
-	box-shadow: 0 1px 2px var(--block-bgcolor);
+	box-shadow: var(--glow);
 }
 
 /* Moz */
@@ -78,15 +83,16 @@ input[type="range"]::-moz-range-thumb {
 	background: var(--block-contentcolor);
 	cursor: pointer;
 	border-radius: var(--borderradius);
-	border: solid var(--borderwidth) var(--accentcolor);
+	border: solid var(--borderwidth) var(--accentcolorm);
 	outline: none;
-	box-shadow: 0 1px 2px var(--block-bgcolor);
+	box-shadow: var(--glow);
 }
 input[type="range"]::-moz-range-progress {
-	background-color: var(--accentcolor);
+	background-color: var(--accentcolorm);
 	height: var(--borderwidth);
 	border-radius: var(--block-borderradius);
 	border: none;
+	box-shadow: var(--glow);
 }
 input[type="range"]::-moz-range-track {  
 	background-color: var(--block-bgcolor);
@@ -128,6 +134,7 @@ input[type="range"]::-moz-range-track {
 	background-color: var(--block-bgcolor);
 	border-radius: var(--borderradius);
 	transition: calc(3*var(--animation-duration)) var(--animation-interpolator);
+	box-shadow: var(--glow);
 }
 .swlabel::after {
 	top: -6px;
@@ -137,8 +144,8 @@ input[type="range"]::-moz-range-track {
 	border: solid 2px var(--accentcolor);
 	border-radius: var(--borderradius);
 	background-color: var(--block-contentcolor);
-	box-shadow: 0 1px 2px var(--block-bgcolor);
 	transition: var(--animation-duration) var(--animation-interpolator);
+	box-shadow: var(--glow);
 }
 .swinput:checked + .swlabel::before {
   background-color: var(--accentcolor);
