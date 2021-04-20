@@ -9,7 +9,6 @@ function setDark() {
 	root.style.setProperty('--bgcolor', 'rgb(10,10,10)');
 	root.style.setProperty('--block-bgcolor', 'rgba(20,20,20,1)');
 	root.style.setProperty('--block-contentcolor', 'rgba(31,31,31,1)');
-	root.style.setProperty('--block-bordercolor', 'rgba(20,20,20,1)');
 	root.style.setProperty('--selcolor', '255');
 	root.style.setProperty('--opaque-selcolor', '40');
 	root.style.setProperty('--textcolor', 'rgba(245,245,245,1)');
@@ -19,7 +18,6 @@ function setLight() {
 	root.style.setProperty('--bgcolor', 'rgb(250,240,240)');
 	root.style.setProperty('--block-bgcolor', 'rgba(200,200,200,1)');
 	root.style.setProperty('--block-contentcolor', 'rgba(255,255,255,1)');
-	root.style.setProperty('--block-bordercolor', 'rgba(150,150,150,1)');
 	root.style.setProperty('--selcolor', '0');
 	root.style.setProperty('--opaque-selcolor', '245');
 	root.style.setProperty('--textcolor', 'rgba(5,5,5,1)');
@@ -52,10 +50,22 @@ function getTheme(tValue) {
 		break;
 	}
 }
+
 function colorUpdate(e) {
-	if (this.id === 'hue') root.style.setProperty('--hm', this.value);
-	if (this.id === 'sat') root.style.setProperty('--sm', this.value + "%");
-	if (this.id === 'lig') root.style.setProperty('--lm', this.value + "%");
+	switch (this.id) {
+	case 'hue':
+		root.style.setProperty('--hm', this.value);
+		document.getElementById('huex').value = this.value;
+		break;
+	case 'sat':
+		root.style.setProperty('--sm', this.value + "%");
+		document.getElementById('satx').value = this.value;
+		break;
+	case 'lig':
+		root.style.setProperty('--lm', this.value + "%");
+		document.getElementById('ligx').value = this.value;
+		break;
+	}
 }
 function setColor() {
 	setSetting(1,'hue','--h','');

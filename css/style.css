@@ -21,6 +21,7 @@ and (min-width: 0em) {
 :root {
 	--block-borderradius: 0em;
 	--block-width: 100%;
+	--adp-height: 1.5em;
 }
 .wrp {
 	justify-content: stretch;
@@ -35,6 +36,7 @@ and (min-width: 35em) {
 :root {
 	--block-borderradius: var(--borderradius);
 	--block-width: 25em;
+	--adp-height: 1em;
 }
 .wrp {
 	justify-content: center;
@@ -47,10 +49,13 @@ and (min-width: 35em) {
 /* other variables */
 :root {
 	--borderwidth: 2px;
-	--borderradius: 0.5em;
+	--borderradius: 0.25em;
 	--input-textcolor: var(--textcolor);
 	--animation-duration: 150ms;
 	--animation-interpolator: cubic-bezier(.25,.1,0,1);
+	
+	--adp-height: 1em;
+	
 	background: var(--bgcolor);
 	transition: var(--animation-duration);
 }
@@ -160,9 +165,19 @@ and (min-width: 35em) {
 	border-radius: 0px var(--borderradius) var(--borderradius) 0px;
 	border-left-width: calc(0.5 * var(--borderwidth));
 }
+.rangebar.contentbar {
+	padding: 0px;
+	display: flex;
+	align-items: center;
+}
 
+.rangebar.contentbar > * {
+	margin-left: 5px;
+	margin-right: 5px;
+}
 .contentbox {
 	border: solid var(--borderwidth) var(--accentcolor);
+	background-color: hsla(var(--h), var(--s), var(--l), 0.02);
 	box-shadow: var(--glow);
 	margin: 5px;
 	touch-action: none;

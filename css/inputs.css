@@ -9,77 +9,70 @@ button {
 	padding-top: 5px;
 	padding-bottom: 2px;
 	border: none;
-	border-radius: calc(2 * var(--borderradius));
+	border-radius: var(--borderradius);
 	color: var(--input-textcolor);
-	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0);
+	background-color: hsla(var(--h), var(--s), var(--l), 0);
 	white-space: nowrap;
 	cursor: pointer;
 }
 button:hover {
-	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.05);
+	background-color: hsla(var(--h), var(--s), var(--l), 0.05);
 }
 button:active,
 button:focus {
-	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
+	background-color: hsla(var(--h), var(--s), var(--l), 0.1);
 }
 
 .buttonactive {
 	text-decoration: underline var(--accentcolor) solid;
-	text-underline-offset: 6px;
+	text-underline-offset: 0.25em;
 	text-decoration-thickness: var(--borderwidth);
 }
 
+output {
+	box-sizing: border-box;
+	padding: 5px;
+	border: solid var(--borderwidth) var(--inactivecolor);
+	border-radius: var(--borderradius);
+	color: var(--textcolor);
+	background-color: hsla(var(--h), var(--s), var(--l), 0.02);
+	width: 60px;
+}
 input[type=text] {
 	box-sizing: border-box;
 	padding: 10px;
-	border-radius: calc(2 * var(--borderradius));
+	border-radius: var(--borderradius);
 	color: var(--textcolor);
-	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.02);
+	background-color: hsla(var(--h), var(--s), var(--l), 0.02);
 	width: 60px;
 }
 input[type=text]:hover {
-	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.05);
+	background-color: hsla(var(--h), var(--s), var(--l), 0.05);
 }
 input[type=text]:active,
 input[type=text]:focus {
-	background-color: rgba(var(--selcolor),var(--selcolor),var(--selcolor),0.1);
+	background-color: hsla(var(--h), var(--s), var(--l), 0.1);
 }
 
 
-input[type="range"]{
-	-webkit-appearance: none;
+input[type="range"] {
 	width: 100%;
-	height: var(--borderwidth);
+	height: var(--adp-height);
+	appearance: none;
 	outline: none !important;
-	appearance:none;
-	border:none;
-	border-radius: var(--block-borderradius);
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
 }
 input[type="range"]::-moz-focus-outer {
 	border: 0;
 }
 input[type="range"]:hover {
-	outline:none;
+	outline: none;
 }
-
-/* Chrome */
-input[type="range"]::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 10px;
-	height: 10px;
-	background: var(--block-contentcolor);
-	cursor: pointer;
-	border-radius: var(--borderradius);
-	border: solid var(--borderwidth) var(--accentcolor);
-	box-shadow: var(--glow);
-}
-
-/* Moz */
 
 input[type="range"]::-moz-range-thumb {
-	width: 10px;
-	height: 10px;
+	width: 1em;
+	height: 1em;
 	background: var(--block-contentcolor);
 	cursor: pointer;
 	border-radius: var(--borderradius);
@@ -94,8 +87,8 @@ input[type="range"]::-moz-range-progress {
 	border: none;
 	box-shadow: var(--glow);
 }
-input[type="range"]::-moz-range-track {  
-	background-color: var(--block-bgcolor);
+input[type="range"]::-moz-range-track {
+	background-color: var(--inactivecolor);
 	border-radius: var(--block-borderradius);
 	border: none;
 	height: var(--borderwidth);
@@ -103,6 +96,7 @@ input[type="range"]::-moz-range-track {
 
 
 .switch {
+	box-sizing: border-box;
 	display: flex;
 	flex-flow: row-reverse;
 	position: relative;
@@ -113,43 +107,45 @@ input[type="range"]::-moz-range-track {
 	display: none;
 }
 .swlabel {
+	box-sizing: inherit;
 	display: block;
 	color: transparent;
 	user-select: none;
 	cursor: pointer;
-	width: 25px;
-	height: 10px;
+	width: 2em;
+	height: var(--adp-height);
+	border-radius: var(--borderradius);
 }
 .swlabel::before,
 .swlabel::after {
+	box-sizing: inherit;
 	content: "";
 	display: block;
 	position: relative;
+	border-radius: var(--borderradius);
 }
 .swlabel::before {
-	top: 3px;
-	left: 5px;
-	width: 15px;
-	height: 4px;
+	top: calc(50% -  0.5 * var(--borderwidth));
+	left: 0.5em;
+	width: 1em;
+	height: var(--borderwidth);
 	background-color: var(--block-bgcolor);
-	border-radius: var(--borderradius);
 	transition: calc(3*var(--animation-duration)) var(--animation-interpolator);
-	box-shadow: var(--glow);
 }
 .swlabel::after {
-	top: -6px;
-	left: 0px;
-	width: 10px;
-	height: 10px;
-	border: solid 2px var(--accentcolor);
-	border-radius: var(--borderradius);
+	top: calc(50% - (0.5em + var(--borderwidth)));
+	left: 0em;
+	width: 1em;
+	height: 1em;
+	border: solid var(--borderwidth) var(--accentcolor);
 	background-color: var(--block-contentcolor);
 	transition: var(--animation-duration) var(--animation-interpolator);
 	box-shadow: var(--glow);
 }
 .swinput:checked + .swlabel::before {
-  background-color: var(--accentcolor);
+	background-color: var(--accentcolor);
+	box-shadow: var(--glow);
 }
 .swinput:checked + .swlabel::after {
-  left: 12px;
+	left: 1em;
 }

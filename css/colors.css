@@ -9,7 +9,6 @@
 	--bgcolor: rgb(10,10,10);
 	--block-bgcolor: rgba(20,20,20,1);
 	--block-contentcolor: rgba(31,31,31,1);
-	--block-bordercolor: rgba(20,20,20,1);
 	--selcolor: 255;
 	--opaque-selcolor: 40;
 	--textcolor: rgba(245,245,245,1);
@@ -26,4 +25,6 @@
 	--sm: var(--s);
 	--lm: var(--l);
 	--accentcolorm: hsla(var(--hm), var(--sm), var(--lm), var(--a));
+	
+	--inactivecolor: rgba(var(--selcolor), var(--selcolor), var(--selcolor), 0.25);
 }

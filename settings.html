@@ -102,7 +102,7 @@
 	</div><br />
 	Изменение радиуса углов (в em):<br />
 	<div class="content buttonbar contentbar">
-    <input type="text" id="bradius" value="0.5">
+    <input type="text" id="bradius" value="0.25">
 	<button class="animated" onclick="setSetting(1,'bradius','--borderradius','em')"><div class="content">→</div></button>
 	</div><br />
 	Изменение ширины границ (в px):<br />
@@ -113,11 +113,17 @@
 	
 	<form class="content contentbox" onsubmit="setColor(); return false;">
 	Оттенок:<br />
-	<input type="range" class="colorRange" id="hue" min="0" max="360" value="220" step="1"><br />
+	<div class="content contentbar rangebar">
+	<input type="range" class="colorRange" id="hue" min="0" max="360" value="220" step="1"><output id="huex" for="hue">220</output>
+	</div>
 	Насыщенность:<br />
-	<input type="range" class="colorRange" id="sat" min="0" max="100" value="40" step="1"><br />
+	<div class="content contentbar rangebar">
+	<input type="range" class="colorRange" id="sat" min="0" max="100" value="40" step="1"><output id="satx" for="sat">40</output>
+	</div>
 	Яркость:<br />
-	<input type="range" class="colorRange" id="lig" min="0" max="100" value="60" step="1"><br />
+	<div class="content contentbar rangebar">
+	<input type="range" class="colorRange" id="lig" min="0" max="100" value="60" step="1"><output id="ligx" for="lig">60</output>
+	</div><br />
 	Изменение радиуса «свечения» (в px):<br />
 	<div class="content buttonbar contentbar">
     <input type="text" id="glowrad" value="2">
