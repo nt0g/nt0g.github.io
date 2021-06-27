@@ -20,4 +20,13 @@ function initSettings() {
 		loadSetting(...argSet);
 	} 
 }
+function initClock(){
+	setInterval(function() {
+		var minutes = new Date().getMinutes();
+		document.getElementById("minutes").innerHTML = (minutes < 10 ? '0' : '') + minutes;
+		var hours = new Date().getHours();
+		document.getElementById("hours").innerHTML = (hours < 10 ? '0' : '') + hours;
+	}, 1000);
+}
 document.addEventListener('DOMContentLoaded', initSettings);
+document.addEventListener('DOMContentLoaded', initClock);

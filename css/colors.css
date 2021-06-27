@@ -6,12 +6,9 @@
 	background: var(--accentcolor);
 }
 :root {
-	--bgcolor: rgb(10,10,10);
-	--block-bgcolor: rgba(20,20,20,1);
-	--block-contentcolor: rgba(31,31,31,1);
 	--selcolor: 255;
 	--opaque-selcolor: 40;
-	--textcolor: rgba(245,245,245,1);
+	--textcolor: rgba(215,215,220,1);
 
 	--h: 220;
 	--s: 40%;
@@ -25,6 +22,13 @@
 	--sm: var(--s);
 	--lm: var(--l);
 	--accentcolorm: hsla(var(--hm), var(--sm), var(--lm), var(--a));
+	
+	/*new stuff*/
+	--ln: 5%;
+	--ln-inv: calc(100% - var(--ln));
+	--bgcolor: hsl(var(--h), 25%, var(--ln));
+	--block-bgcolor: hsl(var(--h), 10%, calc(var(--ln) - 10%));
+	--block-contentcolor: hsl(var(--h), 20%, calc(var(--ln) + 5%));
 	
 	--inactivecolor: rgba(var(--selcolor), var(--selcolor), var(--selcolor), 0.25);
 }

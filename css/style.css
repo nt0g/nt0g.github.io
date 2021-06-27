@@ -1,10 +1,12 @@
 @charset "utf-8";
 @import url("colors.css");
 @import url("pulsar.css");
-@import url("painter.css");
 @import url("gradients.css");
+@import url("clock.css");
 @import url("buttons.css");
 @import url("inputs.css");
+@import url("header.css");
+@import url("hidden-menu.css");
 
 
 /* media queries */
@@ -51,21 +53,34 @@ and (min-width: 35em) {
 	--borderwidth: 2px;
 	--borderradius: 0.25em;
 	--input-textcolor: var(--textcolor);
-	--animation-duration: 150ms;
+	--animation-duration: 300ms;
+	--animation-duration-fast: calc(0.5 * var(--animation-duration));
 	--animation-interpolator: cubic-bezier(.25,.1,0,1);
 	
 	--adp-height: 1em;
 	
 	background: var(--bgcolor);
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 }
 
 
 /* layout */
+.test {
+	border: 1px solid red;
+}
+* {
+	scroll-behavior: smooth;
+}
+body {
+	transition: var(--animation-duration);
+	transition-timing-function: var(--animation-interpolator);
+	margin: 0rem;
+}
+
 .wrp {
 	display: flex;
 	justify-content: center;
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 
@@ -73,7 +88,7 @@ and (min-width: 35em) {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 
@@ -89,14 +104,14 @@ and (min-width: 35em) {
 	margin-bottom: 10px;
 	margin-left: 20px;
 	margin-right: 20px;
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 .block:hover,
 .block:active,
 .block:focus {
 	box-shadow: 0px 15px 40px rgba(0,0,0,0.15);
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 
@@ -120,16 +135,16 @@ and (min-width: 35em) {
 	margin-bottom: 2px;
 	height: 40px;
 	border-radius: var(--borderradius);
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 .buttonbar:hover > * {
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 .buttonbar:active,
 .buttonbar:focus > * {
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 .buttonbar.titlebar {
@@ -197,7 +212,7 @@ and (min-width: 35em) {
 	padding: 20px;
 	border-radius: var(--block-borderradius);
 	color: var(--textcolor);
-	transition: var(--animation-duration);
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 .content > input[type=text] {
@@ -205,7 +220,7 @@ and (min-width: 35em) {
 	font-family: Jost, "sans-serif";
 }
 button > .content {
-	padding: 0px;
+	padding: 0rem;
 	font-size: 14pt;
 	font-family: Jost, "sans-serif";
 }
@@ -215,13 +230,13 @@ button > .content {
 .titlecontent {
 	font-size: 16pt;
 	font-family: Jost, "sans-serif";
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
     /*text-align: center;*/
 }
 button > .titlecontent {
-	padding-top: 0px;
-	padding-bottom: 0px;
+	padding-top: 0rem;
+	padding-bottom: 0rem;
 }
 
 .textcontent {
@@ -231,7 +246,7 @@ button > .titlecontent {
 
 .imagecontent {
 	height: auto;
-	padding: 0px;
+	padding: 0rem;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
@@ -239,8 +254,8 @@ button > .titlecontent {
 }
 .imagecontent > .image {
 	width: var(--block-width);
-	clip-path: inset(0px round var(--block-borderradius));
-	transition: var(--animation-duration);
+	clip-path: inset(0rem round var(--block-borderradius));
+	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
 }
 

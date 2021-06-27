@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/* keyframes */
+@keyframes pulse {
+	0% {opacity: 1;/* transform: scale(1)*/;}
+	25% {opacity: 0;/* transform: scale(0)*/;}
+	100% {opacity: 1;/* transform: scale(1)*/;}
+}
+
+.clock {
+	display: flex;
+	flex-flow: row wrap;
+}
+.clock > .separator {
+	animation: pulse 1s var(--animation-interpolator) infinite;
+}

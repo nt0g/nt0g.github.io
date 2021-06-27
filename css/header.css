@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+
+.gheader {
+	position: sticky;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	min-height: 3em;
+	z-index: 1;
+}
+
+.gheader > .headerbg {
+	backdrop-filter: saturate(80%) blur(20px);
+}
+.gheader > .headercontent {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.headercontent > .buttonbar {
+	align-items: baseline;
+}
+
+
+.title {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: end;
+	padding: 1rem;
+}
+.title > * {
+	padding: 0rem;
+}
+.bgbanner {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}

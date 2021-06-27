@@ -16,6 +16,6 @@
 }
 .pulse {
 	animation-name: pulse;
-	animation-duration: var(--animation-duration);
+	animation-duration: var(--animation-duration-fast);
 	/*animation-fill-mode: forwards;*/
 }

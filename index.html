@@ -13,26 +13,244 @@
 
 <body>
 <script src='js/settingsload.js'></script>
-<div class="wrp">
-<div class="blockwrap"><div class="block bgcontent" id="title">
-	<form class="switch">
-	<input id="switchTheme" type="checkbox" class="swinput" onchange="changeTheme()" checked="true"/>
-	<label for="switchTheme" class="swlabel"></label>
-	</form>
-<div class="content animated titlecontent"><div class="colorwheel"></div><div style="text-align:left; padding-left:75px;line-height:1.2em;">Всякие <br />Посредственно <br />Интересные <br />Штуки</div></div>
+<header class="gheader" id="title">
+	<div class="headerbg bgbanner"></div>
+	<div class="headercontent">
+		<nav class="buttonbar">
+			<button class="animated" onclick="window.location.href='#';">
+				<div class="content">Штуки.</div>
+			</button>
+			<button class="animated" onclick="window.location.href='#things';">
+				<div class="content buttonactive">Штука Раз</div>
+			</button>
+			<button class="animated" onclick="window.location.href='#settings';">
+				<div class="content">Штука Два</div>
+			</button>
+			<button class="animated" onclick="window.location.href='#stuff';">
+				<div class="content">Штука Три</div>
+			</button>
+			<button class="animated" onclick="window.location.href='#';">
+				<div class="content" style="color: var(--inactivecolor)">3.91</div>
+			</button>
+		</nav>
+		
+		<nav class="buttonbar">
+		<button class="animated">
+			<div class="content clock">
+				<div id="hours">⁞⁞⁞</div>
+				<div class="separator">:</div>
+				<div id="minutes">⁞⁞⁞</div>
+			</div>
+		</button>
+		<button class="animated">
+			<div class="content">N</div>
+		</button>
+		</nav>
+	</div>
 
-<div class="content buttonbar">
-    <button class="animated" onclick="window.location.href='#';">
-    <div class="content buttonactive">Штуки</div>
-    </button>
-    <button class="animated" onclick="window.location.href='settings.html';">
-    <div class="content">Настройки</div>
-    </button>
-    <button class="animated" onclick="window.location.href='shtuff.html';">
-    <div class="content">Стаффф</div>
-    </button>
+</header>
+<div class="menu-wrap">
+	<label for="menu-toggle-hidden" class="menu-toggle-label animated bgcontent">
+	<div class="labelcontent">⚙</div>
+	</label>
+	<input type="checkbox" id="menu-toggle-hidden">
+	<aside class="hidden-menu">
+		<div class="scroll-wrap">
+		<div class="menu-header">
+		<nav class="buttonbar">
+			<form class="switch">
+				<input id="switchTheme" type="checkbox" class="swinput" onchange="changeTheme()" checked="true"/>
+				<label for="switchTheme" class="swlabel"></label>
+			</form>
+		</nav>
+		</div>
+		<div class="blockwrap">
+			<div class="block card bgtitle">
+			<div class="content titlecontent">Очистка ло<i>кал</i>ьного хранилища</div>
+			<div class="content textcontent bgcontent">
+				<form onsubmit="localStorage.clear();">
+				Чтоб чисто было.<br />
+				<div class="content buttonbar contentbar">
+				<button type="submit" class="animated"><div class="content">Очистить локальное хранилище</div></button>
+				</div>
+				</form>
+			</div>
+			</div>
+
+			<div class="block card bgtitle">
+			<div class="content titlecontent">Изменение анимации кнопок</div>
+			<div class="content textcontent bgcontent">
+				Изменение перспективы (в см):<br />
+				<div class="content buttonbar contentbar">
+				<input type="text" id="perspective" value="5">
+				<button class="animated" onclick="setSetting(1,'perspective','--perspective','cm')"><div class="content">→</div></button>
+				</div><br />
+				Изменение масштабов 3Д-шенья (меняйте и поймёте):<br />
+				<div class="content buttonbar contentbar">
+				<input type="text" id="3dscale" value="1">
+				<button class="animated" onclick="setSetting(1,'3dscale','--3d-scale','')"><div class="content">→</div></button>
+				</div><br />
+				Метод 3Д-вдавливания:<br />
+				<div class="content buttonbar contentbar">
+				<button class="animated" onclick="setSetting(0,0,'--method','scale(0.975)')"><div class="content">Scale</div></button>
+				<button class="animated" onclick="setSetting(0,0,'--method','translateZ(-5px)')"><div class="content">TranslateZ</div></button>
+				<button class="animated" onclick="setSetting(0,0,'--method','translateZ(-5px) scale(var(--zsca))')"><div class="content">Оба</div></button>
+				<button class="animated" onclick="setSetting(0,0,'--method','0')"><div class="content">Нет</div></button>
+				</div><br />
+				<div class="content buttonbar contentbar">
+				<button class="animated" style="width:100%;"><div class="content">Кнопка для проверки</div></button>
+				</div>
+			</div>
+			</div>
+
+			<div class="block card bgtitle">
+			<div class="content titlecontent">Изменение скорости анимаций</div>
+			<div class="content textcontent bgcontent">
+				И ежу понятно.<br />
+				<div class="content buttonbar contentbar">
+				<input type="text" id="duration" value="300">
+				<button class="animated" onclick="setSetting(1,'duration','--animation-duration','ms')"><div class="content">→</div></button>
+				<button class="animated" onclick="pulse()"><div class="content">▷</div></button>
+				<button class="animated"><div class="content"><div class="pulsar"></div></div></button>
+				</div>
+			</div>
+			</div>
+
+			<div class="block card bgtitle">
+			<div class="content titlecontent">Изменение визуальных штук</div>
+			<div class="content textcontent bgcontent">
+				Понемногу осваиваем жабаскрипт.<br />
+				Ежу, опять же, понятно.<br /><br />
+				Изменение масштаба текста (потом будет):<br />
+				<div class="content buttonbar contentbar">
+				<input type="text" id="" value="Out of Order">
+				<button class="animated" onclick=""><div class="content">→</div></button>
+				</div><br />
+				Изменение ширины блоков (в em):<br />
+				<div class="content buttonbar contentbar">
+				<input type="text" id="bwidth" value="25">
+				<button class="animated" onclick="setSetting(1,'bwidth','--block-width','em')"><div class="content">→</div></button>
+				</div><br />
+				Изменение радиуса углов (в em):<br />
+				<div class="content buttonbar contentbar">
+				<input type="text" id="bradius" value="0.25">
+				<button class="animated" onclick="setSetting(1,'bradius','--borderradius','em')"><div class="content">→</div></button>
+				</div><br />
+				Изменение ширины границ (в px):<br />
+				<div class="content buttonbar contentbar">
+				<input type="text" id="brdwidth" value="2">
+				<button class="animated" onclick="setSetting(1,'brdwidth','--borderwidth','px')"><div class="content">→</div></button>
+				</div><br />
+				
+				<form class="content contentbox" onsubmit="setColor(); return false;">
+				Оттенок:<br />
+				<div class="content contentbar rangebar">
+				<input type="range" class="colorRange" id="hue" min="0" max="360" value="220" step="1"><output id="huex" for="hue">220</output>
+				</div>
+				Насыщенность:<br />
+				<div class="content contentbar rangebar">
+				<input type="range" class="colorRange" id="sat" min="0" max="100" value="40" step="1"><output id="satx" for="sat">40</output>
+				</div>
+				Яркость:<br />
+				<div class="content contentbar rangebar">
+				<input type="range" class="colorRange" id="lig" min="0" max="100" value="60" step="1"><output id="ligx" for="lig">60</output>
+				</div><br />
+				Изменение радиуса «свечения» (в px):<br />
+				<div class="content buttonbar contentbar">
+				<input type="text" id="glowrad" value="2">
+				<button class="animated" onclick="setSetting(1,'glowrad','--glow-radius','px')"><div class="content">→</div></button>
+				</div><br />
+				<div class="content buttonbar contentbar">
+				<button type="submit" class="animated gradient" style="width: 100%;"><div class="gradinside content gradcontent">Изменить цвет</div></button>
+				</div>
+				</form>
+			</div>
+			</div>
+			
+			<div class="block card bgtitle">
+			<div class="content titlebar buttonbar">
+			<button class="animated" onclick="window.location.href=' ';">
+			<div class="titlecontent">Список Изменений Да</div>
+			</button>
+			</div>
+			<div class="content textcontent bgcontent">
+			Версия 3.91
+				<ul>
+					<li>Разделение на страницы <i>отвертано взад</i>.</li>
+					<li>Настройки и проч. в панели справа.</li>
+					<li>Наработки-наработочки из 3.90! (atm многое сломано)</li>
+				</ul>
+			Версия 3.6
+				<ul>
+					<li>Сайт разделён на страницы (нужно ли?).</li>
+					<li>Мелочи.</li>
+				</ul>
+			Версия 3.5
+				<ul>
+					<li>Настройки сохраняются у клиента.</li>
+					<li>Кнопки исправно работают согласно ТЗ (надо же (ну почти (четвёртая переделка уже))).</li>
+				</ul>
+			Версия 3.3
+				<ul>
+					<li>Много разных штук</li>
+				</ul>
+			Версия 3.2
+				<ul>
+					<li>некоторые штуки</li>
+				</ul>
+			Версия 3.1.415926535897932384626433832…
+				<ul>
+					<li>тупые кнопки</li>
+				</ul>
+			Версия 3.1
+				<ul>
+					<li>Больше ре фак то рин га.</li>
+					<li>Элементы панели «объединяются» в общий стиль.</li>
+				</ul>
+			Версия 3, «Наш Ответ Твитору»
+				<ul>
+					<li>Новая (немного глючная и, возможно, более ресурсоёмкая) анимация нажатия кнопки.<br /><i>Also known as: 3Д кНоПаЧкИ!!</i></li>
+					<li>Теперь у нас есть проверка ширины!</li>
+					<li>Тёмная Тема (и анимация) включается автоматически</li>
+				</ul>
+			Версия 2
+				<ul>
+					<li>Зделан рефакторинг, теперь наследство должно распределяться правильно (наверно).</li>
+					<li>Добавлено еще несколько <s>абсолютно никому не нужных</s> классов (главным образом кнопки).</li>
+					<li>Зачем оно всё надо — тоже хороший вопрос.</li>
+					<li>Очень Секретная Кривая Тёмная Тема.</li>
+				</ul>
+			</div>
+			<div class="content actbar buttonbar">
+			<button class="animated"><div class="content">→</div></button>
+			<button class="animated" onclick="window.location.href='https://google.com';"><div class="content">Гугл для гуглинга</div></button>
+			</div>
+			</div>
+
+			<div class="block card bgtitle">
+			<div class="content titlecontent">Notes To Self</div>
+			<div class="content textcontent bgcontent">
+				<ul>
+					<li><s>Запилить ещё один класс для центрирования кнопок в строке действий (зачем?).</s></li>
+					<li>Зробить оформление для этих списков (потом).</li>
+					<li>!! Узнать, как же сделать два скрипта на одну кнопку !!</li>
+					<li>Божественно вмешать ещё столбцы.</li>
+					<li>Сделать вычисление всех цветов из основных и акцентного (да, так можно).</li>
+					<li><s>Можно ли темную тему привязать к теме устройства.</s></li>
+					<li><s>Заделать респонсив лэйаут для мобилок.</s></li>
+					<li>Скорее всего, надо будет все пиксели сделать не зависящими от разрешения.</li>
+					<li>Ещё нужно будет сделать-таки изменение масштаба шрифтов.</li>
+				</ul>
+			</div>
+			</div>
+	</div></div>
+	</aside>
 </div>
-</div>
+</main>
+
+
+<div class="wrp">
+<div class="blockwrap">
 
 <div class="block card bgtitle">
 <div class="content titlecontent">Переигрывающий всех МАЭСТРО</div>
@@ -56,6 +274,7 @@
 </div>
 </div>
 </div>
+</main>
 <script src='js/settings.js'></script>
 <script src='js/theming.js'></script>
 <script src='js/animations.js'></script>
