@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* keyframes */
-@keyframes pulse {
+@keyframes cpulse {
 	0% {opacity: 1;/* transform: scale(1)*/;}
 	25% {opacity: 0;/* transform: scale(0)*/;}
 	100% {opacity: 1;/* transform: scale(1)*/;}
@@ -12,5 +12,5 @@
 	flex-flow: row wrap;
 }
 .clock > .separator {
-	animation: pulse 1s var(--animation-interpolator) infinite;
+	animation: cpulse 1s var(--animation-interpolator) infinite;
 }
