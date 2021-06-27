@@ -1,29 +1,55 @@
 @charset "utf-8";
 
-
+@media all 
+and (min-width: 0em) {
+.gheader .headercontent {
+	flex-flow: column wrap;
+}
+.gheader {
+	position: relative;
+}
+.hidden-menu-button-spacer {
+	flex-basis: 0rem;
+}
+}
+@media all 
+and (min-width: 35em) {
+.gheader .headercontent {
+	flex-flow: row wrap;
+}
 .gheader {
 	position: sticky;
+}
+.hidden-menu-button-spacer {
+	flex-basis: 3rem;
+}
+}
+
+.gheader {
 	left: 0%;
 	top: 0%;
 	width: 100%;
-	min-height: 3em;
-	z-index: 1;
+	min-height: 2.5rem;
+	z-index: 5;
 }
 
-.gheader > .headerbg {
-	backdrop-filter: saturate(80%) blur(20px);
+.gheader .headerbg {
+	background-color: var(--block-bgcolor);
+	/*backdrop-filter: saturate(80%) blur(20px);*/
+	box-shadow: 0px 5px 25px hsla(0,0%,0%,0.1);
 }
-.gheader > .headercontent {
+.gheader .headercontent {
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
 	align-items: center;
+	padding: 0.25rem;
 }
-.headercontent > .buttonbar {
+
+.headercontent .buttonbar {
 	align-items: baseline;
 }
-
-
+.headercontent button {
+	margin: 0rem;
+}
 .title {
 	display: flex;
 	flex-flow: column wrap;
@@ -39,4 +65,11 @@
 	top: 0;
 	height: 100%;
 	width: 100%;
+}
+.spacer {
+	flex-basis: 0rem;
+	flex-grow: 10;
+}
+.hidden-menu-button-spacer {
+	flex-grow: 0;
 }

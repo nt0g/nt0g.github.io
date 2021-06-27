@@ -20,6 +20,9 @@
 			<button class="animated" onclick="window.location.href='#';">
 				<div class="content">Штуки.</div>
 			</button>
+		</nav>
+		
+		<nav class="buttonbar">
 			<button class="animated" onclick="window.location.href='#things';">
 				<div class="content buttonactive">Штука Раз</div>
 			</button>
@@ -29,12 +32,13 @@
 			<button class="animated" onclick="window.location.href='#stuff';">
 				<div class="content">Штука Три</div>
 			</button>
-			<button class="animated" onclick="window.location.href='#';">
-				<div class="content" style="color: var(--inactivecolor)">3.91</div>
-			</button>
 		</nav>
-		
+		<nav class="spacer">
+		</nav>
 		<nav class="buttonbar">
+		<button class="animated">
+			<div class="content" style="color: var(--inactivecolor)">3.92</div>
+		</button>
 		<button class="animated">
 			<div class="content clock">
 				<div id="hours">⁞⁞⁞</div>
@@ -42,27 +46,21 @@
 				<div id="minutes">⁞⁞⁞</div>
 			</div>
 		</button>
-		<button class="animated">
-			<div class="content">N</div>
-		</button>
+		</nav>
+		<nav class="hidden-menu-button-spacer">
 		</nav>
 	</div>
 
 </header>
 <div class="menu-wrap">
+	<input type="checkbox" id="menu-toggle-hidden">
 	<label for="menu-toggle-hidden" class="menu-toggle-label animated bgcontent">
 	<div class="labelcontent">⚙</div>
 	</label>
-	<input type="checkbox" id="menu-toggle-hidden">
 	<aside class="hidden-menu">
 		<div class="scroll-wrap">
 		<div class="menu-header">
-		<nav class="buttonbar">
-			<form class="switch">
-				<input id="switchTheme" type="checkbox" class="swinput" onchange="changeTheme()" checked="true"/>
-				<label for="switchTheme" class="swlabel"></label>
-			</form>
-		</nav>
+			<div class="content titlecontent">Настройки</div>
 		</div>
 		<div class="blockwrap">
 			<div class="block card bgtitle">
@@ -107,6 +105,7 @@
 			<div class="content titlecontent">Изменение скорости анимаций</div>
 			<div class="content textcontent bgcontent">
 				И ежу понятно.<br />
+				<i>(делится на 2)</i><br />
 				<div class="content buttonbar contentbar">
 				<input type="text" id="duration" value="300">
 				<button class="animated" onclick="setSetting(1,'duration','--animation-duration','ms')"><div class="content">→</div></button>
@@ -121,6 +120,13 @@
 			<div class="content textcontent bgcontent">
 				Понемногу осваиваем жабаскрипт.<br />
 				Ежу, опять же, понятно.<br /><br />
+				Ручное переключение темы:<br />
+				<nav class="buttonbar">
+				<form class="switch">
+				<input id="switchTheme" type="checkbox" class="swinput" onchange="changeTheme()" checked="true"/>
+				<label for="switchTheme" class="swlabel"></label>
+				</form>
+				</nav>
 				Изменение масштаба текста (потом будет):<br />
 				<div class="content buttonbar contentbar">
 				<input type="text" id="" value="Out of Order">
@@ -174,11 +180,19 @@
 			</button>
 			</div>
 			<div class="content textcontent bgcontent">
+			Версия 3.92
+				<ul>
+					<li>Фиксы, <i>round one:</i></li>
+					<li>Теперь должно корректно работать на малой ширине.</li>
+					<li>Флекс хедера флексит правильнее.</li>
+					<li>И т.д.</li>
+				</ul>
 			Версия 3.91
 				<ul>
+					<li>Наработки-наработочки из 3.90, <i>round one:</i></li>
 					<li>Разделение на страницы <i>отвертано взад</i>.</li>
 					<li>Настройки и проч. в панели справа.</li>
-					<li>Наработки-наработочки из 3.90! (atm многое сломано)</li>
+					<li>(atm многое сломано)</li>
 				</ul>
 			Версия 3.6
 				<ul>
@@ -233,13 +247,13 @@
 				<ul>
 					<li><s>Запилить ещё один класс для центрирования кнопок в строке действий (зачем?).</s></li>
 					<li>Зробить оформление для этих списков (потом).</li>
-					<li>!! Узнать, как же сделать два скрипта на одну кнопку !!</li>
-					<li>Божественно вмешать ещё столбцы.</li>
+					<li><s>Божественно вмешать ещё столбцы.</s>(kinda?)</li>
 					<li>Сделать вычисление всех цветов из основных и акцентного (да, так можно).</li>
 					<li><s>Можно ли темную тему привязать к теме устройства.</s></li>
 					<li><s>Заделать респонсив лэйаут для мобилок.</s></li>
-					<li>Скорее всего, надо будет все пиксели сделать не зависящими от разрешения.</li>
+					<li>Скорее всего, надо будет все пиксели сделать не зависящими от разрешения. (почти)</li>
 					<li>Ещё нужно будет сделать-таки изменение масштаба шрифтов.</li>
+					<li>Удалить этот раздел.</li>
 				</ul>
 			</div>
 			</div>

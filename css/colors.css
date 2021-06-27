@@ -16,7 +16,8 @@
 	--a: 1;
 	--accentcolor: hsla(var(--h), var(--s), var(--l), var(--a));
 	--glow-radius: 2px;
-	--glow: 0 1px var(--glow-radius) hsla(var(--h), var(--s), var(--l), 0.25);
+
+	--glow: 0 1px var(--glow-radius) var(--glow-color);
 
 	--hm: var(--h);
 	--sm: var(--s);
@@ -27,8 +28,10 @@
 	--ln: 5%;
 	--ln-inv: calc(100% - var(--ln));
 	--bgcolor: hsl(var(--h), 25%, var(--ln));
-	--block-bgcolor: hsl(var(--h), 10%, calc(var(--ln) - 10%));
+	--block-bgcolor: hsl(var(--h), 10%, calc(var(--ln) + 2.5%));
 	--block-contentcolor: hsl(var(--h), 20%, calc(var(--ln) + 5%));
+	
+	--glow-color: hsla(var(--h), var(--s), var(--l), 0.25);
 	
 	--inactivecolor: rgba(var(--selcolor), var(--selcolor), var(--selcolor), 0.25);
 }

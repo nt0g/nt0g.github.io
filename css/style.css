@@ -23,7 +23,7 @@ and (min-width: 0em) {
 :root {
 	--block-borderradius: 0em;
 	--block-width: 100%;
-	--adp-height: 1.5em;
+	--adp-height: 1.5rem;
 }
 .wrp {
 	justify-content: stretch;
@@ -37,8 +37,8 @@ and (min-width: 0em) {
 and (min-width: 35em) {
 :root {
 	--block-borderradius: var(--borderradius);
-	--block-width: 25em;
-	--adp-height: 1em;
+	--block-width: 25rem;
+	--adp-height: 1rem;
 }
 .wrp {
 	justify-content: center;
@@ -51,13 +51,13 @@ and (min-width: 35em) {
 /* other variables */
 :root {
 	--borderwidth: 2px;
-	--borderradius: 0.25em;
+	--borderradius: 0.25rem;
 	--input-textcolor: var(--textcolor);
 	--animation-duration: 300ms;
 	--animation-duration-fast: calc(0.5 * var(--animation-duration));
 	--animation-interpolator: cubic-bezier(.25,.1,0,1);
 	
-	--adp-height: 1em;
+	--adp-height: 1rem;
 	
 	background: var(--bgcolor);
 	transition: var(--animation-duration-fast);
@@ -99,7 +99,7 @@ body {
 	flex-flow: column nowrap;
 	border-bottom: solid var(--borderwidth) var(--accentcolor);
 	border-radius: var(--block-borderradius);
-	box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+	box-shadow: 0px 10px 30px hsla(0,0%,0%,0.05);
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: 20px;
@@ -110,16 +110,9 @@ body {
 .block:hover,
 .block:active,
 .block:focus {
-	box-shadow: 0px 15px 40px rgba(0,0,0,0.15);
+	box-shadow: 0px 15px 40px hsla(0,0%,0%,0.1);
 	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
-}
-
-.titlebar > .titlecontent {
-	padding: 0px;
-}
-.titlebar button {
-	margin: 0px;
 }
 
 .buttonbar {
@@ -129,11 +122,11 @@ body {
 	justify-content: flex-start;
 }
 .buttonbar > * {
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-	height: 40px;
+	margin-left: 0.25rem;
+	margin-right: 0.25rem;
+	margin-top: 0.1rem;
+	margin-bottom: 0.1rem;
+	min-height: 2.5rem;
 	border-radius: var(--borderradius);
 	transition: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-interpolator);
@@ -149,39 +142,39 @@ body {
 }
 .buttonbar.titlebar {
 	--3d-scale: 0.5;
-	padding: 0px;
+	padding: 0rem;
 }
 .buttonbar.actbar {
 	--3d-scale: 0.75;
 	flex-flow: row-reverse nowrap;
-	padding: 0px;
+	padding: 0rem;
 }
 .buttonbar.contentbar {
-	padding: 0px;
+	padding: 0rem;
 }
 .buttonbar.contentbar > * {
 	border: solid var(--borderwidth) var(--accentcolor);
 	box-shadow: var(--glow);
 }
 .buttonbar.contentbar > *:first-child:not(:only-child) {
-	margin-right: 0px;
-	border-radius: var(--borderradius) 0px 0px var(--borderradius);
+	margin-right: 0rem;
+	border-radius: var(--borderradius) 0rem 0rem var(--borderradius);
 	border-right-width: calc(0.5 * var(--borderwidth));
 }
 .buttonbar.contentbar > *:not(:first-child):not(:last-child):not(:only-child) {
-	margin-left: 0px;
-	margin-right: 0px;
-	border-radius: 0px;
+	margin-left: 0rem;
+	margin-right: 0rem;
+	border-radius: 0rem;
 	border-right-width: calc(0.5 * var(--borderwidth));
 	border-left-width: calc(0.5 * var(--borderwidth));
 }
 .buttonbar.contentbar > *:last-child:not(:only-child) {
-	margin-left: 0px;
-	border-radius: 0px var(--borderradius) var(--borderradius) 0px;
+	margin-left: 0rem;
+	border-radius: 0rem var(--borderradius) var(--borderradius) 0rem;
 	border-left-width: calc(0.5 * var(--borderwidth));
 }
 .rangebar.contentbar {
-	padding: 0px;
+	padding: 0rem;
 	display: flex;
 	align-items: center;
 }
@@ -198,7 +191,7 @@ body {
 	touch-action: none;
 }
 .contentbox .buttonbar > * {
-	margin: 0px;
+	margin: 0rem;
 }
 
 /* block types*/
@@ -265,25 +258,4 @@ button > .titlecontent {
 
 .bgtitle {
 	background-color: var(--block-bgcolor);
-}
-
-
-/*IDs*/
-#title {}
-#title .titlecontent {
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-top: 20px;
-	text-align: center;
-	font-size: 24px;
-}
-#title .buttonbar {
-	justify-content: center;
-	align-items: baseline;
-	height: 50px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	white-space: nowrap;
 }

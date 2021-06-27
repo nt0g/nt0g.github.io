@@ -40,7 +40,7 @@ output {
 }
 input[type=text] {
 	box-sizing: border-box;
-	padding: 10px;
+	padding-left: 0.5rem;
 	border-radius: var(--borderradius);
 	color: var(--textcolor);
 	background-color: hsla(var(--h), var(--s), var(--l), 0.02);

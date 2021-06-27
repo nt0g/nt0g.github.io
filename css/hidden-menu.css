@@ -1,14 +1,23 @@
 @charset "utf-8";
+
 @media all 
 and (min-width: 0em) {
-.menu-wrap {
-	
+.scroll-wrap {
+	width: 100vw;
+}
+.menu-header {
+	padding-left: 0rem;
+	justify-content: center;
 }
 }
 @media all 
 and (min-width: 35em) {
-.menu-wrap {
-	
+.scroll-wrap {
+	width: unset;
+}
+.menu-header {
+	padding-left: 1rem;
+	justify-content: space-between;
 }
 }
 
@@ -38,17 +47,17 @@ and (min-width: 35em) {
 	border-left: solid var(--borderwidth) var(--accentcolor);
 	border-radius: var(--borderradius) 0 0 var(--borderradius);
 	
-	box-shadow: 0 0 2em rgba(0,0,0,0.1);
+	box-shadow: 0 0 2rem rgba(0,0,0,0.1);
 	scrollbar-width: none;
 }
 .scroll-wrap::-webkit-scrollbar {
-    width: 0px;
+    width: 0rem;
 }
 .menu-header {
-	height: 3em;
+	height: 3rem;
+	margin-bottom: 0.5rem;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
 	align-items: center;
 }
 .menu-header > .buttonbar {
@@ -59,21 +68,39 @@ and (min-width: 35em) {
 	left: 0%;
 	display: block;
 	
-	border-radius: 1em 0 0 1em;
+	border-radius: var(--borderradius) 0 0 var(--borderradius);
 	
-	box-shadow: 0 0 0.5em rgba(0,0,0,0.25);
+	box-shadow: 0 0 0rem rgba(0,0,0,0);
 	z-index: 15;
+}
+#menu-toggle-hidden:checked ~ .menu-toggle-label {
+	box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.menu-toggle-label > * {
+	transform: rotate(0deg);
+	transition: var(--animation-duration);
+	transition-timing-function: var(--animation-interpolator);
+}
+#menu-toggle-hidden:checked ~ .menu-toggle-label > * {
+	transform: rotate(180deg);
+	transition: var(--animation-duration);
+	transition-timing-function: var(--animation-interpolator);
 }
 .labelcontent {
 	font-size: 16pt;
 	font-family: Jost, "sans-serif";
 	color: var(--textcolor);
-	padding-left: 1em;
-	padding-right: 1em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+	min-height: 2rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 #menu-toggle-hidden {
+	position: absolute;
+	top: -100%;
+	
 	opacity: 0;
 }
 #menu-toggle-hidden:checked {
