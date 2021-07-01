@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* keyframes */
-@keyframes pulse {
+@keyframes pulseP {
 	0% {opacity: 0; transform: scale(0);}
 	50% {opacity: 1; transform: scale(1);}
 	100% {opacity: 0; transform: scale(2);}
@@ -11,11 +11,11 @@
 	height: 10px;
 	border: none;
 	border-radius: 20px;
-	background: var(--accentcolor);
+	background: var(--accent-color);
 	opacity: 0;
 }
 .pulse {
-	animation-name: pulse;
-	animation-duration: var(--animation-duration-fast);
+	animation-name: pulseP;
+	animation-duration: var(--animation-duration);
 	/*animation-fill-mode: forwards;*/
 }

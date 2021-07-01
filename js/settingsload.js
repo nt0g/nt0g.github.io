@@ -6,8 +6,8 @@ function loadSetting(variant,str1,str2,prev) {
 	case 1:
 		root.style.setProperty(str1, prev + str2);
 		break;
-	case 'theme':
-		getTheme(str2);
+	case 2:
+		document.documentElement.setAttribute(str1, str2);
 		break;
 	}
 }
@@ -28,5 +28,16 @@ function initClock(){
 		document.getElementById("hours").innerHTML = (hours < 10 ? '0' : '') + hours;
 	}, 1000);
 }
+
+function initCheckboxUpdate() {
+	if (document.documentElement.hasAttribute("data-color-mode")) {
+		if (document.documentElement.getAttribute("data-color-mode") === 'light') {
+			check.checked = false;
+		}
+	} else {
+		check.checked = true;
+	}
+}
 document.addEventListener('DOMContentLoaded', initSettings);
 document.addEventListener('DOMContentLoaded', initClock);
+document.addEventListener('DOMContentLoaded', initCheckboxUpdate);
