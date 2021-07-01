@@ -5,6 +5,9 @@ and (min-width: 0em) {
 .scroll-wrap {
 	width: 100vw;
 }
+.hidden-menu {
+	--block-width: 100%;
+}
 .menu-header {
 	padding-left: 0rem;
 	justify-content: center;
@@ -14,6 +17,9 @@ and (min-width: 0em) {
 and (min-width: 35em) {
 .scroll-wrap {
 	width: unset;
+}
+.hidden-menu {
+	--block-width: 25rem;
 }
 .menu-header {
 	padding-left: 1rem;
@@ -29,7 +35,6 @@ and (min-width: 35em) {
 	z-index: 10;
 }
 .hidden-menu {
-	--block-width: 25rem;
 	position: absolute;
 	top: 0%;
 	left: 100%;

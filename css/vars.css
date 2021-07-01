@@ -104,8 +104,10 @@ and (min-width: 35em) {
 	
 	/* animation settings */
 	--animation-duration: 150ms;
+	--animation-duration-plus-fast: calc(0.25 * var(--animation-duration));
 	--animation-duration-fast: calc(0.5 * var(--animation-duration));
 	--animation-duration-slow: calc(2.0 * var(--animation-duration));
+	--animation-duration-plus-slow: calc(4.0 * var(--animation-duration));
 	--animation-interpolator: cubic-bezier(.25,.1,0,1);
 	
 	
