@@ -15,7 +15,6 @@
 	touch-action: none;
 	
 	transition: transform var(--animation-duration-plus-slow);
-	transition-timing-function: var(--animation-interpolator);
 }
 .animated > * {
 	pointer-events: none;
@@ -23,4 +22,5 @@
 .animated:active {
 	transform: rotateX(calc(var(--3d-scale) * var(--xrot))) rotateY(calc(var(--3d-scale) * var(--yrot))) var(--method);
 	transition: transform var(--animation-duration-fast);
+	transition-timing-function: var(--animation-interaction-interpolator);
 }
