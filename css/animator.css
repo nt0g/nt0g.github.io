@@ -21,6 +21,6 @@
 }
 .animated:active {
 	transform: rotateX(calc(var(--3d-scale) * var(--xrot))) rotateY(calc(var(--3d-scale) * var(--yrot))) var(--method);
-	transition: transform var(--animation-duration-fast);
+	transition: transform var(--animation-duration);
 	transition-timing-function: var(--animation-interaction-interpolator);
 }
