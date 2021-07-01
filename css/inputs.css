@@ -62,8 +62,7 @@ output {
 .bar input[type=text],
 .bar output {
 	width: 4rem;
-	padding-top: 0.25rem;
-	padding-bottom: 0.25rem;
+	padding: 0.5rem;
 }
 
 input[type="range"] { /* hiding default style */
@@ -175,20 +174,22 @@ input[type="range"]::-moz-range-track {
 }
 
 /* collapsible checkbox */
-.collinput + .colllabel + .collapsible {
-	/*transform: scaleY(0%);*/
-	max-height: 0rem;
+#c-inp1 + .colllabel + #c-div1,
+#c-inp2 + .colllabel + #c-div2 {
+
+	max-height: 0;
 	padding-top: 0;
 	padding-bottom: 0;
 	
 	overflow: hidden;
 	transition: all var(--animation-duration-slow);
 }
-.collinput:checked + .colllabel + .collapsible {
-	/*transform: scaleY(100%);*/
+#c-inp1:checked + .colllabel + #c-div1,
+#c-inp2:checked + .colllabel + #c-div2 {
+	
 	max-height: 200rem;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-top: var(--theme-padding);
+	padding-bottom: var(--theme-padding);
 	
 	transition: all var(--animation-duration-plus-slow);
 }
@@ -217,9 +218,10 @@ input[type="range"]::-moz-range-track {
 .collinput:checked + .colllabel::before {
 	transform: rotate(90deg) translateX(-3px);
 }
-.colllabel.titlecontent {
+.colllabel.content.titlecontent { /* will break stuff */
 	--3d-scale: 0.5;
-	padding-bottom: var(--block-title-padding);
+	padding-top: var(--block-title-padding) !important;
+	padding-bottom: var(--block-title-padding) !important;
 }
 .colllabel.titlecontent:hover {
 	background-color: var(--theme-input-color-hover);

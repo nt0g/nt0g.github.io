@@ -12,7 +12,7 @@
 @media all 
 and (min-width: 0em) {
 :root {
-	--block-borderradius: 0em;
+	--block-borderradius: 0;
 	--block-width: 100%;
 	--adp-height: 1.5rem;
 }
@@ -42,7 +42,7 @@ and (min-width: 35em) {
 }
 :root {
 	/* ThemeEngine2(tm) */
-	--hue: 220;
+	--hue: var(--accent-hue);
 	--accent-hue: 220;
 	--accent-hue-manual: var(--hue);
 	--saturation-theme: 1;
@@ -70,23 +70,33 @@ and (min-width: 35em) {
 	--theme-glow-radius: 2px;
 	--theme-glow-color: var(--accent-color-25);
 	--theme-input-color: hsla(var(--accent-color-param), 0);
-	--theme-input-handle-color: var(--block-content-bg-color);
-	--theme-textinput-color: hsla(var(--accent-color-param), 0.02);
 	--theme-input-color-hover: hsla(var(--accent-color-param), 0.05);
 	--theme-input-color-active: hsla(var(--accent-color-param), 0.1);
+	--theme-input-handle-color: var(--block-content-bg-color);
+	--theme-textinput-color: hsla(var(--accent-color-param), 0.02);
 	
 	--theme-padding: 1.5rem;
+	--block-padding: 1rem;
 	--block-title-padding: 0.25rem;
+	--block-title-padding-bottom: var(--block-title-padding);
+	
 	
 	/* font-related */
+	
+	--font-size: 16px;
+	--font-weight: 500;
+	
 	--font-head: Jost, "sans-serif";
 	--font-content: Jost, "sans-serif";
+	--font-input: Jost, "sans-serif";
+	--font-button: Jost, "sans-serif";
 	--font-weight-head: 500;
 	--font-weight-content: 500;
-	--font-size-head: 16pt;
-	--font-size-content: 12pt;
-	--font-size-input: 12pt;
-	--font-size-button: 14pt;
+	--font-weight-button: 500;
+	--font-size-head: 1.5rem;
+	--font-size-content: 1rem;
+	--font-size-input: 1rem;
+	--font-size-button: 1.25rem;
 	
 	
 	/* border-related */
@@ -129,7 +139,7 @@ and (min-width: 35em) {
 	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 90%);
 }
 
-:root[data-theme='1'] {
+:root[data-theme='1'] { /* more whitespace, less color */
 	/* ThemeEngine2(tm) */
 	--hue: 220;
 	--accent-hue: 220;
@@ -137,25 +147,29 @@ and (min-width: 35em) {
 	
 	--block-title-bg-color: var(--block-content-bg-color);
 	
+	
 	/* other color-related */
 	--theme-input-handle-color: var(--theme-input-color);
-	--theme-input-color: hsla(var(--accent-color-param), 0.25);
-	--theme-textinput-color: hsla(var(--accent-color-param), 0.15);
+	--theme-input-color: hsla(var(--accent-color-param), 0.15);
+	--theme-input-color-hover: hsla(var(--accent-color-param), 0.25);
+	--theme-input-color-active: hsla(var(--accent-color-param), 0.2);
+	--theme-textinput-color: hsla(var(--accent-color-param), 0.1);
 	--theme-input-handle-color: var(--accent-color);
 	
 	--theme-padding: 2rem;
-	--block-title-padding: 1.5rem;
+	--block-padding: 0.25rem;
+	--block-title-padding: var(--theme-padding);
+	--block-title-padding-bottom: var(--block-padding);
+	
 	
 	/* font-related */
-	--font-head: Helvetica, "sans-serif";
-	--font-content: Helvetica, "sans-serif";
+	--font-head: Helvetica;
+	--font-content: Helvetica;
+	--font-button: Helvetica Neue;
 	--font-weight-head: 700;
 	--font-weight-content: 300;
+	--font-weight-button: 500;
 	
-	/*--accent-color: hsl(0, 0%, calc(var(--ln) + 5%);
-	--background-color: hsl(0, 0%, var(--ln));
-	--block-title-bg-color: var(--accentcolor);
-	--block-content-bg-color: var(--accentcolor);*/
 	
 	/* border-related */
 	--theme-glow: none;
@@ -165,4 +179,14 @@ and (min-width: 35em) {
 
 	--theme-block-shadow: none;
 	--theme-block-shadow-hover: none;
+}
+
+:root[data-theme='1'][data-color-mode='light'] {
+	
+	--background-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 15%), 95%);
+	--block-title-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 92.5%);
+	--block-content-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 92.5%);
+	--block-content-bg-color-param: var(--accent-hue), calc(var(--saturation-theme) * 20%), 92.5%; /* for gradient button layer bg */
+	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 90%);
+	
 }

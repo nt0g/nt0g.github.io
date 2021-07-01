@@ -2,6 +2,9 @@
 
 
 /* content */
+html {
+	font-size: var(--font-size);
+}
 .content {
 	padding: var(--theme-padding);
 	
@@ -17,14 +20,20 @@
 button > .content {
 	padding: 0rem;
 	
-	font-family: var(--font-content);
+	font-family: var(--font-button);
 	font-size: var(--font-size-button);
-	font-weight: var(--font-weight-content);
+	font-weight: var(--font-weight-button);
 }
-
+output.content {
+	border-radius: var(--borderradius);
+	
+	font-family: var(--font-button);
+	font-size: var(--font-size-input);
+	font-weight: var(--font-weight-button);
+}
 .titlecontent {
-	padding-top: var(--block-title-padding);
-	padding-bottom: 0.25rem;
+	/*padding-top: var(--block-title-padding);
+	padding-bottom: 0.25rem;*/
 	
 	font-family: var(--font-head);
 	font-size: var(--font-size-head);
@@ -67,4 +76,13 @@ button > .titlecontent {
 
 .bgtitle {
 	background-color: var(--block-title-bg-color);
+}
+
+.contentbox > .titlecontent {
+	font-size: var(--font-size-button);
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+.contentbox > .content {
+	/*padding: calc(var(--theme-padding) / 2);*/
 }

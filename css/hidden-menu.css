@@ -22,7 +22,7 @@ and (min-width: 35em) {
 	--block-width: 25rem;
 }
 .menu-header {
-	padding-left: 1rem;
+	padding-left: 2rem;
 	justify-content: space-between;
 }
 }
@@ -53,7 +53,7 @@ and (min-width: 35em) {
 	background: var(--background-color);
 	
 	border-left: var(--theme-border-inactive);
-	border-radius: var(--borderradius) 0 0 var(--borderradius);
+	border-radius: var(--block-borderradius) 0 0 var(--block-borderradius);
 	
 	box-shadow: 0 0 2rem rgba(0,0,0,0.1);
 	scrollbar-width: none;
@@ -68,8 +68,10 @@ and (min-width: 35em) {
 	flex-flow: row wrap;
 	align-items: center;
 }
-.menu-header > .buttonbar {
+.menu-header > * {
 	align-items: baseline;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 .menu-toggle-label {
 	position: relative;

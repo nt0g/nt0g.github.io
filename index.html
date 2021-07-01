@@ -37,7 +37,7 @@
 		</nav>
 		<nav class="bar">
 		<button class="animated">
-			<div class="content titlecontent" style="color: var(--accent-color-inactive)">3.95</div>
+			<div class="content titlecontent" style="color: var(--accent-color-inactive)">3.96</div>
 		</button>
 		<button class="animated">
 			<div class="content titlecontent clock">
@@ -117,7 +117,6 @@
 			<div class="block card bgtitle">
 			<div class="content titlecontent">Изменение визуальных штук</div>
 			<div class="content textcontent bgcontent">
-				Понемногу осваиваем жабаскрипт.<br />
 				Ежу, опять же, понятно.<br /><br />
 				Ручное переключение темы:<br />
 				<div class="content bar row-bar">
@@ -135,20 +134,25 @@
 				<button class="animated" onclick="setSetting(2,'color','data-color-mode','light')"><div class="content">Светлая</div></button>
 				<button class="animated" onclick="setSetting(2,'color','data-color-mode','dark')"><div class="content">Тёмная</div></button>
 				</div><br />
-				Изменение масштаба текста (потом будет):<br />
+				Изменение масштаба текста (в px):<br />
 				<div class="content bar row-bar">
-				<input type="text" id="" value="Out of Order">
-				<button class="animated" onclick=""><div class="content">→</div></button>
+				<input type="text" id="bfont" value="16">
+				<button class="animated" onclick="setSetting(1,'bfont','--font-size','px')"><div class="content">→</div></button>
 				</div><br />
-				Изменение ширины блоков (в em):<br />
+				Изменение ширины блоков (в rem):<br />
 				<div class="content bar row-bar">
 				<input type="text" id="bwidth" value="30">
-				<button class="animated" onclick="setSetting(1,'bwidth','--block-width','em')"><div class="content">→</div></button>
+				<button class="animated" onclick="setSetting(1,'bwidth','--block-width','rem')"><div class="content">→</div></button>
 				</div><br />
-				Изменение радиуса углов (в em):<br />
+				Изменение радиуса углов элементов (в rem):<br />
 				<div class="content bar row-bar">
 				<input type="text" id="bradius" value="0.25">
-				<button class="animated" onclick="setSetting(1,'bradius','--borderradius','em')"><div class="content">→</div></button>
+				<button class="animated" onclick="setSetting(1,'bradius','--borderradius','rem')"><div class="content">→</div></button>
+				</div><br />
+				Изменение радиуса углов блоков (в rem):<br />
+				<div class="content bar row-bar">
+				<input type="text" id="bblradius" value="0.25">
+				<button class="animated" onclick="setSetting(1,'bblradius','--block-borderradius','rem')"><div class="content">→</div></button>
 				</div><br />
 				Изменение ширины границ (в px):<br />
 				<div class="content bar row-bar">
@@ -156,10 +160,13 @@
 				<button class="animated" onclick="setSetting(1,'brdwidth','--borderwidth','px')"><div class="content">→</div></button>
 				</div><br />
 				
-				<form class="content contentbox" onsubmit="setAccentColor(); return false;">
+				<form class="contentbox" onsubmit="setAccentColor(); return false;">
+				<input id="c-inp1" type="checkbox" class="collinput"/>
+				<label for="c-inp1" class="colllabel titlecontent animated" style="width: 100%; text-align: center;">Настройка оттенка</label>
+				<div id="c-div1" class="content">
 				Оттенок:<br />
 				<div class="content bar rangebar">
-				<input type="range" class="colorRange" id="hue" min="0" max="360" value="220" step="1"><output id="huex" for="hue">220</output>
+				<input type="range" class="colorRange" id="hue" min="0" max="360" value="220" step="1"><output class="content" id="huex" for="hue">220</output>
 				</div><br />
 				Изменение радиуса «свечения» (в px):<br />
 				<div class="content bar row-bar">
@@ -169,14 +176,15 @@
 				<div class="content bar row-bar">
 				<button type="submit" class="animated gradient" style="width: 100%;"><div class="gradinside content gradcontent">Изменить цвет</div></button>
 				</div>
+				</div>
 				</form>
 			</div>
 			</div>
 			
 			<div class="block card bgtitle">
-			<input id="switchCollapsible" type="checkbox" class="collinput"/>
-			<label for="switchCollapsible" class="colllabel content titlecontent animated">Список Изменений Да</label>
-			<div class="collapsible content textcontent bgcontent">
+			<input id="c-inp2" type="checkbox" class="collinput"/>
+			<label for="c-inp2" class="colllabel content titlecontent animated">Список Изменений Да</label>
+			<div id="c-div2" class="content textcontent bgcontent">
 			Версия 3.95
 				<ul>
 					<li>Большие штуки, <i>round three:</i></li>
@@ -253,10 +261,10 @@
 			<div class="content titlecontent">Notes To Self</div>
 			<div class="content textcontent bgcontent">
 				<ul>
-					<li><s>Запилить ещё один класс для центрирования кнопок в строке действий (зачем?).</s></li>
-					<li>Кнопки в хедере и заголовках на второй теме.</li>
-					<li>Изменение масштаба шрифтов.</li>
-					<li>Переключатель тем.</li>
+					<li>Разобраться с отступами (рядом с барами, например).</li>
+					<li><s>Кнопки в хедере и заголовках на второй теме.</s> (есть)</li>
+					<li><s>Изменение масштаба шрифтов.</s> (есть)</li>
+					<li><s>Переключатель тем.</s> (есть)</li>
 					<li>Удалить этот раздел.</li>
 				</ul>
 			</div>
