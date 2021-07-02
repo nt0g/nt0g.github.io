@@ -38,6 +38,14 @@ function initCheckboxUpdate() {
 		check.checked = true;
 	}
 }
+
+function initAnimatorTimer() {
+	window.setTimeout(function() {
+		document.documentElement.classList.add('animation')
+	}, 500)
+}
+
 document.addEventListener('DOMContentLoaded', initSettings);
 document.addEventListener('DOMContentLoaded', initClock);
 document.addEventListener('DOMContentLoaded', initCheckboxUpdate);
+document.addEventListener('DOMContentLoaded', initAnimatorTimer);

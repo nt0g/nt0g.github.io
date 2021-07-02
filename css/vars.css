@@ -33,10 +33,10 @@ and (min-width: 35em) {
 	/*color: ;*/
 	background: var(--selection-color);
 }
-:root,
-:root *,
-:root *:before,
-:root *:after {
+:root.animation,
+:root.animation *,
+:root.animation *:before,
+:root.animation *:after {
 	transition: all var(--animation-duration);
 	transition-timing-function: var(--animation-interpolator);
 }
@@ -110,6 +110,7 @@ and (min-width: 35em) {
 	
 	--theme-block-shadow: 0px 10px 30px hsla(0,0%,0%,0.05);
 	--theme-block-shadow-hover: 0px 15px 40px hsla(0,0%,0%,0.1);
+	--theme-block-shadow-double: 0px 10px 30px hsla(0,0%,0%,0.1);
 	
 	
 	/* animation settings */

@@ -14,13 +14,14 @@
 	user-select: none;
 	touch-action: none;
 	
-	transition: transform var(--animation-duration-plus-slow);
+	transition: transform var(--animation-duration-plus-slow), background-color var(--animation-duration-slow);
+	transition-timing-function: var(--animation-interpolator);
 }
 .animated > * {
 	pointer-events: none;
 }
 .animated:active {
 	transform: rotateX(calc(var(--3d-scale) * var(--xrot))) rotateY(calc(var(--3d-scale) * var(--yrot))) var(--method);
-	transition: transform var(--animation-duration);
+	transition: transform var(--animation-duration), background-color var(--animation-duration-plus-fast);
 	transition-timing-function: var(--animation-interaction-interpolator);
 }

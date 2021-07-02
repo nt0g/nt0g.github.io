@@ -13,6 +13,12 @@ and (min-width: 0em) {
 	padding-left: 0rem;
 	justify-content: center;
 }
+.menu-toggle-label {
+	border-radius: var(--borderradius) 0 var(--block-borderradius) var(--borderradius);
+}
+#menu-toggle-hidden:checked ~ .menu-toggle-label {
+	border-radius: var(--borderradius) 0 0 var(--borderradius);
+}
 }
 @media all 
 and (min-width: 35em) {
@@ -28,6 +34,13 @@ and (min-width: 35em) {
 	justify-content: space-between;
 }
 }
+@media all 
+and (min-width: 45em) {
+.menu-toggle-label {
+	border-radius: var(--borderradius) 0 0 var(--borderradius);
+}
+}
+
 
 .menu-wrap {
 	/*content-visibility: auto;*/
@@ -66,21 +79,21 @@ and (min-width: 35em) {
 .menu-header {
 	height: 3rem;
 	margin-bottom: 0.5rem;
+	
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
 }
 .menu-header > * {
-	align-items: baseline;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
+	
+	align-items: baseline;
 }
 .menu-toggle-label {
 	position: relative;
 	left: 0%;
 	display: block;
-	
-	border-radius: var(--borderradius) 0 0 var(--borderradius);
 	
 	box-shadow: 0 0 0rem rgba(0,0,0,0);
 	z-index: 15;
@@ -126,5 +139,5 @@ and (min-width: 35em) {
 }
 
 #menu-toggle-hidden:checked ~ .hidden-menu > .scroll-wrap {
-	box-shadow: 0 0 2rem hsla(0,0%,0%,0.1);
+	box-shadow: var(--theme-block-shadow-double);
 }

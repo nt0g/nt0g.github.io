@@ -8,7 +8,7 @@ and (min-width: 0em) {
 	align-items: flex-start;
 }
 .scroll-block {
-	padding-top: 8rem;
+	padding-top: 3rem;
 }
 }
 
@@ -136,7 +136,7 @@ body {
 .bar.titlebar,
 .bar.actbar,
 .bar.row-bar {
-	padding: 0rem;
+	padding: 0rem !important; /* :( */
 }
 
 .bar.titlebar {

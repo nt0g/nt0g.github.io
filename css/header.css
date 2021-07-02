@@ -8,6 +8,9 @@ and (min-width: 0em) {
 .gheader {
 	position: relative;
 }
+.gheader .headerbg {
+	border-radius: 0 0 var(--block-borderradius) var(--block-borderradius);
+}
 .hidden-menu-button-spacer {
 	flex-basis: 0rem;
 }
@@ -22,6 +25,9 @@ and (min-width: 45em) {
 }
 .gheader {
 	position: sticky;
+}
+.gheader .headerbg {
+	border-radius: 0;
 }
 .hidden-menu-button-spacer {
 	flex-basis: 3rem;
@@ -44,7 +50,7 @@ and (min-width: 45em) {
 
 .gheader .headerbg {
 	background-color: var(--block-title-bg-color);
-	box-shadow: 0px 5px 25px hsla(0,0%,0%,0.1);
+	box-shadow: var(--theme-block-shadow-double);
 }
 .gheader .headercontent {
 	padding: 0.25rem;
@@ -62,9 +68,7 @@ and (min-width: 45em) {
 .headercontent .bar > * {
 	margin: 0;
 }
-.headercontent .bar > *:not(:hover),
-.headercontent .bar > *:not(:active),
-.headercontent .bar > *:not(:focus) {
+.headercontent > .bar > *:not(:hover):not(:active):not(:focus) {
 	background-color: hsla(var(--accent-color-param), 0);
 }
 .bgbanner {

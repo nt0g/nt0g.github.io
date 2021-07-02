@@ -57,7 +57,7 @@ button > .titlecontent {
 }
 
 .imagecontent {
-	padding: 0rem;
+	padding: 0rem !important;
 	height: auto;
 	
 	display: flex;

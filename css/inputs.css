@@ -200,6 +200,7 @@ input[type="range"]::-moz-range-track {
 	display: inline-block;
 	position: relative;
 	
+	border-radius: inherit;
 	cursor: pointer;
 }
 .colllabel::before {
