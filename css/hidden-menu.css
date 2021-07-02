@@ -4,6 +4,7 @@
 and (min-width: 0em) {
 .scroll-wrap {
 	width: 100vw;
+	border-radius: 0;
 }
 .hidden-menu {
 	--block-width: 100%;
@@ -17,6 +18,7 @@ and (min-width: 0em) {
 and (min-width: 35em) {
 .scroll-wrap {
 	width: unset;
+	border-radius: var(--block-borderradius) 0 0 var(--block-borderradius);
 }
 .hidden-menu {
 	--block-width: 25rem;
@@ -28,6 +30,7 @@ and (min-width: 35em) {
 }
 
 .menu-wrap {
+	/*content-visibility: auto;*/
 	position: fixed;
 	top: 0%;
 	right: 0%;
@@ -53,9 +56,8 @@ and (min-width: 35em) {
 	background: var(--background-color);
 	
 	border-left: var(--theme-border-inactive);
-	border-radius: var(--block-borderradius) 0 0 var(--block-borderradius);
 	
-	box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+	box-shadow: none;
 	scrollbar-width: none;
 }
 .scroll-wrap::-webkit-scrollbar {
@@ -121,4 +123,8 @@ and (min-width: 35em) {
 	transform: translateX(-100%);
 	transition: var(--animation-duration-slow);
 	transition-timing-function: var(--animation-interpolator);
+}
+
+#menu-toggle-hidden:checked ~ .hidden-menu > .scroll-wrap {
+	box-shadow: 0 0 2rem hsla(0,0%,0%,0.1);
 }

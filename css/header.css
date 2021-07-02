@@ -11,6 +11,9 @@ and (min-width: 0em) {
 .hidden-menu-button-spacer {
 	flex-basis: 0rem;
 }
+.hidden-ent {
+	display: none;
+}
 }
 @media all 
 and (min-width: 45em) {
@@ -23,6 +26,9 @@ and (min-width: 45em) {
 .hidden-menu-button-spacer {
 	flex-basis: 3rem;
 }
+.hidden-ent {
+	display: inherit;
+}
 }
 
 
@@ -31,7 +37,7 @@ and (min-width: 45em) {
 	left: 0%;
 	top: 0%;
 	width: 100%;
-	min-height: 2.5rem;
+	min-height: 3rem;
 	
 	z-index: 5;
 }

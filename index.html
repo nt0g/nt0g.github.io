@@ -16,7 +16,7 @@
 <header class="gheader" id="title">
 	<div class="headerbg bgbanner"></div>
 	<div class="headercontent">
-		<nav class="bar">
+		<nav class="bar hidden-ent">
 			<button class="animated" onclick="window.location.href='#';">
 				<div class="content titlecontent"style="color: var(--accent-color-inactive)">Некоторые Определённые Штуки</div>
 			</button>
@@ -24,18 +24,18 @@
 		
 		<nav class="bar">
 			<button class="animated" onclick="window.location.href='#one';">
-				<div class="content titlecontent">Штука Раз</div>
+				<div class="content titlecontent">Раз</div>
 			</button>
 			<button class="animated" onclick="window.location.href='#two';">
-				<div class="content titlecontent">Штука Два</div>
+				<div class="content titlecontent">Два</div>
 			</button>
 			<button class="animated" onclick="window.location.href='#three';">
-				<div class="content titlecontent">Штука Три</div>
+				<div class="content titlecontent">Три</div>
 			</button>
 		</nav>
 		<nav class="spacer">
 		</nav>
-		<nav class="bar">
+		<nav class="bar hidden-ent">
 		<button class="animated">
 			<div class="content titlecontent" style="color: var(--accent-color-inactive)">3.96</div>
 		</button>
@@ -67,7 +67,7 @@
 			<div class="content titlecontent">Очистка ло<i>кал</i>ьного хранилища</div>
 			<div class="content textcontent bgcontent">
 				<form onsubmit="localStorage.clear();">
-				Чтоб чисто было.<br />
+				<p>Чтоб чисто было.</p>
 				<div class="content bar row-bar">
 				<button type="submit" class="animated"><div class="content">Очистить локальное хранилище</div></button>
 				</div>
@@ -78,17 +78,17 @@
 			<div class="block card bgtitle">
 			<div class="content titlecontent">Изменение анимации кнопок</div>
 			<div class="content textcontent bgcontent">
-				Изменение перспективы (в см):<br />
+				<p>Изменение перспективы (в см):</p>
 				<div class="content bar row-bar">
 				<input type="text" id="perspective" value="5">
 				<button class="animated" onclick="setSetting(1,'perspective','--perspective','cm')"><div class="content">→</div></button>
 				</div><br />
-				Изменение масштабов 3Д-шенья (меняйте и поймёте):<br />
+				<p>Изменение масштабов 3Д-шенья (меняйте и поймёте):</p>
 				<div class="content bar row-bar">
 				<input type="text" id="3dscale" value="1">
 				<button class="animated" onclick="setSetting(1,'3dscale','--3d-scale','')"><div class="content">→</div></button>
 				</div><br />
-				Метод 3Д-вдавливания:<br />
+				<p>Метод 3Д-вдавливания:</p>
 				<div class="content bar row-bar">
 				<button class="animated" onclick="setSetting(0,'method','--method','scale(0.975)')"><div class="content">Scale</div></button>
 				<button class="animated" onclick="setSetting(0,'method','--method','translateZ(-5px)')"><div class="content">TranslateZ</div></button>
@@ -104,7 +104,7 @@
 			<div class="block card bgtitle">
 			<div class="content titlecontent">Изменение скорости анимаций</div>
 			<div class="content textcontent bgcontent">
-				И ежу понятно.<br />
+				<p>И ежу понятно.</p>
 				<div class="content bar row-bar">
 				<input type="text" id="duration" value="150">
 				<button class="animated" onclick="setSetting(1,'duration','--animation-duration','ms')"><div class="content">→</div></button>
@@ -117,13 +117,13 @@
 			<div class="block card bgtitle">
 			<div class="content titlecontent">Изменение визуальных штук</div>
 			<div class="content textcontent bgcontent">
-				Ежу, опять же, понятно.<br /><br />
-				Ручное переключение темы:<br />
+				<p>Ежу, опять же, понятно.</p>
+				<p>Ручное переключение темы:</p>
 				<div class="content bar row-bar">
 				<button class="animated" onclick="setSetting(2,'theme','data-theme','0')"><div class="content">Тема 1</div></button>
 				<button class="animated" onclick="setSetting(2,'theme','data-theme','1')"><div class="content">Тема 2</div></button>
 				</div><br />
-				Ручное переключение цвета:<br />
+				<p>Ручное переключение цвета:</p>
 				<nav class="bar">
 				<form class="switch">
 				<input id="switchTheme" type="checkbox" class="swinput" onchange="themeCheckboxChange()" checked="true"/>
@@ -134,27 +134,27 @@
 				<button class="animated" onclick="setSetting(2,'color','data-color-mode','light')"><div class="content">Светлая</div></button>
 				<button class="animated" onclick="setSetting(2,'color','data-color-mode','dark')"><div class="content">Тёмная</div></button>
 				</div><br />
-				Изменение масштаба текста (в px):<br />
+				<p>Изменение масштаба текста (в px):</p>
 				<div class="content bar row-bar">
 				<input type="text" id="bfont" value="16">
 				<button class="animated" onclick="setSetting(1,'bfont','--font-size','px')"><div class="content">→</div></button>
 				</div><br />
-				Изменение ширины блоков (в rem):<br />
+				<p>Изменение ширины блоков (в rem):</p>
 				<div class="content bar row-bar">
 				<input type="text" id="bwidth" value="30">
 				<button class="animated" onclick="setSetting(1,'bwidth','--block-width','rem')"><div class="content">→</div></button>
 				</div><br />
-				Изменение радиуса углов элементов (в rem):<br />
+				<p>Изменение радиуса углов элементов (в rem):</p>
 				<div class="content bar row-bar">
 				<input type="text" id="bradius" value="0.25">
 				<button class="animated" onclick="setSetting(1,'bradius','--borderradius','rem')"><div class="content">→</div></button>
 				</div><br />
-				Изменение радиуса углов блоков (в rem):<br />
+				<p>Изменение радиуса углов блоков (в rem):</p>
 				<div class="content bar row-bar">
 				<input type="text" id="bblradius" value="0.25">
 				<button class="animated" onclick="setSetting(1,'bblradius','--block-borderradius','rem')"><div class="content">→</div></button>
 				</div><br />
-				Изменение ширины границ (в px):<br />
+				<p>Изменение ширины границ (в px):</p>
 				<div class="content bar row-bar">
 				<input type="text" id="brdwidth" value="2">
 				<button class="animated" onclick="setSetting(1,'brdwidth','--borderwidth','px')"><div class="content">→</div></button>
@@ -164,11 +164,11 @@
 				<input id="c-inp1" type="checkbox" class="collinput"/>
 				<label for="c-inp1" class="colllabel titlecontent animated" style="width: 100%; text-align: center;">Настройка оттенка</label>
 				<div id="c-div1" class="content">
-				Оттенок:<br />
+				<p>Оттенок:</p>
 				<div class="content bar rangebar">
 				<input type="range" class="colorRange" id="hue" min="0" max="360" value="220" step="1"><output class="content" id="huex" for="hue">220</output>
 				</div><br />
-				Изменение радиуса «свечения» (в px):<br />
+				<p>Изменение радиуса «свечения» (в px):</p>
 				<div class="content bar row-bar">
 				<input type="text" id="glowrad" value="2">
 				<button class="animated" onclick="setSetting(1,'glowrad','--theme-glow-radius','px')"><div class="content">→</div></button>
@@ -290,7 +290,7 @@
 				Suspendisse tincidunt vel augue in dapibus. Etiam sit amet dignissim elit. 
 				Sed hendrerit consequat lorem, porttitor eleifend enim tempus pharetra. 
 				Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-				Cras quis pharetra ante. Praesent bibendum sollicitudin nibh nec pharetra.<br /><br />
+				Cras quis pharetra ante. Praesent bibendum sollicitudin nibh nec pharetra. <br /><br />
 				<div class="content bar row-bar">
 				<button class="animated"><div class="content">B1</div></button>
 				<button class="animated"><div class="content">B2</div></button>
@@ -301,7 +301,7 @@
 		</div>
 	</div>
 
-	<div class="scroll-block" id="two">
+	<div class="scroll-block" id="two" style="background-image: url('images/pic2.jpg')">
 		<div class="blockwrap">
 			<div class="block card bgtitle">
 			<div class="content titlecontent">Штука 2</div>
