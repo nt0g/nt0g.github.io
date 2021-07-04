@@ -14,7 +14,14 @@ html {
 }
 .content > input[type=text] {
 	font-family: var(--font-content);
-	font-size: var(--font-size-content);
+	font-size: var(--font-size-input);
+	font-weight: var(--font-weight-content);
+}
+output.content {
+	border-radius: var(--borderradius);
+	
+	font-family: var(--font-content);
+	font-size: var(--font-size-input);
 	font-weight: var(--font-weight-content);
 }
 button > .content {
@@ -24,13 +31,7 @@ button > .content {
 	font-size: var(--font-size-button);
 	font-weight: var(--font-weight-button);
 }
-output.content {
-	border-radius: var(--borderradius);
-	
-	font-family: var(--font-button);
-	font-size: var(--font-size-input);
-	font-weight: var(--font-weight-button);
-}
+
 .titlecontent {
 	/*padding-top: var(--block-title-padding);
 	padding-bottom: 0.25rem;*/

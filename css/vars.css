@@ -164,11 +164,11 @@ and (min-width: 35em) {
 	
 	
 	/* font-related */
-	--font-head: Helvetica;
-	--font-content: Helvetica;
+	--font-head: HelveticaNeueCyr;
+	--font-content: HelveticaNeueCyr;
 	--font-button: Helvetica Neue;
 	--font-weight-head: 700;
-	--font-weight-content: 300;
+	--font-weight-content: 400;
 	--font-weight-button: 500;
 	
 	
