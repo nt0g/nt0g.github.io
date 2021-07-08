@@ -31,11 +31,11 @@ function initClock(){
 
 function initCheckboxUpdate() {
 	if (document.documentElement.hasAttribute("data-color-mode")) {
-		if (document.documentElement.getAttribute("data-color-mode") === 'light') {
-			check.checked = false;
+		if (document.documentElement.getAttribute("data-color-mode") === 'dark') {
+			check.checked = true;
 		}
 	} else {
-		check.checked = true;
+		check.checked = false;
 	}
 }
 

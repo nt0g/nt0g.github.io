@@ -36,6 +36,12 @@
 		<nav class="spacer">
 		</nav>
 		<nav class="bar hidden-ent">
+			<form class="switch">
+			<input id="switchTheme" type="checkbox" class="swinput" onchange="themeCheckboxChange()" checked="false"/>
+			<label for="switchTheme" class="swlabel"></label>
+			</form>
+		</nav>
+		<nav class="bar hidden-ent">
 		<button class="animated">
 			<div class="content titlecontent" style="color: var(--accent-color-inactive)">3.97</div>
 		</button>
@@ -68,7 +74,7 @@
 			<div class="content textcontent bgcontent">
 				<form onsubmit="localStorage.clear();">
 				<p>Чтоб чисто было.</p>
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<button type="submit" class="animated"><div class="content">Очистить локальное хранилище</div></button>
 				</div>
 				</form>
@@ -78,24 +84,24 @@
 			<div class="block card bgtitle">
 			<div class="content titlecontent">Изменение анимации кнопок</div>
 			<div class="content textcontent bgcontent">
-				<p>Изменение перспективы (в см):</p>
-				<div class="content bar row-bar">
+				<label for="perspective">Изменение перспективы (в см):</label>
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="perspective" value="5">
 				<button class="animated" onclick="setSetting(1,'perspective','--perspective','cm')"><div class="content">→</div></button>
 				</div><br />
-				<p>Изменение масштабов 3Д-шенья (меняйте и поймёте):</p>
-				<div class="content bar row-bar">
+				<label for="3dscale">Изменение масштабов 3Д-шенья (меняйте и поймёте):</label>
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="3dscale" value="1">
 				<button class="animated" onclick="setSetting(1,'3dscale','--3d-scale','')"><div class="content">→</div></button>
 				</div><br />
-				<p>Метод 3Д-вдавливания:</p>
-				<div class="content bar row-bar">
+				<label>Метод 3Д-вдавливания:</label>
+				<div class="content bar horiz-bar h-bar-border">
 				<button class="animated" onclick="setSetting(0,'method','--method','scale(0.975)')"><div class="content">Scale</div></button>
 				<button class="animated" onclick="setSetting(0,'method','--method','translateZ(-5px)')"><div class="content">TranslateZ</div></button>
 				<button class="animated" onclick="setSetting(0,'method','--method','translateZ(-5px) scale(var(--zsca))')"><div class="content">Оба</div></button>
 				<button class="animated" onclick="setSetting(0,'method','--method','0')"><div class="content">Нет</div></button>
 				</div><br />
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<button class="animated" style="width:100%;"><div class="content">Кнопка для проверки</div></button>
 				</div>
 			</div>
@@ -105,7 +111,7 @@
 			<div class="content titlecontent">Изменение скорости анимаций</div>
 			<div class="content textcontent bgcontent">
 				<p>И ежу понятно.</p>
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="duration" value="150">
 				<button class="animated" onclick="setSetting(1,'duration','--animation-duration','ms')"><div class="content">→</div></button>
 				<button class="animated" onclick="pulse()"><div class="content">▷</div></button>
@@ -119,43 +125,38 @@
 			<div class="content textcontent bgcontent">
 				<p>Ежу, опять же, понятно.</p>
 				<p>Ручное переключение темы:</p>
-				<div class="content bar row-bar">
-				<button class="animated" onclick="setSetting(2,'theme','data-theme','0')"><div class="content">Тема 1</div></button>
-				<button class="animated" onclick="setSetting(2,'theme','data-theme','1')"><div class="content">Тема 2</div></button>
+				<div class="content bar horiz-bar h-bar-border">
+				<button class="animated" onclick="setSetting(2,'theme','data-theme','0')"><div class="content">Тема 0</div></button>
+				<button class="animated" onclick="setSetting(2,'theme','data-theme','1')"><div class="content">Тема 1</div></button>
 				</div><br />
 				<p>Ручное переключение цвета:</p>
-				<nav class="bar">
-				<form class="switch">
-				<input id="switchTheme" type="checkbox" class="swinput" onchange="themeCheckboxChange()" checked="true"/>
-				<label for="switchTheme" class="swlabel"></label>
-				</form>
-				</nav>
-				<div class="content bar row-bar">
+
+				<div class="content bar horiz-bar h-bar-border">
 				<button class="animated" onclick="setSetting(2,'color','data-color-mode','light')"><div class="content">Светлая</div></button>
 				<button class="animated" onclick="setSetting(2,'color','data-color-mode','dark')"><div class="content">Тёмная</div></button>
 				</div><br />
 				<p>Изменение масштаба текста (в px):</p>
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="bfont" value="16">
 				<button class="animated" onclick="setSetting(1,'bfont','--font-size','px')"><div class="content">→</div></button>
 				</div><br />
 				<p>Изменение ширины блоков (в rem):</p>
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="bwidth" value="30">
 				<button class="animated" onclick="setSetting(1,'bwidth','--block-width','rem')"><div class="content">→</div></button>
 				</div><br />
 				<p>Изменение радиуса углов элементов (в rem):</p>
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="bradius" value="0.25">
 				<button class="animated" onclick="setSetting(1,'bradius','--borderradius','rem')"><div class="content">→</div></button>
 				</div><br />
 				<p>Изменение радиуса углов блоков (в rem):</p>
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="bblradius" value="0.25">
 				<button class="animated" onclick="setSetting(1,'bblradius','--block-borderradius','rem')"><div class="content">→</div></button>
 				</div><br />
 				<p>Изменение ширины границ (в px):</p>
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="brdwidth" value="2">
 				<button class="animated" onclick="setSetting(1,'brdwidth','--borderwidth','px')"><div class="content">→</div></button>
 				</div><br />
@@ -168,12 +169,17 @@
 				<div class="content bar rangebar">
 				<input type="range" class="colorRange" id="hue" min="0" max="360" value="220" step="1"><output class="content" id="huex" for="hue">220</output>
 				</div><br />
+				<div class="content bar horiz-bar">
+				<div class="colorprv accent-darker animated"></div>
+				<div class="colorprv accent-cl animated"></div>
+				<div class="colorprv accent-lighter animated"></div>
+				</div><br />
 				<p>Изменение радиуса «свечения» (в px):</p>
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<input type="text" id="glowrad" value="2">
 				<button class="animated" onclick="setSetting(1,'glowrad','--theme-glow-radius','px')"><div class="content">→</div></button>
 				</div><br />
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<button type="submit" class="animated gradient" style="width: 100%;"><div class="gradinside content gradcontent">Изменить цвет</div></button>
 				</div>
 				</div>
@@ -291,7 +297,7 @@
 				Sed hendrerit consequat lorem, porttitor eleifend enim tempus pharetra. 
 				Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
 				Cras quis pharetra ante. Praesent bibendum sollicitudin nibh nec pharetra. <br /><br />
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<button class="animated"><div class="content">B1</div></button>
 				<button class="animated"><div class="content">B2</div></button>
 				<button class="animated"><div class="content">B3</div></button>
@@ -314,7 +320,7 @@
 				Interdum et malesuada fames ac ante ipsum primis in faucibus. 
 				Phasellus pellentesque laoreet augue, in sagittis sapien bibendum nec. 
 				Donec id nulla id justo rhoncus semper sodales in eros. <br /><br />
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<button class="animated"><div class="content">B1</div></button>
 				<button class="animated"><div class="content">B2</div></button>
 				<button class="animated"><div class="content">B3</div></button>
@@ -334,7 +340,7 @@
 				Cras accumsan urna tempus lorem viverra sodales. Pellentesque quis augue a augue tempor facilisis. 
 				Sed eget nulla at dolor pharetra tincidunt ut vel nunc. Nulla facilisi. 
 				Integer tempus sapien in ligula ullamcorper, rutrum fringilla magna tempus. <br /><br />
-				<div class="content bar row-bar">
+				<div class="content bar horiz-bar h-bar-border">
 				<button class="animated"><div class="content">B1</div></button>
 				<button class="animated"><div class="content">B2</div></button>
 				<button class="animated"><div class="content">B3</div></button>

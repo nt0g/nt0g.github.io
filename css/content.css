@@ -5,9 +5,11 @@
 html {
 	font-size: var(--font-size);
 }
+p {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+}
 .content {
-	padding: var(--theme-padding);
-	
 	color: var(--text-color);
 	
 	border-radius: var(--block-borderradius);
@@ -24,9 +26,7 @@ output.content {
 	font-size: var(--font-size-input);
 	font-weight: var(--font-weight-content);
 }
-button > .content {
-	padding: 0rem;
-	
+button > .content {	
 	font-family: var(--font-button);
 	font-size: var(--font-size-button);
 	font-weight: var(--font-weight-button);
@@ -35,6 +35,8 @@ button > .content {
 .titlecontent {
 	/*padding-top: var(--block-title-padding);
 	padding-bottom: 0.25rem;*/
+	
+	color: var(--text-color-darker);
 	
 	font-family: var(--font-head);
 	font-size: var(--font-size-head);
@@ -85,5 +87,20 @@ button > .titlecontent {
 	padding-bottom: 0.5rem;
 }
 .contentbox > .content {
-	/*padding: calc(var(--theme-padding) / 2);*/
+	padding: var(--content-padding);
+}
+/*  horizontal bar w/border  */
+.h-bar-border > * {
+	border: var(--theme-border);
+	box-shadow: var(--theme-glow);
+}
+.h-bar-border > *:first-child:not(:only-child) {
+	border-right-width: calc(0.5 * var(--borderwidth));
+}
+.h-bar-border > *:not(:first-child):not(:last-child):not(:only-child) {
+	border-right-width: calc(0.5 * var(--borderwidth));
+	border-left-width: calc(0.5 * var(--borderwidth));
+}
+.h-bar-border > *:last-child:not(:only-child) {
+	border-left-width: calc(0.5 * var(--borderwidth));
 }

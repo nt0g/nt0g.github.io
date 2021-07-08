@@ -7,7 +7,7 @@ button {
 	padding-left: 1rem;
 	padding-right: 1rem;
 	padding-top: 0.5rem;
-	padding-bottom: 0.25rem;
+	padding-bottom: 0.5rem;
 	
 	display: flex;
 	justify-content: center;
@@ -68,22 +68,17 @@ output {
 input[type="range"] { /* hiding default style */
 	width: 100%;
 	height: var(--adp-height);
+	
 	appearance: none;
-	outline: none !important;
 	border: none;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: hsla(0,0%,0%,0);
+	
 	touch-action: none;
-}
-input[type="range"]::-moz-focus-outer {
-	border: 0;
-}
-input[type="range"]:hover {
-	outline: none;
 }
 
 input[type="range"]::-moz-range-thumb {
-	width: 0.5rem;
-	height: 0.5rem;
+	width: 1rem;
+	height: 1rem;
 	
 	background: var(--theme-input-handle-color);
 	
@@ -92,6 +87,7 @@ input[type="range"]::-moz-range-thumb {
 	
 	box-shadow: var(--theme-glow);
 	cursor: pointer;
+	box-sizing: border-box;
 }
 input[type="range"]::-moz-range-progress {
 	height: var(--borderwidth);
@@ -180,6 +176,7 @@ input[type="range"]::-moz-range-track {
 	max-height: 0;
 	padding-top: 0;
 	padding-bottom: 0;
+	opacity: 0;
 	
 	overflow: hidden;
 	transition: all var(--animation-duration-slow);
@@ -188,8 +185,9 @@ input[type="range"]::-moz-range-track {
 #c-inp2:checked + .colllabel + #c-div2 {
 	
 	max-height: 200rem;
-	padding-top: var(--theme-padding);
-	padding-bottom: var(--theme-padding);
+	padding-top: var(--content-padding);
+	padding-bottom: var(--content-padding);
+	opacity: 1;
 	
 	transition: all var(--animation-duration-plus-slow);
 }

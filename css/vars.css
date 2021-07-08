@@ -2,6 +2,12 @@
 
 
 /* media queries */
+@media (prefers-reduced-motion: no-preference) {
+:focus {
+	transition: outline-offset var(--animation-duration);
+	transition-timing-function: var(--animation-interpolator);
+  }
+}
 @media (prefers-reduced-motion) {
 :root {
 	--animation-duration: 0ms !important;
@@ -47,15 +53,15 @@ and (min-width: 35em) {
 	--accent-hue-manual: var(--hue);
 	--saturation-theme: 1;
 	
-	--text-color: hsl(240, calc(var(--saturation-theme) * 5%), 85%);
-	--text-color-darker: hsl(240, calc(var(--saturation-theme) * 5%), 80%);
-	--text-color-lighter: hsl(240, calc(var(--saturation-theme) * 5%), 90%);
+	--text-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 15%);
+	--text-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 10%);
+	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 20%);
 	
-	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
-	--block-title-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 7.5%);
-	--block-content-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
-	--block-content-bg-color-param: var(--accent-hue), calc(var(--saturation-theme) * 20%), 10%; /* for gradient button layer bg */
-	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 15%);
+	--background-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 15%), 85%);
+	--block-title-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 90%);
+	--block-content-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 95%);
+	--block-content-bg-color-param: var(--accent-hue), calc(var(--saturation-theme) * 20%), 85%; /* for gradient button layer bg */
+	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 90%);
 	
 	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 60%);
 	--accent-color-25: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 60%, 0.25);
@@ -75,7 +81,7 @@ and (min-width: 35em) {
 	--theme-input-handle-color: var(--block-content-bg-color);
 	--theme-textinput-color: hsla(var(--accent-color-param), 0.02);
 	
-	--theme-padding: 1.5rem;
+	--content-padding: 1.5rem;
 	--block-padding: 1rem;
 	--block-title-padding: 0.25rem;
 	--block-title-padding-bottom: var(--block-title-padding);
@@ -112,6 +118,8 @@ and (min-width: 35em) {
 	--theme-block-shadow-hover: 0px 15px 40px hsla(0,0%,0%,0.1);
 	--theme-block-shadow-double: 0px 10px 30px hsla(0,0%,0%,0.1);
 	
+	--theme-outline: var(--borderwidth) solid var(--text-color);
+	
 	
 	/* animation settings */
 	--animation-duration: 150ms;
@@ -126,18 +134,19 @@ and (min-width: 35em) {
 	/* touch targets size (probably?) */
 	--adp-height: 1rem;
 }
-
-:root[data-color-mode='light'] {
+:root[data-color-mode='dark'] {
 	/* ThemeEngine2(tm) */
-	--text-color: hsl(240, calc(var(--saturation-theme) * 5%), 15%);
-	--text-color-darker: hsl(240, calc(var(--saturation-theme) * 5%), 10%);
-	--text-color-lighter: hsl(240, calc(var(--saturation-theme) * 5%), 20%);
+	--saturation-theme: 0.5;
 	
-	--background-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 15%), 85%);
-	--block-title-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 90%);
-	--block-content-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 95%);
-	--block-content-bg-color-param: var(--accent-hue), calc(var(--saturation-theme) * 20%), 85%; /* for gradient button layer bg */
-	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 90%);
+	--text-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 85%);
+	--text-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 80%);
+	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 90%);
+	
+	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
+	--block-title-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 7.5%);
+	--block-content-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
+	--block-content-bg-color-param: var(--accent-hue), calc(var(--saturation-theme) * 20%), 10%; /* for gradient button layer bg */
+	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 15%);
 }
 
 :root[data-theme='1'] { /* more whitespace, less color */
@@ -146,7 +155,11 @@ and (min-width: 35em) {
 	--accent-hue: 220;
 	--saturation-theme: 0;
 	
+	--background-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 15%), 95%);
 	--block-title-bg-color: var(--block-content-bg-color);
+	--block-content-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 92.5%);
+	--block-content-bg-color-param: var(--accent-hue), calc(var(--saturation-theme) * 20%), 92.5%; /* for gradient button layer bg */
+	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 90%);
 	
 	
 	/* other color-related */
@@ -157,9 +170,9 @@ and (min-width: 35em) {
 	--theme-textinput-color: hsla(var(--accent-color-param), 0.1);
 	--theme-input-handle-color: var(--accent-color);
 	
-	--theme-padding: 2rem;
+	--content-padding: 2rem;
 	--block-padding: 0.25rem;
-	--block-title-padding: var(--theme-padding);
+	--block-title-padding: var(--content-padding);
 	--block-title-padding-bottom: var(--block-padding);
 	
 	
@@ -181,13 +194,10 @@ and (min-width: 35em) {
 	--theme-block-shadow: none;
 	--theme-block-shadow-hover: none;
 }
-
-:root[data-theme='1'][data-color-mode='light'] {
-	
-	--background-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 15%), 95%);
-	--block-title-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 92.5%);
-	--block-content-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 92.5%);
-	--block-content-bg-color-param: var(--accent-hue), calc(var(--saturation-theme) * 20%), 92.5%; /* for gradient button layer bg */
-	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 90%);
-	
+:root[data-theme='1'][data-color-mode='dark'] {
+	--background-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 15%), 5%);
+	--block-title-bg-color: var(--block-content-bg-color);
+	--block-content-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 8.5%);
+	--block-content-bg-color-param: var(--accent-hue), calc(var(--saturation-theme) * 20%), 8.5%; /* for gradient button layer bg */
+	--contentbox-bg-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 10%);
 }
