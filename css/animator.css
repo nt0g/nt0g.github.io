@@ -25,3 +25,6 @@
 	transition: transform var(--animation-duration), background-color var(--animation-duration-plus-fast);
 	transition-timing-function: var(--animation-interaction-interpolator);
 }
+.anim-pressed {
+	--animation-duration: 0ms;
+}

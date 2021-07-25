@@ -1,4 +1,4 @@
-let down = false;
+let pDown = false;
 
 function calculations(event) {
 	let bounds = event.target.getBoundingClientRect();
@@ -16,30 +16,44 @@ function calculations(event) {
 	root.style.setProperty('--xrot', yAng + 'deg');
 	root.style.setProperty('--zsca', zTes.toFixed(2));
 }
-function eventStart(event) {
+function eventDown(event) {
 	calculations(event);
-	down = true;
+	pDown = true;
 }
-function eventCont(event) {
-	if (down === true) {
-		calculations(event);
+function eventEnter(event) {
+	if (pDown === true) {
+		event.target.classList.add('anim-pressed');
 	}
 }
-function eventEnd(event) {
-	if (down === true) {
+function eventMove(event) {
+	if (pDown === true) {
+		calculations(event);
+		event.target.classList.add('anim-pressed');
+	}
+}
+function eventLeave(event) {
+	event.target.classList.remove('anim-pressed');
+}
+function eventUp(event) {
+	if (pDown === true) {
+		event.target.classList.remove('anim-pressed');
 		root.style.setProperty('--yrot', '0deg');
 		root.style.setProperty('--xrot', '0deg');
 		root.style.setProperty('--zsca', '1');
-		down = false;
+		pDown = false;
 	}
 }
 function startup() {
 	const cur =  document.querySelectorAll('.animated');
     let length = cur.length;
     for (index = 0; index < length; index++) {
-		cur[index].addEventListener('pointerdown', eventStart, false);
-		cur[index].addEventListener('pointermove', eventCont, false);
-		cur[index].addEventListener('pointerup', eventEnd, false);
+		cur[index].addEventListener('pointerdown', eventDown, false);
+		cur[index].addEventListener('pointerenter', eventEnter, false);
+		cur[index].addEventListener('pointermove', eventMove, false);
+		cur[index].addEventListener('pointerleave', eventLeave, false);
+		cur[index].addEventListener('pointerup', eventUp, false);
+		cur[index].addEventListener('pointercancel', eventUp, false);
 	}
 }
 document.addEventListener('DOMContentLoaded', startup);
+// 4.5 tetst
