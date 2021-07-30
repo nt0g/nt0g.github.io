@@ -8,365 +8,135 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jost&family=Rubik&display=swap');
 </style>
-<title>Сайты Ucoz.ru (я пошутил (не бейте))</title>
+<title>β</title>
 </head>
 
 <body>
 <script src='js/settingsload.js'></script>
-<header class="gheader" id="title">
-	<div class="headerbg bgbanner"></div>
-	<div class="headercontent">
-		<nav class="bar hidden-ent">
-			<button class="animated" onclick="window.location.href='#';">
-				<div class="content titlecontent"style="color: var(--accent-color-inactive)">Некоторые Определённые Штуки</div>
-			</button>
-		</nav>
-		
-		<nav class="bar">
-			<button class="animated" onclick="window.location.href='#one';">
-				<div class="content titlecontent">Раз</div>
-			</button>
-			<button class="animated" onclick="window.location.href='#two';">
-				<div class="content titlecontent">Два</div>
-			</button>
-			<button class="animated" onclick="window.location.href='#three';">
-				<div class="content titlecontent">Три</div>
-			</button>
-		</nav>
-		<nav class="spacer">
-		</nav>
-		<nav class="bar hidden-ent">
-			<form class="switch">
-			<input id="switchTheme" type="checkbox" class="swinput" onchange="themeCheckboxChange()" checked="false"/>
-			<label for="switchTheme" class="swlabel"></label>
-			</form>
-		</nav>
-		<nav class="bar hidden-ent">
-		<button class="animated">
-			<div class="content titlecontent" style="color: var(--accent-color-inactive)">3.97</div>
-		</button>
-		<button class="animated">
-			<div class="content titlecontent clock">
-				<div id="hours">⁞⁞⁞</div>
-				<div class="separator">:</div>
-				<div id="minutes">⁞⁞⁞</div>
-			</div>
-		</button>
-		</nav>
-		<nav class="hidden-menu-button-spacer">
-		</nav>
-	</div>
 
-</header>
-<div class="menu-wrap">
-	<input type="checkbox" id="menu-toggle-hidden">
-	<label for="menu-toggle-hidden" class="menu-toggle-label animated bgcontent">
-	<div class="labelcontent titlecontent">⚙</div>
-	</label>
-	<aside class="hidden-menu">
-		<div class="scroll-wrap">
-		<div class="menu-header">
-			<div class="content titlecontent">Настройки</div>
-		</div>
-		<div class="blockwrap">
-			<div class="block card bgtitle">
-			<div class="content titlecontent">Очистка ло<i>кал</i>ьного хранилища</div>
-			<div class="content textcontent bgcontent">
-				<form onsubmit="localStorage.clear();">
-				<p>Чтоб чисто было.</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<button type="submit" class="animated"><div class="content">Очистить локальное хранилище</div></button>
-				</div>
+<div class="wrapper">
+<div class="scroller">
+	<header class="header" id="head">
+		<div class="headercontent">
+			<nav class="bar">
+			<div class="content titlecontent" style="color: var(--accent-color-text)">Некоторые Штуки</div>
+			</nav>
+			<nav class="spacer"></nav>
+			<nav class="bar hidden-ent">
+				<form class="switch">
+				<input id="switchTheme" type="checkbox" class="swinput" onchange="themeCheckboxChange()" checked="false"/>
+				<label for="switchTheme" class="swlabel"></label>
 				</form>
-			</div>
-			</div>
+			</nav>
+			<nav class="bar hidden-ent">
+				<div class="content titlecontent clock">
+					<div id="hours">⁞⁞⁞</div>
+					<div class="separator">:</div>
+					<div id="minutes">⁞⁞⁞</div>
+			</button>
+			</nav>
+		</div>
+	</header>
 
-			<div class="block card bgtitle">
-			<div class="content titlecontent">Изменение анимации кнопок</div>
-			<div class="content textcontent bgcontent">
-				<label for="perspective">Изменение перспективы (в см):</label>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="perspective" value="5">
-				<button class="animated" onclick="setSetting(1,'perspective','--perspective','cm')"><div class="content">→</div></button>
-				</div><br />
-				<label for="3dscale">Изменение масштабов 3Д-шенья (меняйте и поймёте):</label>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="3dscale" value="1">
-				<button class="animated" onclick="setSetting(1,'3dscale','--3d-scale','')"><div class="content">→</div></button>
-				</div><br />
-				<label>Метод 3Д-вдавливания:</label>
-				<div class="content bar horiz-bar h-bar-border">
-				<button class="animated" onclick="setSetting(0,'method','--method','scale(0.975)')"><div class="content">Scale</div></button>
-				<button class="animated" onclick="setSetting(0,'method','--method','translateZ(-5px)')"><div class="content">TranslateZ</div></button>
-				<button class="animated" onclick="setSetting(0,'method','--method','translateZ(-5px) scale(var(--zsca))')"><div class="content">Оба</div></button>
-				<button class="animated" onclick="setSetting(0,'method','--method','0')"><div class="content">Нет</div></button>
-				</div><br />
-				<div class="content bar horiz-bar h-bar-border">
-				<button class="animated" style="width:100%;"><div class="content">Кнопка для проверки</div></button>
-				</div>
-			</div>
-			</div>
+	<div class="block">
+	<div class="content titlecontent">Штука 1</div>
+	<div class="content textcontent">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		In ipsum est, blandit at mauris ac, suscipit ultrices justo. 
+		Suspendisse tincidunt vel augue in dapibus. Etiam sit amet dignissim elit. 
+		Sed hendrerit consequat lorem, porttitor eleifend enim tempus pharetra. 
+		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+		Cras quis pharetra ante. Praesent bibendum sollicitudin nibh nec pharetra. <br /><br />
+		<div class="content bar horiz-bar">
+		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','0')">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">0</span>
+		</button>
+		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','50')">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">50</span>
+		</button>
+		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','100')">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">100</span>
+		</button>
+		</div>
+		<div class="content bar horiz-bar">
+		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','150')">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">150</span>
+		</button>
+		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','200')">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">200</span>
+		</button>
+		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','250')">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">250</span>
+		</button>
+		</div>
+		<div class="content bar horiz-bar">
+		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','300')">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">300</span>
+		</button>
+		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','350')">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">350</span>
+		</button>
+		</div><br /><br />
 
-			<div class="block card bgtitle">
-			<div class="content titlecontent">Изменение скорости анимаций</div>
-			<div class="content textcontent bgcontent">
-				<p>И ежу понятно.</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="duration" value="150">
-				<button class="animated" onclick="setSetting(1,'duration','--animation-duration','ms')"><div class="content">→</div></button>
-				<button class="animated" onclick="pulse()"><div class="content">▷</div></button>
-				<button class="animated"><div class="content"><div class="pulsar"></div></div></button>
-				</div>
-			</div>
-			</div>
+		<form onsubmit="localStorage.clear();">
+		<p>Чтоб чисто было.</p>
+		<div class="content bar horiz-bar h-bar-border">
+		<button type="submit" class="animated">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">
+			Сброс
+			</span>
+		</button>
+		</div>
+		</form>
+	</div>
+	</div>
 
-			<div class="block card bgtitle">
-			<div class="content titlecontent">Изменение визуальных штук</div>
-			<div class="content textcontent bgcontent">
-				<p>Ежу, опять же, понятно.</p>
-				<p>Ручное переключение темы:</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<button class="animated" onclick="setSetting(2,'theme','data-theme','0')"><div class="content">Тема 0</div></button>
-				<button class="animated" onclick="setSetting(2,'theme','data-theme','1')"><div class="content">Тема 1</div></button>
-				</div><br />
-				<p>Ручное переключение цвета:</p>
-
-				<div class="content bar horiz-bar h-bar-border">
-				<button class="animated" onclick="setSetting(2,'color','data-color-mode','light')"><div class="content">Светлая</div></button>
-				<button class="animated" onclick="setSetting(2,'color','data-color-mode','dark')"><div class="content">Тёмная</div></button>
-				</div><br />
-				<p>Изменение масштаба текста (в px):</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="bfont" value="16">
-				<button class="animated" onclick="setSetting(1,'bfont','--font-size','px')"><div class="content">→</div></button>
-				</div><br />
-				<p>Изменение ширины блоков (в rem):</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="bwidth" value="30">
-				<button class="animated" onclick="setSetting(1,'bwidth','--block-width','rem')"><div class="content">→</div></button>
-				</div><br />
-				<p>Изменение радиуса углов элементов (в rem):</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="bradius" value="0.25">
-				<button class="animated" onclick="setSetting(1,'bradius','--borderradius','rem')"><div class="content">→</div></button>
-				</div><br />
-				<p>Изменение радиуса углов блоков (в rem):</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="bblradius" value="0.25">
-				<button class="animated" onclick="setSetting(1,'bblradius','--block-borderradius','rem')"><div class="content">→</div></button>
-				</div><br />
-				<p>Изменение ширины границ (в px):</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="brdwidth" value="2">
-				<button class="animated" onclick="setSetting(1,'brdwidth','--borderwidth','px')"><div class="content">→</div></button>
-				</div><br />
-				
-				<form class="contentbox" onsubmit="setAccentColor(); return false;">
-				<input id="c-inp1" type="checkbox" class="collinput"/>
-				<label for="c-inp1" class="colllabel titlecontent animated" style="width: 100%; text-align: center;">Настройка оттенка</label>
-				<div id="c-div1" class="content">
-				<p>Оттенок:</p>
-				<div class="content bar rangebar">
-				<input type="range" class="colorRange" id="hue" min="0" max="360" value="220" step="1"><output class="content" id="huex" for="hue">220</output>
-				</div><br />
-				<div class="content bar horiz-bar">
-				<div class="colorprv accent-darker animated"></div>
-				<div class="colorprv accent-cl animated"></div>
-				<div class="colorprv accent-lighter animated"></div>
-				</div><br />
-				<p>Изменение радиуса «свечения» (в px):</p>
-				<div class="content bar horiz-bar h-bar-border">
-				<input type="text" id="glowrad" value="2">
-				<button class="animated" onclick="setSetting(1,'glowrad','--theme-glow-radius','px')"><div class="content">→</div></button>
-				</div><br />
-				<div class="content bar horiz-bar h-bar-border">
-				<button type="submit" class="animated gradient" style="width: 100%;"><div class="gradinside content gradcontent">Изменить цвет</div></button>
-				</div>
-				</div>
-				</form>
-			</div>
-			</div>
-			
-			<div class="block card bgtitle">
-			<input id="c-inp2" type="checkbox" class="collinput"/>
-			<label for="c-inp2" class="colllabel content titlecontent animated">Список Изменений Да</label>
-			<div id="c-div2" class="content textcontent bgcontent">
-			Версия 3.95
-				<ul>
-					<li>Большие штуки, <i>round three:</i></li>
-					<li>Полностью перелопачен принцип наложения тем (цвет, шрифт, прочее).</li>
-					<li>Прочие подкапотные штуки.</li>
-					<li>И т.д.</li>
-				</ul>
-			Версия 3.93
-				<ul>
-					<li>Большие штуки, <i>round two:</i></li>
-					<li>Скролл прикреплён к разделам.</li>
-					<li>Пытаемся в темы.</li>
-					<li>И т.д.</li>
-				</ul>
-			Версия 3.92
-				<ul>
-					<li>Фиксы, <i>round one:</i></li>
-					<li>Теперь должно корректно работать на малой ширине.</li>
-					<li>Флекс хедера флексит правильнее.</li>
-					<li>И т.д.</li>
-				</ul>
-			Версия 3.91
-				<ul>
-					<li>Наработки-наработочки из 3.90, <i>round one:</i></li>
-					<li>Цвета подстраиваются под акцентный (а-ля Monet).</li>
-					<li>Разделение на страницы <i>отвертано взад</i>.</li>
-					<li>Настройки и проч. в панели справа.</li>
-					<li>(atm многое сломано)</li>
-				</ul>
-			Версия 3.6
-				<ul>
-					<li>Сайт разделён на страницы (нужно ли?).</li>
-					<li>Мелочи.</li>
-				</ul>
-			Версия 3.5
-				<ul>
-					<li>Настройки сохраняются у клиента.</li>
-					<li>Кнопки исправно работают согласно ТЗ (надо же (ну почти (четвёртая переделка уже))).</li>
-				</ul>
-			Версия 3.3
-				<ul>
-					<li>Много разных штук</li>
-				</ul>
-			Версия 3.2
-				<ul>
-					<li>некоторые штуки</li>
-				</ul>
-			Версия 3.1.415926535897932384626433832…
-				<ul>
-					<li>тупые кнопки</li>
-				</ul>
-			Версия 3.1
-				<ul>
-					<li>Больше ре фак то рин га.</li>
-					<li>Элементы панели «объединяются» в общий стиль.</li>
-				</ul>
-			Версия 3, «Наш Ответ Твитору»
-				<ul>
-					<li>Новая (немного глючная и, возможно, более ресурсоёмкая) анимация нажатия кнопки.<br /><i>Also known as: 3Д кНоПаЧкИ!!</i></li>
-					<li>Теперь у нас есть проверка ширины!</li>
-					<li>Тёмная Тема (и анимация) включается автоматически</li>
-				</ul>
-			Версия 2
-				<ul>
-					<li>Зделан рефакторинг, теперь наследство должно распределяться правильно (наверно).</li>
-					<li>Добавлено еще несколько <s>абсолютно никому не нужных</s> классов (главным образом кнопки).</li>
-					<li>Зачем оно всё надо — тоже хороший вопрос.</li>
-					<li>Очень Секретная Кривая Тёмная Тема.</li>
-				</ul>
-			</div>
-			</div>
-
-			<div class="block card bgtitle">
-			<div class="content titlecontent">Notes To Self</div>
-			<div class="content textcontent bgcontent">
-				<ul>
-					<li>Разобраться с отступами (рядом с барами, например).</li>
-					<li><s>Кнопки в хедере и заголовках на второй теме.</s> (есть)</li>
-					<li><s>Изменение масштаба шрифтов.</s> (есть)</li>
-					<li><s>Переключатель тем.</s> (есть)</li>
-					<li>Удалить этот раздел.</li>
-				</ul>
-			</div>
-			</div>
-			
-			<div class="block card bgcontent animated" onclick="window.location.href='https://mit-license.org/';">
-				<div class="content textcontent">
-				Зроблено в 2021 роцi переважно в блокнотi.<br /> Licensed under <a href="https://mit-license.org/">the MIT License</a>.</div>
-			</div>
-	</div></div>
-	</aside>
-</div>
-</main>
-
-<div class="scroller gcontent">
-	<div class="scroll-block" id="one">
-		<div class="blockwrap">
-			<div class="block card bgtitle">
-			<div class="content titlecontent">Штука 1</div>
-			<div class="content textcontent bgcontent">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-				In ipsum est, blandit at mauris ac, suscipit ultrices justo. 
-				Suspendisse tincidunt vel augue in dapibus. Etiam sit amet dignissim elit. 
-				Sed hendrerit consequat lorem, porttitor eleifend enim tempus pharetra. 
-				Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-				Cras quis pharetra ante. Praesent bibendum sollicitudin nibh nec pharetra. <br /><br />
-				<div class="content bar horiz-bar h-bar-border">
-				<button class="animated"><div class="content">B1</div></button>
-				<button class="animated"><div class="content">B2</div></button>
-				<button class="animated"><div class="content">B3</div></button>
-				</div>
-				</div>
-			</div>
+	<div class="block">
+	<div class="content titlecontent">Штука 2</div>
+	<div class="content textcontent">
+		Vivamus tristique sapien eu enim facilisis auctor. 
+		Fusce mauris augue, porta vel quam nec, auctor tincidunt nisl. 
+		Pellentesque mi lacus, pulvinar in facilisis eu, pretium vitae augue. 
+		Aliquam nisi erat, accumsan ac vulputate et, maximus nec libero. 
+		Cras non imperdiet tellus, non blandit mi. Suspendisse id lobortis dolor. 
+		Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+		Phasellus pellentesque laoreet augue, in sagittis sapien bibendum nec. 
+		Donec id nulla id justo rhoncus semper sodales in eros. <br /><br />
 		</div>
 	</div>
 
-	<div class="scroll-block" id="two" style="background-image: url('images/pic2.jpg')">
-		<div class="blockwrap">
-			<div class="block card bgtitle">
-			<div class="content titlecontent">Штука 2</div>
-			<div class="content textcontent bgcontent">
-				Vivamus tristique sapien eu enim facilisis auctor. 
-				Fusce mauris augue, porta vel quam nec, auctor tincidunt nisl. 
-				Pellentesque mi lacus, pulvinar in facilisis eu, pretium vitae augue. 
-				Aliquam nisi erat, accumsan ac vulputate et, maximus nec libero. 
-				Cras non imperdiet tellus, non blandit mi. Suspendisse id lobortis dolor. 
-				Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-				Phasellus pellentesque laoreet augue, in sagittis sapien bibendum nec. 
-				Donec id nulla id justo rhoncus semper sodales in eros. <br /><br />
-				<div class="content bar horiz-bar h-bar-border">
-				<button class="animated"><div class="content">B1</div></button>
-				<button class="animated"><div class="content">B2</div></button>
-				<button class="animated"><div class="content">B3</div></button>
-				</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="scroll-block" id="three">
-		<div class="blockwrap">
-			<div class="block card bgtitle">
-			<div class="content titlecontent">Штука 3</div>
-			<div class="content textcontent bgcontent">
-				Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-				Phasellus faucibus ut mi in pulvinar. Morbi diam augue, convallis in elementum sed, lobortis ac nisi. 
-				Cras accumsan urna tempus lorem viverra sodales. Pellentesque quis augue a augue tempor facilisis. 
-				Sed eget nulla at dolor pharetra tincidunt ut vel nunc. Nulla facilisi. 
-				Integer tempus sapien in ligula ullamcorper, rutrum fringilla magna tempus. <br /><br />
-				<div class="content bar horiz-bar h-bar-border">
-				<button class="animated"><div class="content">B1</div></button>
-				<button class="animated"><div class="content">B2</div></button>
-				<button class="animated"><div class="content">B3</div></button>
-				</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="scroll-block" id="four">
-		<div class="blockwrap">
-			<div class="block card bgtitle">
-			<div class="content titlecontent">😢</div>
-			<div class="content imagecontent animated"><img class="image" src="images/bug.png" alt="Ещё лучше"></div>
-			<div class="bar actbar buttonbar">
-				<button class="animated" onclick="window.location.href='https://bugzilla.mozilla.org/show_bug.cgi?id=1680107';"><div class="content">Посмотреть на красоту →</div></button>
-			</div>
-			</div>
+	<div class="block">
+	<div class="content titlecontent">Штука 3</div>
+	<div class="content textcontent">
+		Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+		Phasellus faucibus ut mi in pulvinar. Morbi diam augue, convallis in elementum sed, lobortis ac nisi. 
+		Cras accumsan urna tempus lorem viverra sodales. Pellentesque quis augue a augue tempor facilisis. 
+		Sed eget nulla at dolor pharetra tincidunt ut vel nunc. Nulla facilisi. 
+		Integer tempus sapien in ligula ullamcorper, rutrum fringilla magna tempus. <br /><br />
 		</div>
 	</div>
 </div>
+</div>
 
-</main>
 <script src='js/settings.js'></script>
 <script src='js/theming.js'></script>
-<script src='js/animations.js'></script>
-<script src='js/buttons4.js'></script>
 </body>
 </html>

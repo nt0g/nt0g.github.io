@@ -1,15 +1,369 @@
 @charset "utf-8";
 @import url("vars.css");
-
-@import url("layout.css");
-@import url("content.css");
-@import url("gradients.css");
 @import url("../fonts/fonts.css");
 
-@import url("inputs.css");
-@import url("animator.css");
 
-@import url("header.css");
-@import url("hidden-menu.css");
-@import url("clock.css");
-@import url("pulsar.css");
+
+/*  media queries  */
+@media (min-width: 0em) {
+.scroller {
+	width: 100vw;
+}
+.block {
+	margin-left: 0rem;
+	margin-right: 0rem;
+}
+.header {
+	position: relative;
+	margin-top: 0;
+}
+.header .headercontent {
+	flex-flow: column wrap;
+	padding: 1rem;
+}
+.hidden-ent {
+	display: none;
+}
+}
+@media (min-width: 40em) {
+.block {
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+.header {
+	position: sticky;
+	margin-top: 2rem;
+}
+.header .headercontent {
+	flex-flow: row wrap;
+	padding-left: 4rem;
+	padding-right: 4rem;
+}
+.hidden-ent {
+	display: inherit;
+}
+}
+@media (min-width: 60em) {
+.scroller {
+	width: 50em;
+}
+}
+
+
+/*  common layout  */
+* {
+	scroll-behavior: smooth;
+}
+:focus {
+	outline-offset: calc(-1 * var(--borderwidth));
+}
+body {
+	margin: 0rem;
+	background: var(--background-color);
+}
+
+.test {
+	border: 1px solid red;
+}
+
+
+/*  block rules  */
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.block {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	
+	border-radius: var(--block-borderradius);
+	
+	background-color: var(--block-bg-color);
+	box-shadow: var(--theme-block-shadow);
+}
+.block:hover,
+.block:active,
+.block:focus {
+	background-color: var(--block-bg-color-hover);
+	box-shadow: var(--theme-block-shadow-hover);
+}
+
+
+/* header */
+.header {
+	width: 100%;
+	z-index: 5;
+	border-bottom: var(--theme-border);
+}
+
+.header .headercontent {
+	display: flex;
+	align-items: center;
+}
+
+.spacer {
+	flex-basis: 0rem;
+	flex-grow: 10;
+}
+
+
+/* content merging in a block */
+.block > * {
+	padding: 2rem;
+}
+.block > *:first-child:not(:only-child) {
+	padding-top: 2rem;
+	padding-bottom: 0.25rem;
+}
+.block > *:not(:first-child):not(:last-child):not(:only-child) {
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}
+.block > *:last-child:not(:only-child) {
+	padding-top: 0.25rem;
+	padding-bottom: 2rem;
+}
+
+/* content merging in a bar */
+.bar {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+.bar > * {	
+	border-radius: var(--borderradius);
+}
+.horiz-bar > *:first-child:not(:only-child) {
+	margin-right: 0rem;
+	
+	border-radius: var(--borderradius) 0rem 0rem var(--borderradius);
+}
+.horiz-bar > *:not(:first-child):not(:last-child):not(:only-child) {
+	margin-left: 0rem;
+	margin-right: 0rem;
+	
+	border-radius: 0rem;
+}
+.horiz-bar > *:last-child:not(:only-child) {
+	margin-left: 0rem;
+	
+	border-radius: 0rem var(--borderradius) var(--borderradius) 0rem;
+}
+
+
+/* specific bar type rules */
+.titlebar,
+.actbar {
+	padding: 0rem !important;
+}
+.titlebar {
+	--3d-scale: 0.5;
+}
+.actbar {
+	--3d-scale: 0.75;
+	flex-flow: row-reverse nowrap;
+}
+
+
+
+/* content */
+html {
+	font-size: var(--font-size);
+}
+.content {
+	color: var(--text-color);
+	border-radius: var(--block-borderradius);
+}
+
+button > .content {	
+	font-family: var(--font-button);
+	font-size: var(--font-size-button);
+	font-weight: var(--font-weight-button);
+	color: var(--background-color);
+}
+
+.titlecontent {
+	/*padding-top: var(--block-title-padding);
+	padding-bottom: 0.25rem;*/
+	
+	color: var(--text-color-darker);
+	
+	font-family: var(--font-head);
+	font-size: var(--font-size-head);
+	font-weight: var(--font-weight-head);
+    /*text-align: center;*/
+}
+
+.textcontent {
+	font-family: var(--font-content);
+	font-size: var(--font-size-content);
+	font-weight: var(--font-weight-content);
+	
+	hyphens: auto;
+}
+
+.imagecontent {
+	padding: 0rem !important;
+	height: auto;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.imagecontent > .image {
+	width: var(--block-width);
+	clip-path: inset(0rem round var(--block-borderradius));
+}
+
+
+/* https://www.joshwcomeau.com/animation/3d-button/ */
+.animated {
+	position: relative;
+	padding: 0;
+	
+	background: transparent;
+	border: none;
+	border-radius: var(--borderradius);
+	
+	cursor: pointer;
+}
+.shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	border-radius: inherit;
+	background: var(--accent-color-10);
+	transform: translateY(var(--borderwidth));
+}
+.edge {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	background-color: var(--accent-color-darker);
+}
+.front {
+	display: block;
+	position: relative;
+	padding: 0.5rem 1rem;
+	
+	border-radius: inherit;
+	background-color: var(--accent-color-lighter);
+	
+    will-change: transform;
+    transition-duration: var(--animation-duration-plus-slow);
+    transform: translateY(calc(-2 * var(--borderwidth)));
+}
+.animated:hover {
+	transition: filter;
+    transition-duration: var(--animation-duration-slow);
+	transition-timing-function: var(--animation-bounceback-interpolator);
+	filter: brightness(110%);
+}
+.animated:hover .front {
+    transition-duration: var(--animation-duration-slow);
+	transition-timing-function: var(--animation-bounceback-interpolator);
+	transform: translateY(calc(-2.5 * var(--borderwidth)));
+}
+.animated:hover .shadow {
+    transition-duration: var(--animation-duration-slow);
+	transition-timing-function: var(--animation-bounceback-interpolator);
+	transform: translateY(calc(1.5 * var(--borderwidth)));
+}
+.animated:active .front {
+    transition-duration: var(--animation-duration-plus-fast);
+	transition-timing-function: var(--animation-interaction-interpolator);
+	transform: translateY(calc(-1 * var(--borderwidth)));
+}
+.animated:active .shadow {
+    transition-duration: var(--animation-duration-plus-fast);
+	transform: translateY(calc(0.5 * var(--borderwidth)));
+}
+
+
+/* switch style checkbox */
+.switch {
+	position: relative;
+	margin: 1rem;
+	height: 100%;
+	
+	box-sizing: border-box;
+}
+.swinput {
+	display: none;
+}
+.swlabel {
+	display: block;
+	width: 2rem;
+	height: var(--adp-height);
+	
+	box-sizing: inherit;
+	color: transparent;
+	
+	border-radius: var(--borderradius);
+	user-select: none;
+	cursor: pointer;
+}
+.swlabel::before,
+.swlabel::after {
+	content: "";
+	display: block;
+	position: relative;
+	
+	box-sizing: inherit;
+	
+	border-radius: var(--borderradius);
+}
+.swlabel::before {
+	top: calc(50% -  0.5 * var(--borderwidth));
+	left: 0.5rem;
+	width: 1rem;
+	height: var(--borderwidth);
+	
+	background-color: var(--accent-color-inactive);
+}
+.swlabel::after {
+	top: calc(50% - (0.5em + var(--borderwidth)));
+	left: 0rem;
+	width: 1rem;
+	height: 1rem;
+	
+	background-color: var(--theme-input-handle-color);
+	border: var(--theme-border);
+	
+	box-shadow: var(--theme-glow);
+}
+.swinput:checked + .swlabel::before {
+	background-color: var(--accent-color);
+	box-shadow: var(--theme-glow);
+}
+.swinput:checked + .swlabel::after {
+	left: 1rem;
+}
+
+
+/* clock */
+@keyframes cpulse {
+	0% {opacity: 1;/* transform: scale(1)*/;}
+	25% {opacity: 0;/* transform: scale(0)*/;}
+	100% {opacity: 1;/* transform: scale(1)*/;}
+}
+
+.clock {
+	display: flex;
+	flex-flow: row wrap;
+}
+.clock > .separator {
+	animation: cpulse 1s var(--animation-interpolator) infinite;
+}
