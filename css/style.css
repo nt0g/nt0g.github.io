@@ -10,32 +10,29 @@
 	width: 100vw;
 }
 .block {
-	margin-left: 0rem;
-	margin-right: 0rem;
+	margin: 1rem 0rem 1rem 0rem;
 }
 .header {
 	position: relative;
-	margin-top: 0;
-	margin-bottom: 0;
-	flex-flow: column wrap;
-	padding: 1rem;
+	padding: 1rem 2rem 1rem 2rem;
+}
+label.switch {
+	margin: 0;
 }
 .hidden {
 	display: none;
 }
 }
-@media (min-width: 40em) {
+@media (min-width: 35em) {
 .block {
-	margin-left: 2rem;
-	margin-right: 2rem;
+	margin: 1rem 2rem 1rem 2rem;
 }
 .header {
 	position: sticky;
-	flex-flow: row wrap;
-	margin-top: 3rem;
-	padding-bottom: 1rem;
-	padding-left: 4rem;
-	padding-right: 4rem;
+	padding: 5rem 4rem 1rem 4rem;
+}
+label.switch {
+	margin: 0rem 1rem 0rem 1rem;
 }
 .hidden {
 	display: inherit;
@@ -54,7 +51,7 @@
 :root.animated .block,
 :root.animated .header {
 	transition-property: all;
-	transition-duration: var(--animation-duration-slow);
+	transition-duration: var(--animation-duration-plus-slow);
 	transition-timing-function: var(--animation-interpolator);
 }
 /*  common layout  */
@@ -81,8 +78,6 @@ body {
 }
 
 .block {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
 	
 	display: flex;
 	flex-flow: column nowrap;
@@ -103,6 +98,7 @@ body {
 /*  header  */
 .header {
 	display: flex;
+	flex-flow: row wrap;
 	align-items: center;
 	
 	border-bottom: var(--theme-border);
@@ -232,7 +228,7 @@ button > .content {
 	border-radius: var(--borderradius);
 	
 	cursor: pointer;
-    transform: translateY(calc(1 * var(--borderwidth)));
+    transform: translateY(0.1rem);
 }
 .shadow {
 	position: absolute;
@@ -243,7 +239,7 @@ button > .content {
 
 	border-radius: inherit;
 	background-color: var(--accent-color-10);
-	transform: translateY(var(--borderwidth));
+	transform: translateY(0.1rem);
 }
 .edge {
 	position: absolute;
@@ -264,7 +260,7 @@ button > .content {
 	
     will-change: transform;
     transition-duration: var(--animation-duration-slow);
-    transform: translateY(calc(-2 * var(--borderwidth)));
+    transform: translateY(-0.25rem);
 }
 .push-an:hover {
 	transition: filter;
@@ -275,21 +271,21 @@ button > .content {
 .push-an:hover .front {
     transition-duration: var(--animation-duration);
 	transition-timing-function: var(--animation-bounceback-interpolator);
-	transform: translateY(calc(-2.5 * var(--borderwidth)));
+	transform: translateY(-0.3rem);
 }
 .push-an:hover .shadow {
-    transition-duration: var(--animation-duration);
-	transition-timing-function: var(--animation-bounceback-interpolator);
-	transform: translateY(calc(1.5 * var(--borderwidth)));
+    /*transition-duration: var(--animation-duration);
+	transition-timing-function: var(--animation-bounceback-interpolator);*/
+	transform: translateY(0.15rem);
 }
 .push-an:active .front {
     transition-duration: var(--animation-duration-plus-fast);
 	transition-timing-function: var(--animation-interaction-interpolator);
-	transform: translateY(calc(-1 * var(--borderwidth)));
+	transform: translateY(-0.1rem);
 }
 .push-an:active .shadow {
-    transition-duration: var(--animation-duration-plus-fast);
-	transform: translateY(calc(0.5 * var(--borderwidth)));
+    /*transition-duration: var(--animation-duration-plus-fast);*/
+	transform: translateY(0.05rem);
 }
 
 
@@ -298,8 +294,6 @@ input.switch {
 	display: none;
 }
 label.switch {
-	margin-left: 1rem;
-	margin-right: 1rem;
 	opacity: 0.75;
 }
 label.switch > .front {

@@ -17,24 +17,20 @@
 <div class="wrapper">
 <div class="scroller">
 	<header class="header">
-		<nav>
 		<div class="content titlecontent" style="color: var(--accent-color-text)">Некоторые Штуки</div>
-		</nav>
 		<nav class="spacer"></nav>
+		<input id="switchTheme" type="checkbox" class="switch" onchange="themeCheckboxChange()" checked="false"/>
+		<label for="switchTheme" class="switch push-an">			
+		<span class="shadow"></span>
+		<span class="edge"></span>
+		<span class="front content"></span>
+		</label>
 		<nav class="hidden">
-			<input id="switchTheme" type="checkbox" class="switch" onchange="themeCheckboxChange()" checked="false"/>
-			<label for="switchTheme" class="switch push-an">			
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content"></span>
-			</label>
-		</nav>
-		<nav class="hidden">
-			<div class="content titlecontent clock">
-				<div id="hours">⁞⁞⁞</div>
-				<div class="separator">:</div>
-				<div id="minutes">⁞⁞⁞</div>
-			</div>
+		<div class="content titlecontent clock">
+			<div id="hours">⁞⁞⁞</div>
+			<div class="separator">:</div>
+			<div id="minutes">⁞⁞⁞</div>
+		</div>
 		</nav>
 	</header>
 
