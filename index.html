@@ -16,26 +16,26 @@
 
 <div class="wrapper">
 <div class="scroller">
-	<header class="header" id="head">
-		<div class="headercontent">
-			<nav class="bar">
-			<div class="content titlecontent" style="color: var(--accent-color-text)">Некоторые Штуки</div>
-			</nav>
-			<nav class="spacer"></nav>
-			<nav class="bar hidden-ent">
-				<form class="switch">
-				<input id="switchTheme" type="checkbox" class="swinput" onchange="themeCheckboxChange()" checked="false"/>
-				<label for="switchTheme" class="swlabel"></label>
-				</form>
-			</nav>
-			<nav class="bar hidden-ent">
-				<div class="content titlecontent clock">
-					<div id="hours">⁞⁞⁞</div>
-					<div class="separator">:</div>
-					<div id="minutes">⁞⁞⁞</div>
-			</button>
-			</nav>
-		</div>
+	<header class="header">
+		<nav>
+		<div class="content titlecontent" style="color: var(--accent-color-text)">Некоторые Штуки</div>
+		</nav>
+		<nav class="spacer"></nav>
+		<nav class="hidden">
+			<input id="switchTheme" type="checkbox" class="switch" onchange="themeCheckboxChange()" checked="false"/>
+			<label for="switchTheme" class="switch push-an">			
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content"></span>
+			</label>
+		</nav>
+		<nav class="hidden">
+			<div class="content titlecontent clock">
+				<div id="hours">⁞⁞⁞</div>
+				<div class="separator">:</div>
+				<div id="minutes">⁞⁞⁞</div>
+			</div>
+		</nav>
 	</header>
 
 	<div class="block">
@@ -47,47 +47,47 @@
 		Sed hendrerit consequat lorem, porttitor eleifend enim tempus pharetra. 
 		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
 		Cras quis pharetra ante. Praesent bibendum sollicitudin nibh nec pharetra. <br /><br />
-		<div class="content bar horiz-bar">
-		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','0')">
+		<div class="content bar">
+		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','0')">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">0</span>
 		</button>
-		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','50')">
+		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','50')">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">50</span>
 		</button>
-		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','100')">
+		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','100')">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">100</span>
 		</button>
 		</div>
-		<div class="content bar horiz-bar">
-		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','150')">
+		<div class="content bar">
+		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','150')">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">150</span>
 		</button>
-		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','200')">
+		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','200')">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">200</span>
 		</button>
-		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','250')">
+		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','250')">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">250</span>
 		</button>
 		</div>
-		<div class="content bar horiz-bar">
-		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','300')">
+		<div class="content bar">
+		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','300')">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">300</span>
 		</button>
-		<button class="animated" onclick="setSetting(0,'accent-hue','--accent-hue','350')">
+		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','350')">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">350</span>
@@ -97,7 +97,7 @@
 		<form onsubmit="localStorage.clear();">
 		<p>Чтоб чисто было.</p>
 		<div class="content bar horiz-bar h-bar-border">
-		<button type="submit" class="animated">
+		<button type="submit" class="push-an">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">

@@ -35,13 +35,8 @@ and (min-width: 35em) {
 	/*color: ;*/
 	background: var(--selection-color);
 }
-:root.animation,
-:root.animation *,
-:root.animation *:before,
-:root.animation *:after {
-	transition: all var(--animation-duration);
-	transition-timing-function: var(--animation-interpolator);
-}
+
+
 :root {
 	/* ThemeEngine2(tm) */
 	--hue: var(--accent-hue);
@@ -56,11 +51,11 @@ and (min-width: 35em) {
 	--block-bg-color: var(--background-color);
 	--block-bg-color-hover: hsl(var(--hue), calc(var(--saturation-theme) * 20%), 95%);
 	
-	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 50%), 60%);
-	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 50%), 60%, 0.1);
+	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 60%);
+	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 60%, 0.1);
 	--accent-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 40%);
-	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 80%), 60%);
-	--accent-color-text: hsl(var(--accent-hue), calc(var(--saturation-theme) * 50%), 60%);
+	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 60%), 60%);
+	--accent-color-text: hsl(var(--accent-hue), calc(var(--saturation-theme) * 60%), 60%);
 	--selection-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
 	
 	
@@ -81,15 +76,15 @@ and (min-width: 35em) {
 	
 	
 	/* border-related */
-	--theme-border: solid var(--borderwidth) var(--accent-color);
+	--theme-border: dotted var(--borderwidth) var(--accent-color);
 	
 	--borderwidth: 2px;
-	--borderradius: 0.25rem;
+	--borderradius: 0.5rem;
 	--block-borderradius: 1rem;
 	
 	--input-textcolor: var(--textcolor);
 	
-	--theme-block-shadow: none;
+	--theme-block-shadow: 0px 0px 0px hsla(0,0%,0%,0.1);
 	--theme-block-shadow-hover: 0px 15px 40px hsla(0,0%,0%,0.1);
 	--theme-block-shadow-double: 0px 10px 30px hsla(0,0%,0%,0.1);
 	
@@ -97,14 +92,14 @@ and (min-width: 35em) {
 	
 	
 	/* animation settings */
-	--animation-duration: 300ms;
+	--animation-duration: 150ms;
 	--animation-duration-plus-fast: calc(0.25 * var(--animation-duration));
 	--animation-duration-fast: calc(0.5 * var(--animation-duration));
 	--animation-duration-slow: calc(2.0 * var(--animation-duration));
 	--animation-duration-plus-slow: calc(4.0 * var(--animation-duration));
 	--animation-interpolator: cubic-bezier(.25,.1,0,1);
 	--animation-interaction-interpolator: cubic-bezier(0,.5,0,1);
-	--animation-bounceback-interpolator: cubic-bezier(0,.75,.5,1.5);
+	--animation-bounceback-interpolator: cubic-bezier(0,.75,.5,2.0);
 	
 	
 	/* touch targets size (probably?) */
@@ -114,10 +109,15 @@ and (min-width: 35em) {
 	/* ThemeEngine2(tm) */
 	--saturation-theme: 0.5;
 	
-	--text-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 85%);
-	--text-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 80%);
-	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 90%);
+	--text-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 80%);
+	--text-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 90%);
+	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 70%);
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
 	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 7.5%);
+	
+	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
+	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%, 0.1);
+	--accent-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 30%);
+	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 60%), 50%);
 }

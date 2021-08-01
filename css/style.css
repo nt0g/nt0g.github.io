@@ -16,12 +16,11 @@
 .header {
 	position: relative;
 	margin-top: 0;
-}
-.header .headercontent {
+	margin-bottom: 0;
 	flex-flow: column wrap;
 	padding: 1rem;
 }
-.hidden-ent {
+.hidden {
 	display: none;
 }
 }
@@ -32,14 +31,13 @@
 }
 .header {
 	position: sticky;
-	margin-top: 2rem;
-}
-.header .headercontent {
 	flex-flow: row wrap;
+	margin-top: 3rem;
+	padding-bottom: 1rem;
 	padding-left: 4rem;
 	padding-right: 4rem;
 }
-.hidden-ent {
+.hidden {
 	display: inherit;
 }
 }
@@ -50,6 +48,15 @@
 }
 
 
+/*    */
+:root.animated,
+:root.animated body,
+:root.animated .block,
+:root.animated .header {
+	transition-property: all;
+	transition-duration: var(--animation-duration-slow);
+	transition-timing-function: var(--animation-interpolator);
+}
 /*  common layout  */
 * {
 	scroll-behavior: smooth;
@@ -93,18 +100,14 @@ body {
 }
 
 
-/* header */
+/*  header  */
 .header {
-	width: 100%;
-	z-index: 5;
-	border-bottom: var(--theme-border);
-}
-
-.header .headercontent {
 	display: flex;
 	align-items: center;
+	
+	border-bottom: var(--theme-border);
+	z-index: 5;
 }
-
 .spacer {
 	flex-basis: 0rem;
 	flex-grow: 10;
@@ -138,20 +141,17 @@ body {
 .bar > * {	
 	border-radius: var(--borderradius);
 }
-.horiz-bar > *:first-child:not(:only-child) {
+.bar > *:first-child:not(:only-child) {
 	margin-right: 0rem;
-	
 	border-radius: var(--borderradius) 0rem 0rem var(--borderradius);
 }
-.horiz-bar > *:not(:first-child):not(:last-child):not(:only-child) {
+.bar > *:not(:first-child):not(:last-child):not(:only-child) {
 	margin-left: 0rem;
 	margin-right: 0rem;
-	
 	border-radius: 0rem;
 }
-.horiz-bar > *:last-child:not(:only-child) {
+.bar > *:last-child:not(:only-child) {
 	margin-left: 0rem;
-	
 	border-radius: 0rem var(--borderradius) var(--borderradius) 0rem;
 }
 
@@ -171,7 +171,7 @@ body {
 
 
 
-/* content */
+/*  content  */
 html {
 	font-size: var(--font-size);
 }
@@ -181,16 +181,16 @@ html {
 }
 
 button > .content {	
+	padding: 0.5rem 1rem;
+	
+	color: var(--background-color);
+	
 	font-family: var(--font-button);
 	font-size: var(--font-size-button);
 	font-weight: var(--font-weight-button);
-	color: var(--background-color);
 }
 
 .titlecontent {
-	/*padding-top: var(--block-title-padding);
-	padding-bottom: 0.25rem;*/
-	
 	color: var(--text-color-darker);
 	
 	font-family: var(--font-head);
@@ -222,8 +222,8 @@ button > .content {
 }
 
 
-/* https://www.joshwcomeau.com/animation/3d-button/ */
-.animated {
+/*  https://www.joshwcomeau.com/animation/3d-button/  */
+.push-an {
 	position: relative;
 	padding: 0;
 	
@@ -232,6 +232,7 @@ button > .content {
 	border-radius: var(--borderradius);
 	
 	cursor: pointer;
+    transform: translateY(calc(1 * var(--borderwidth)));
 }
 .shadow {
 	position: absolute;
@@ -241,7 +242,7 @@ button > .content {
 	height: 100%;
 
 	border-radius: inherit;
-	background: var(--accent-color-10);
+	background-color: var(--accent-color-10);
 	transform: translateY(var(--borderwidth));
 }
 .edge {
@@ -256,103 +257,85 @@ button > .content {
 .front {
 	display: block;
 	position: relative;
-	padding: 0.5rem 1rem;
+	padding: 0;
 	
 	border-radius: inherit;
 	background-color: var(--accent-color-lighter);
 	
     will-change: transform;
-    transition-duration: var(--animation-duration-plus-slow);
+    transition-duration: var(--animation-duration-slow);
     transform: translateY(calc(-2 * var(--borderwidth)));
 }
-.animated:hover {
+.push-an:hover {
 	transition: filter;
-    transition-duration: var(--animation-duration-slow);
+    transition-duration: var(--animation-duration);
 	transition-timing-function: var(--animation-bounceback-interpolator);
 	filter: brightness(110%);
 }
-.animated:hover .front {
-    transition-duration: var(--animation-duration-slow);
+.push-an:hover .front {
+    transition-duration: var(--animation-duration);
 	transition-timing-function: var(--animation-bounceback-interpolator);
 	transform: translateY(calc(-2.5 * var(--borderwidth)));
 }
-.animated:hover .shadow {
-    transition-duration: var(--animation-duration-slow);
+.push-an:hover .shadow {
+    transition-duration: var(--animation-duration);
 	transition-timing-function: var(--animation-bounceback-interpolator);
 	transform: translateY(calc(1.5 * var(--borderwidth)));
 }
-.animated:active .front {
+.push-an:active .front {
     transition-duration: var(--animation-duration-plus-fast);
 	transition-timing-function: var(--animation-interaction-interpolator);
 	transform: translateY(calc(-1 * var(--borderwidth)));
 }
-.animated:active .shadow {
+.push-an:active .shadow {
     transition-duration: var(--animation-duration-plus-fast);
 	transform: translateY(calc(0.5 * var(--borderwidth)));
 }
 
 
 /* switch style checkbox */
-.switch {
-	position: relative;
-	margin: 1rem;
-	height: 100%;
-	
-	box-sizing: border-box;
-}
-.swinput {
+input.switch {
 	display: none;
 }
-.swlabel {
-	display: block;
-	width: 2rem;
-	height: var(--adp-height);
-	
-	box-sizing: inherit;
-	color: transparent;
-	
-	border-radius: var(--borderradius);
-	user-select: none;
-	cursor: pointer;
+label.switch {
+	margin-left: 1rem;
+	margin-right: 1rem;
+	opacity: 0.75;
 }
-.swlabel::before,
-.swlabel::after {
-	content: "";
-	display: block;
-	position: relative;
-	
-	box-sizing: inherit;
-	
-	border-radius: var(--borderradius);
-}
-.swlabel::before {
-	top: calc(50% -  0.5 * var(--borderwidth));
-	left: 0.5rem;
-	width: 1rem;
-	height: var(--borderwidth);
-	
-	background-color: var(--accent-color-inactive);
-}
-.swlabel::after {
-	top: calc(50% - (0.5em + var(--borderwidth)));
-	left: 0rem;
+label.switch > .front {
+	display: flex;
+	justify-content: center;
 	width: 1rem;
 	height: 1rem;
-	
-	background-color: var(--theme-input-handle-color);
-	border: var(--theme-border);
-	
-	box-shadow: var(--theme-glow);
+	border: solid var(--borderwidth) var(--accent-color-10);
 }
-.swinput:checked + .swlabel::before {
-	background-color: var(--accent-color);
-	box-shadow: var(--theme-glow);
-}
-.swinput:checked + .swlabel::after {
-	left: 1rem;
+label.switch > .content {
+	padding: 0.25rem 0.5rem;
+	
+	color: var(--background-color);
+	
+	font-family: var(--font-button);
+	font-size: var(--font-size);
+	font-weight: var(--font-weight-head);
 }
 
-
+.switch:checked + label.switch > .front {
+    transform: translateY(calc(-1.5 * var(--borderwidth)));
+	background-color: var(--accent-color-darker);
+	border: solid var(--borderwidth) var(--accent-color);
+}
+.switch:checked + label.switch:active > .front {
+    transform: translateY(calc(-1 * var(--borderwidth)));
+}
+.switch:checked + label.switch > .content {
+	color: var(--accent-color-lighter);
+}/*
+label.switch > .front::after {
+	content: "◎";
+}
+.switch:checked + label.switch > .front::after {
+	content: "◉";
+}*/
 /* clock */
 @keyframes cpulse {
 	0% {opacity: 1;/* transform: scale(1)*/;}

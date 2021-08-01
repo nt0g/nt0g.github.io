@@ -41,7 +41,7 @@ function initCheckboxUpdate() {
 
 function initAnimatorTimer() {
 	window.setTimeout(function() {
-		document.documentElement.classList.add('animation')
+		document.documentElement.classList.add('animated')
 	}, 500)
 }
 
