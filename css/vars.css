@@ -15,15 +15,13 @@
 }
 }
 
-@media all 
-and (min-width: 0em) {
+@media (min-width: 0em) {
 :root {
 	--adp-height: 1.5rem;
 }
 }
 
-@media all 
-and (min-width: 35em) {
+@media (min-width: 35em) {
 :root {
 	--adp-height: 1rem;
 }
@@ -37,7 +35,8 @@ and (min-width: 35em) {
 }
 
 
-:root {
+:root,
+:root[data-color-mode='light'] {
 	/* ThemeEngine2(tm) */
 	--hue: var(--accent-hue);
 	--accent-hue: 220;
@@ -56,7 +55,7 @@ and (min-width: 35em) {
 	--accent-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 40%);
 	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 60%), 60%);
 	--accent-color-text: hsl(var(--accent-hue), calc(var(--saturation-theme) * 60%), 60%);
-	--selection-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
+	--selection-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 60%);
 	
 	
 	/* font-related */
@@ -64,8 +63,8 @@ and (min-width: 35em) {
 	--font-size: 18px;
 	--font-weight: 500;
 	
-	--font-head: HelveticaNeueCyr;
-	--font-content: HelveticaNeueCyr;
+	--font-head: Manrope, "sans-serif";
+	--font-content: Rubik, "sans-serif";
 	--font-button: Jost, "sans-serif";
 	--font-weight-head: 700;
 	--font-weight-content: 400;
@@ -104,7 +103,8 @@ and (min-width: 35em) {
 	/* touch targets size (probably?) */
 	--adp-height: 1rem;
 }
-:root[data-color-mode='dark'] {
+@media (prefers-color-scheme: dark) {
+:root {
 	/* ThemeEngine2(tm) */
 	--saturation-theme: 0.5;
 	
@@ -113,10 +113,35 @@ and (min-width: 35em) {
 	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 70%);
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
-	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 7.5%);
+	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
 	
 	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
 	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%, 0.1);
-	--accent-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 30%);
-	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 60%), 50%);
+	--accent-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 50%), 30%);
+	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 70%), 50%);
+		
+	
+	/* font-related */
+	/*--font-weight-content: 300;*/
+}
+}
+:root[data-color-mode='dark'] { /* should duplicate query vars */
+	/* ThemeEngine2(tm) */
+	--saturation-theme: 0.5;
+	
+	--text-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 80%);
+	--text-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 90%);
+	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 70%);
+	
+	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
+	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
+	
+	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
+	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%, 0.1);
+	--accent-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 50%), 30%);
+	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 70%), 50%);
+		
+	
+	/* font-related */
+	/*--font-weight-content: 300;*/
 }
