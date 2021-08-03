@@ -144,7 +144,8 @@ body {
 .bar > * {	
 	border-radius: var(--borderradius);
 }
-.bar > *:first-child:not(:only-child) {
+.bar > *:first-child:not(:only-child),
+.bar > input[type="checkbox"]:first-child + *:nth-child(2):not(:only-child) { /* ля костыль */
 	margin-right: 0rem;
 	border-radius: var(--borderradius) 0rem 0rem var(--borderradius);
 }
@@ -311,7 +312,7 @@ label.switch > .front {
 	justify-content: center;
 	width: 1rem;
 	height: 1rem;
-	border: solid var(--borderwidth) var(--accent-color-10);
+	/*border: solid var(--borderwidth) var(--accent-color-10);*/
 }
 label.switch > .content {
 	padding: 0.25rem 0.5rem;
@@ -322,17 +323,15 @@ label.switch > .content {
 	font-size: var(--font-size);
 	font-weight: var(--font-weight-head);
 }
-
+.switch:checked + label.switch {
+    filter: brightness(0.75) saturate(1.5);
+}
 .switch:checked + label.switch > .front {
     transform: translateY(calc(-1.5 * var(--borderwidth)));
-	background-color: var(--accent-color-darker);
-	border: solid var(--borderwidth) var(--accent-color);
+	/*border: solid var(--borderwidth) var(--accent-color);*/
 }
 .switch:checked + label.switch:active > .front {
     transform: translateY(calc(-1 * var(--borderwidth)));
-}
-.switch:checked + label.switch > .content {
-	color: var(--accent-color-lighter);
 }/*
 label.switch > .front::after {
 	content: "◎";

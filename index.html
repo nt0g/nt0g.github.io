@@ -19,12 +19,20 @@
 	<header class="header">
 		<div class="content titlecontent">Некоторые Штуки</div>
 		<nav class="spacer"></nav>
-		<input id="switchTheme" type="checkbox" class="switch" onchange="themeCheckboxChange()" checked="false"/>
-		<label for="switchTheme" class="switch push-an">			
+		<nav class="bar">
+		<input id="colorSwitch" type="checkbox" class="switch" onchange="checkboxChange('colorSwitch','data-dark-mode','(prefers-color-scheme: dark)')" checked="false"/>
+		<label for="colorSwitch" class="switch push-an">			
 		<span class="shadow"></span>
 		<span class="edge"></span>
 		<span class="front content"></span>
 		</label>
+		<input id="soundSwitch" type="checkbox" class="switch" onchange="checkboxChange('soundSwitch','data-mute',false)" checked="false"/>
+		<label for="soundSwitch" class="switch push-an">			
+		<span class="shadow"></span>
+		<span class="edge"></span>
+		<span class="front content"></span>
+		</label>
+		</nav>
 		<nav class="hidden">
 		<div class="content titlecontent clock">
 			<div id="hours">⁞⁞⁞</div>
@@ -133,6 +141,5 @@
 </div>
 
 <script src='js/settings.js'></script>
-<script src='js/theming.js'></script>
 </body>
 </html>
