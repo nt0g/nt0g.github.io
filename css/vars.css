@@ -70,8 +70,8 @@
 	--font-weight-head: 700;
 	--font-weight-content: 400;
 	--font-weight-button: 500;
-	--font-size-head: 1.5rem;
-	--font-size-content: 1rem;
+	--font-size-head: clamp(1.5rem, 0.0000rem + 3.3333vw, 2rem);
+	--font-size-content: clamp(1rem, 0.2500rem + 1.6667vw, 1.25rem);
 	--font-size-button: 1.25rem;
 	
 	
@@ -84,8 +84,8 @@
 	
 	--input-textcolor: var(--textcolor);
 	
-	--theme-block-shadow: 0px 0px 0px hsla(0,0%,0%,0.1);
-	--theme-block-shadow-hover: 0px 15px 40px hsla(0,0%,0%,0.1);
+	--theme-block-shadow: 0 0 0 hsla(0,0%,0%,0.1);
+	--theme-block-shadow-hover: 0 0.5rem 2rem hsla(0,0%,0%,0.1);
 	
 	--theme-outline: var(--borderwidth) solid var(--text-color);
 	
@@ -123,7 +123,9 @@
 		
 	
 	/* font-related */
-	/*--font-weight-content: 300;*/
+	/*--font-weight-head: 600;
+	--font-weight-content: 300;
+	--font-weight-button: 400;*/
 }
 }
 :root[data-dark-mode='true'] { /* should duplicate query vars */
@@ -144,5 +146,7 @@
 		
 	
 	/* font-related */
-	/*--font-weight-content: 300;*/
+	/*--font-weight-head: 600;
+	--font-weight-content: 300;
+	--font-weight-button: 400;*/
 }
