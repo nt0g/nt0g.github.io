@@ -4,6 +4,7 @@
 
 
 /*  media queries  */
+
 @media (min-width: 0em) {
 .scroller {
 	inline-size: 100vw;
@@ -301,6 +302,11 @@ header .titlecontent {
 }
 .raisable:hover .image .image-front {
 	transform: scale(1.1);
+}
+@media (prefers-reduced-motion) {
+.raisable:hover .image .image-front {
+	transform: none;
+}
 }
 .image .image-back {
 	position: absolute;

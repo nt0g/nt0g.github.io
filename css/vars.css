@@ -12,6 +12,10 @@
 :root {
 	--animation-duration: 0ms !important;
 	--3d-scale: 0 !important;
+	
+	--theme-block-shadow: none !important;
+	--theme-block-shadow-hover: none !important;
+	--theme-blur-filter: blur(0) opacity(0) !important;
 }
 }
 
