@@ -86,6 +86,7 @@
 	
 	--theme-block-shadow: 0 0 0 hsla(0,0%,0%,0.1);
 	--theme-block-shadow-hover: 0 0.5rem 2rem hsla(0,0%,0%,0.1);
+	--theme-blur-filter: blur(1rem) opacity(0.5);
 	
 	--theme-outline: var(--borderwidth) solid var(--text-color);
 	
@@ -126,6 +127,10 @@
 	/*--font-weight-head: 600;
 	--font-weight-content: 300;
 	--font-weight-button: 400;*/
+	
+	
+	/* border-related */
+	--theme-blur-filter: blur(1rem) opacity(0.1);
 }
 }
 :root[data-dark-mode='true'] { /* should duplicate query vars */
@@ -149,4 +154,8 @@
 	/*--font-weight-head: 600;
 	--font-weight-content: 300;
 	--font-weight-button: 400;*/
+	
+	
+	/* border-related */
+	--theme-blur-filter: blur(1rem) opacity(0.1);
 }
