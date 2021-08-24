@@ -84,6 +84,8 @@ header .titlecontent {
 }
 :focus {
 	outline-offset: calc(-1 * var(--borderwidth));
+	transition-duration: var(--animation-duration-fast);
+	transition-timing-function: var(--animation-bounceback-interpolator);
 }
 body {
 	margin: 0rem;
@@ -257,6 +259,45 @@ header .titlecontent {
 	justify-content: center;
 }
 
+kbd {
+	padding-inline: 0.5rem;
+	
+	color: var(--text-color);
+	background-color: var(--block-bg-color-hover);
+	
+	font-family: var(--font-button);
+	font-size: var(--font-size-button);
+	font-weight: var(--font-weight-content);
+	
+	border-radius: calc(0.5 * var(--borderradius));
+    border-block-end: solid var(--borderwidth) var(--accent-color-darker);
+}
+kbd:active,
+kbd:focus {
+	background-color: var(--bg-color-darker);
+}
+
+pre {
+	padding: 1rem;
+	
+	color: var(--text-color-lighter);
+	background-color: var(--bg-color-darker);
+	
+	font-family: var(--font-mono);
+	font-size: var(--font-size-mono);
+	font-weight: var(--font-weight-mono);
+	
+	border-radius: calc(0.5 * var(--borderradius));
+	border-block-end: solid var(--borderwidth) var(--accent-color-darker);
+}
+.hl-user {
+	color: var(--accent-color-text);
+	filter: hue-rotate(-90deg) brightness(0.75) contrast(150%);
+}
+.hl-dir {
+	color: var(--accent-color-text);
+	filter: hue-rotate(-45deg) brightness(0.75) contrast(150%);
+}
 
 /*  accepted image sizes  */
 .size-s {
@@ -418,9 +459,7 @@ header .titlecontent {
 	transform: translateY(0.05rem);
 }
 .push-an:focus {
-	
-	outline-offset: 0.25rem;
-	
+	outline-offset: var(--borderwidth);
 }
 
 /*  switch style checkbox  */
@@ -463,23 +502,7 @@ label.switch > .front::after {
 	content: "◉";
 }*/
 
-kbd {
-	padding-inline: 0.5rem;
-	
-	background-color: var(--block-bg-color-hover);
-	color: var(--text-color);
-	
-	font-family: var(--font-button);
-	font-size: var(--font-size-button);
-	font-weight: var(--font-weight-content);
-	
-	border-radius: calc(0.5 * var(--borderradius));
-    border-block-end: solid var(--borderwidth) var(--accent-color);
-}
-kbd:active,
-kbd:focus {
-	background-color: var(--block-bg-color);
-}
+
 /*  clock  */
 @keyframes cpulse {
 	0% {opacity: 1;/* transform: scale(1)*/;}

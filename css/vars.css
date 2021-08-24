@@ -48,9 +48,10 @@
 	
 	--text-color: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 15%);
 	--text-color-darker: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 10%);
-	--text-color-lighter: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 30%);
+	--text-color-lighter: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 20%);
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 90%);
+	--bg-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 85%);
 	--block-bg-color: var(--background-color);
 	--block-bg-color-hover: hsl(var(--hue), calc(var(--saturation-theme) * 20%), 95%);
 	
@@ -70,12 +71,15 @@
 	
 	--font-head: Manrope, "sans-serif";
 	--font-content: Rubik, "sans-serif";
+	--font-mono: JetBrains Mono, "monospace";
 	--font-button: Jost, "sans-serif";
 	--font-weight-head: 700;
 	--font-weight-content: 400;
+	--font-weight-mono: 400;
 	--font-weight-button: 500;
 	--font-size-head: clamp(1.5rem, 0.0000rem + 3.3333vw, 2rem);
 	--font-size-content: clamp(1rem, 0.2500rem + 1.6667vw, 1.25rem);
+	--font-size-mono: clamp(0.75rem, 0.0000rem + 1.6667vw, 1rem);
 	--font-size-button: 1.25rem;
 	
 	
@@ -120,11 +124,13 @@
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
 	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
+	--bg-color-darker: hsl(var(--hue), calc(var(--saturation-theme) * 30%), 2.5%);
 	
 	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
 	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%, 0.1);
 	--accent-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 50%), 30%);
 	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 70%), 50%);
+	--selection-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 30%);
 		
 	
 	/* font-related */
@@ -147,11 +153,13 @@
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
 	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
+	--bg-color-darker: hsl(var(--hue), calc(var(--saturation-theme) * 30%), 2.5%);
 	
 	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
 	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%, 0.1);
 	--accent-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 50%), 30%);
 	--accent-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 70%), 50%);
+	--selection-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 30%);
 		
 	
 	/* font-related */
