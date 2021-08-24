@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-
+/* https://mwichary.medium.com/dark-theme-in-a-day-3518dde2955a */
 /* media queries */
 @media (prefers-reduced-motion: no-preference) {
 :focus {
@@ -28,7 +28,7 @@
 }
 
 
-/* other variables*/
+/* other variables */
 ::selection {
 	/*color: ;*/
 	background: var(--selection-color);
@@ -44,7 +44,7 @@
 	
 	--text-color: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 15%);
 	--text-color-darker: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 10%);
-	--text-color-lighter: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 20%);
+	--text-color-lighter: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 30%);
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 90%);
 	--block-bg-color: var(--background-color);
@@ -111,7 +111,7 @@
 	
 	--text-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 80%);
 	--text-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 90%);
-	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 70%);
+	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 60%);
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
 	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
@@ -134,7 +134,7 @@
 	
 	--text-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 80%);
 	--text-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 90%);
-	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 70%);
+	--text-color-lighter: hsl(var(--accent-hue), calc(var(--saturation-theme) * 5%), 60%);
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
 	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);

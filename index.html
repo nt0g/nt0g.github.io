@@ -16,7 +16,7 @@
 
 <div class="wrapper">
 <div class="scroller">
-	<header class="header">
+	<header>
 		<div class="content titlecontent">Некоторые Штуки</div>
 		<nav class="spacer"></nav>
 		<nav class="bar">
@@ -41,10 +41,9 @@
 		</div>
 		</nav>
 	</header>
-	
 	<div class="block">
 	<div class="content imagecontent raisable">
-		<div class="image size-15">
+		<div class="image size-l">
 			<img class="image-back" src="images/1.png" alt="Травмай">
 			<div class="image-clipper">
 			<img class="image-front" src="images/1.png" alt="Травмай">
@@ -52,36 +51,20 @@
 		</div>
 		<div class="block image-info">
 			<div class="image-title content titlecontent">Заголовок слайда</div>
-			<div class="image-subtitle content textcontent">Подзаголовок слайда</div>
+			<div class="image-subtitle content textcontent">
+				<div class="content bar">
+				<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue',randomVal(360))">
+					<span class="shadow"></span>
+					<span class="edge"></span>
+					<span class="front content"><div class="icon masked arrow-down"></div></span>
+				</button>
+				<button class="push-an" onclick="">
+					<span class="shadow"></span>
+					<span class="edge"></span>
+					<span class="front content">GitHub</span>
+				</button>
+				</div>
 		</div>
-	</div>
-	
-	</div>
-	<div class="block">
-	<div class="content imagecontent raisable">
-		<div class="image size-15">
-			<img class="image-back" src="images/2.png" alt="Травмай">
-			<div class="image-clipper">
-			<img class="image-front" src="images/2.png" alt="Травмай">
-			</div>
-		</div>
-		<div class="block image-info">
-			<div class="image-title content titlecontent">Заголовок слайда</div>
-			<div class="image-subtitle content textcontent">Подзаголовок слайда</div>
-		</div>
-	</div>
-	</div>
-	<div class="block">
-	<div class="content imagecontent raisable">
-		<div class="image size-15">
-			<img class="image-back" src="images/3.png" alt="Травмай">
-			<div class="image-clipper">
-			<img class="image-front" src="images/3.png" alt="Травмай">
-			</div>
-		</div>
-		<div class="block image-info">
-			<div class="image-title content titlecontent">Заголовок слайда</div>
-			<div class="image-subtitle content textcontent">Подзаголовок слайда</div>
 		</div>
 	</div>
 	</div>
@@ -96,68 +79,24 @@
 		Sed hendrerit consequat lorem, porttitor eleifend enim tempus pharetra. 
 		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
 		Cras quis pharetra ante. Praesent bibendum sollicitudin nibh nec pharetra. <br /><br />
-		<div class="content bar">
-		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','0')">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">0</span>
-		</button>
-		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','50')">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">50</span>
-		</button>
-		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','100')">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">100</span>
-		</button>
-		</div>
-		<div class="content bar">
-		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','150')">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">150</span>
-		</button>
-		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','200')">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">200</span>
-		</button>
-		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','250')">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">250</span>
-		</button>
-		</div>
-		<div class="content bar">
-		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','300')">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">300</span>
-		</button>
-		<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue','350')">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">350</span>
-		</button>
-		</div><br /><br />
-
-		<form onsubmit="localStorage.clear();">
-		<p>Чтоб чисто было.</p>
-		<div class="content bar horiz-bar h-bar-border">
-		<button type="submit" class="push-an">
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<span class="front content">
-			Сброс
-			</span>
-		</button>
-		</div>
-		</form>
 	</div>
 	</div>
-
+	
+	<div class="block">
+	<div class="content imagecontent raisable">
+		<div class="image size-l">
+			<img class="image-back" src="images/2.png" alt="Травмай">
+			<div class="image-clipper">
+			<img class="image-front" src="images/2.png" alt="Травмай">
+			</div>
+		</div>
+		<div class="block image-info">
+			<div class="image-title content titlecontent">Заголовок слайда</div>
+			<div class="image-subtitle content textcontent">Подзаголовок слайда</div>
+		</div>
+	</div>
+	</div>
+	
 	<div class="block raised">
 	<div class="content titlecontent">Штука 2</div>
 	<div class="content textcontent">
@@ -169,6 +108,21 @@
 		Interdum et malesuada fames ac ante ipsum primis in faucibus. 
 		Phasellus pellentesque laoreet augue, in sagittis sapien bibendum nec. 
 		Donec id nulla id justo rhoncus semper sodales in eros. <br /><br />
+	</div>
+	</div>
+	
+	<div class="block">
+	<div class="content imagecontent raisable">
+		<div class="image size-l">
+			<img class="image-back" src="images/3.png" alt="Травмай">
+			<div class="image-clipper">
+			<img class="image-front" src="images/3.png" alt="Травмай">
+			</div>
+		</div>
+		<div class="block image-info">
+			<div class="image-title content titlecontent">Заголовок слайда</div>
+			<div class="image-subtitle content textcontent">Подзаголовок слайда</div>
+		</div>
 	</div>
 	</div>
 
@@ -193,8 +147,25 @@
 		Vivamus vel eleifend orci. 
 		Sed molestie lorem et mi semper feugiat. 
 		Vestibulum eleifend leo sed lacinia consectetur. <br /><br />
+
+		<form onsubmit="localStorage.clear();">
+		<p>Чтоб чисто было.</p>
+		<div class="content bar horiz-bar h-bar-border">
+		<button type="submit" class="push-an">
+			<span class="shadow"></span>
+			<span class="edge"></span>
+			<span class="front content">
+			Сброс
+			</span>
+		</button>
+		</div>
+		</form>
 	</div>
 	</div>
+	
+	<footer>
+	<div class="content textcontent">Licensed under <a href="https://mit-license.org/">the MIT License</a>.</div>
+	</footer>
 </div>
 </div>
 
