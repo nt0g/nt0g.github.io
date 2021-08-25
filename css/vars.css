@@ -51,7 +51,7 @@
 	--text-color-lighter: hsl(var(--hue), calc(var(--saturation-theme) * 5%), 20%);
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 90%);
-	--bg-color-darker: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 85%);
+	--bg-color-accented: hsl(var(--accent-hue), calc(var(--saturation-theme) * 20%), 85%);
 	--block-bg-color: var(--background-color);
 	--block-bg-color-hover: hsl(var(--hue), calc(var(--saturation-theme) * 20%), 95%);
 	
@@ -96,8 +96,6 @@
 	--theme-block-shadow-hover: 0 0.5rem 2rem hsla(0,0%,0%,0.1);
 	--theme-blur-filter: blur(1rem) opacity(0.5);
 	
-	--theme-outline: var(--borderwidth) solid var(--text-color);
-	
 	
 	/* animation settings */
 	--animation-duration: 150ms;
@@ -124,7 +122,7 @@
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
 	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
-	--bg-color-darker: hsl(var(--hue), calc(var(--saturation-theme) * 30%), 2.5%);
+	--bg-color-accented: hsl(var(--hue), calc(var(--saturation-theme) * 30%), 10%);
 	
 	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
 	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%, 0.1);
@@ -153,7 +151,7 @@
 	
 	--background-color: hsl(var(--hue), calc(var(--saturation-theme) * 15%), 5%);
 	--block-bg-color-hover: hsl(var(--accent-hue), calc(var(--saturation-theme) * 10%), 10%);
-	--bg-color-darker: hsl(var(--hue), calc(var(--saturation-theme) * 30%), 2.5%);
+	--bg-color-accented: hsl(var(--hue), calc(var(--saturation-theme) * 30%), 7.5%);
 	
 	--accent-color: hsl(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%);
 	--accent-color-10: hsla(var(--accent-hue), calc(var(--saturation-theme) * 40%), 50%, 0.1);
