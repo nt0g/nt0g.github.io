@@ -16,7 +16,6 @@
 	text-align: center;
 }
 header {
-	position: relative;
 	padding: 1rem 2rem 1rem 2rem;
 }
 footer {
@@ -34,9 +33,12 @@ label.switch {
 .hidden {
 	display: none;
 }
+.gallery-clipper {
+	gap: 1rem;
 }
 .imagecontent {
 	flex-flow: column wrap;
+}
 }
 @media (min-width: 35em) {
 .block {
@@ -46,7 +48,6 @@ label.switch {
 	text-align: left;
 }
 header {
-	position: sticky;
 	padding: 5rem 4rem 1rem 4rem;
 }
 footer {
@@ -64,6 +65,9 @@ label.switch {
 .imagecontent {
 	flex-flow: row wrap;
 }
+.gallery-clipper {
+	gap: 1rem;
+}
 }
 @media (min-width: 60em) {
 .scroller {
@@ -71,6 +75,9 @@ label.switch {
 }
 header .titlecontent {
 	font-size: calc(1.25 * var(--font-size-head));
+}
+.gallery-clipper {
+	gap: 2rem;
 }
 }
 
@@ -109,7 +116,6 @@ body {
 	display: flex;
 	justify-content: center;
 }
-
 .block {
 	
 	display: flex;
@@ -156,7 +162,11 @@ footer {
 	flex-basis: 0rem;
 	flex-grow: 10;
 }
-
+.sticky {
+	position: sticky;
+	inset-block-start: 0;
+	background-color: var(--background-color);
+}
 
 /*  content merging in a block  */
 .block > * {
@@ -325,7 +335,7 @@ pre {
 	
 	border-radius: calc(0.625 * var(--block-borderradius));
 }
-.size-m.image > .image-clipper {
+.image-clipper {
 	clip-path: inset(0 round calc(0.625 * var(--block-borderradius)));
 }
 .size-l {
@@ -337,6 +347,24 @@ pre {
 .size-l.image > .image-clipper {
 	clip-path: inset(0 round calc(0.75 * var(--block-borderradius)));
 }
+.gallery-clipper {
+	clip-path: inset(0 round calc(0.5 * var(--block-borderradius)));
+	display: flex;
+	flex-flow: row nowrap;
+	overflow: auto;
+	scrollbar-width: none;
+	scroll-snap-type: x mandatory;
+}
+.gallery-clipper::-webkit-scrollbar {
+  display: none;
+}
+.gallery-item {
+	max-inline-size: 80%;
+	max-block-size: 100%;
+	border-radius: calc(0.5 * var(--block-borderradius));
+	scroll-snap-align: center;
+}
+
 .image {
 	position: relative;
 }
@@ -354,7 +382,7 @@ pre {
 }
 .image .image-front {
 }
-.raisable:hover .image .image-front {
+.raisable:hover .image:not(.size-wide) .image-front {
 	transform: scale(1.1);
 }
 @media (prefers-reduced-motion) {
@@ -381,6 +409,9 @@ pre {
 	block-size: var(--font-size-content);
 	inline-size: var(--font-size-content);
 }
+.inactive {
+	opacity: 50%;
+}
 .front .icon {
 	block-size: var(--font-size-button);
 	inline-size: var(--font-size-button);
@@ -397,10 +428,9 @@ pre {
 }
 
 /*  icons  */
-.arrow-down {
+.arrow {
 	--mask-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath d='M5.39,31.77c-1.31-1.31-1.31-3.41,0-4.71c0.65-0.65,1.5-0.98,2.36-0.98s1.7,0.33,2.36,0.98l11.57,11.57V3.34C21.67,1.5,23.16,0,25.01,0c1.84,0,3.34,1.49,3.34,3.34v35.29L39.9,27.05c1.31-1.31,3.41-1.31,4.71,0c1.31,1.31,1.31,3.41,0,4.71L27.36,49.02C26.73,49.64,25.89,50,25,50c-0.89,0-1.73-0.35-2.36-0.98L5.39,31.77z' /%3E%3C/svg%3E");
 }
-
 
 /*  https://www.joshwcomeau.com/animation/3d-button/  */
 .push-an {
@@ -412,6 +442,8 @@ pre {
 	border-radius: var(--borderradius);
 	
 	cursor: pointer;
+    transition-duration: var(--animation-duration-slow);
+	transition-timing-function: var(--animation-interpolator);
     transform: translateY(0.2rem);
 }
 .shadow {
@@ -447,9 +479,8 @@ pre {
     transform: translateY(-0.25rem);
 }
 .push-an:hover {
-	transition: filter;
-    transition-duration: var(--animation-duration);
-	transition-timing-function: var(--animation-bounceback-interpolator);
+    transition-duration: var(--animation-duration-slow);
+	transition-timing-function: var(--animation-interaction-interpolator);
 	filter: brightness(110%);
 }
 .push-an:hover .front {
@@ -458,8 +489,8 @@ pre {
 	transform: translateY(-0.3rem);
 }
 .push-an:hover .shadow {
-    /*transition-duration: var(--animation-duration);
-	transition-timing-function: var(--animation-bounceback-interpolator);*/
+    transition-duration: var(--animation-duration);
+	transition-timing-function: var(--animation-bounceback-interpolator);
 	transform: translateY(0.15rem);
 }
 .push-an:active .front {
@@ -468,7 +499,7 @@ pre {
 	transform: translateY(-0.1rem);
 }
 .push-an:active .shadow {
-    /*transition-duration: var(--animation-duration-plus-fast);*/
+    transition-duration: var(--animation-duration-plus-fast);
 	transform: translateY(0.05rem);
 }
 .push-an:focus {
@@ -525,8 +556,8 @@ label.switch > .front::after {
 }*/
 
 
-/*  clock  */
-@keyframes cpulse {
+/*  animations  */
+@keyframes blinker {
 	0% {opacity: 1;/* transform: scale(1)*/;}
 	25% {opacity: 0;/* transform: scale(0)*/;}
 	100% {opacity: 1;/* transform: scale(1)*/;}
@@ -537,5 +568,9 @@ label.switch > .front::after {
 	flex-flow: row wrap;
 }
 .clock > .separator {
-	animation: cpulse 1s var(--animation-interpolator) infinite;
+	animation: blinker 1s var(--animation-interpolator) infinite 
+}
+
+.blinker {
+	animation: blinker 1s var(--animation-interpolator) infinite reverse;
 }

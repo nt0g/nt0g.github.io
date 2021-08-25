@@ -58,9 +58,3 @@ function checkboxChange(id,name,query) {
 		if (muted === false) new Audio(audioClickOff).play();
 	}
 }
-
-function randomVal(value) {
-	let rnd = Math.round(Math.random() * value);
-//	console.log(rnd);
-	return rnd;
-}
