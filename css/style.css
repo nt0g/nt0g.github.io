@@ -12,6 +12,17 @@
 .block {
 	margin: 1rem 0rem 1rem 0rem;
 }
+.block > .gallery {
+	padding-inline: 0.5rem;
+	border-radius: 0;
+}
+.gallery-clipper {
+	clip-path: inset(0 round calc(0.25 * var(--block-borderradius)));
+	gap: 0.5rem;
+}
+.gallery-item {
+	border-radius: calc(0.25 * var(--block-borderradius));
+}
 .content > .block > *:not(:only-child) { /*  */
 	text-align: center;
 }
@@ -33,16 +44,25 @@ label.switch {
 .hidden {
 	display: none;
 }
-.gallery-clipper {
-	gap: 1rem;
-}
 .imagecontent {
 	flex-flow: column wrap;
+	justify-content: center;
 }
 }
 @media (min-width: 35em) {
 .block {
 	margin: 1rem 2rem 1rem 2rem;
+}
+.block > .gallery {
+	padding: 1rem;
+	border-radius: var(--block-borderradius);
+}
+.gallery-clipper {
+	clip-path: inset(0 round calc(0.6 * var(--block-borderradius)));
+	gap: 1rem;
+}
+.gallery-item {
+	border-radius: calc(0.6 * var(--block-borderradius));
 }
 .content > .block > *:not(:only-child) { /*  */
 	text-align: left;
@@ -64,25 +84,35 @@ label.switch {
 }
 .imagecontent {
 	flex-flow: row wrap;
-}
-.gallery-clipper {
-	gap: 1rem;
+	justify-content: space-between;
 }
 }
 @media (min-width: 60em) {
 .scroller {
 	inline-size: 50em;
 }
+.block > .gallery {
+	padding: 2rem;
+}
+.gallery-clipper {
+	clip-path: inset(0 round calc(0.5 * var(--block-borderradius)));
+	gap: 1.5rem;
+}
+.gallery-item {
+	border-radius: calc(0.5 * var(--block-borderradius));
+}
 header .titlecontent {
 	font-size: calc(1.25 * var(--font-size-head));
 }
-.gallery-clipper {
-	gap: 2rem;
-}
 }
 
 
-/*    */
+/*  AnImAtIoNs!  */
+@media (prefers-reduced-motion: no-preference) {
+:focus-visible {
+	transition-duration: var(--animation-duration-fast);
+	transition-timing-function: var(--animation-bounceback-interpolator);
+}
 :root.animated,
 :root.animated *:not(button),
 :root.animated *:not(button):before,
@@ -91,15 +121,61 @@ header .titlecontent {
 	transition-duration: var(--animation-duration-plus-slow);
 	transition-timing-function: var(--animation-interpolator);
 }
-/*  common layout  */
 * {
 	scroll-behavior: smooth;
 }
-/*:focus {
-	outline-offset: calc(-1 * var(--borderwidth));
+.raisable:hover .image:not(.size-wide) .image-front {
+	transform: scale(1.1);
+}
+.image .image-back {
+	filter: var(--theme-blur-filter);
+	transform: translateY(0.5rem);
+}
+.raisable:hover .image .image-back {
+	filter: blur(0) opacity(0);
+}
+.push-an {
+    transition-duration: var(--animation-duration-slow);
+	transition-timing-function: var(--animation-interpolator);
+}
+.front {
+    transition-duration: var(--animation-duration-slow);
+}
+.push-an:hover {
+    transition-duration: var(--animation-duration-slow);
+	transition-timing-function: var(--animation-interaction-interpolator);
+}
+.push-an:hover .front {
+    transition-duration: var(--animation-duration);
+	transition-timing-function: var(--animation-bounceback-interpolator);
+}
+.push-an:hover .shadow {
+    transition-duration: var(--animation-duration);
+	transition-timing-function: var(--animation-bounceback-interpolator);
+}
+.push-an:active .front {
+    transition-duration: var(--animation-duration-plus-fast);
+	transition-timing-function: var(--animation-interaction-interpolator);
+}
+.push-an:active .shadow {
+    transition-duration: var(--animation-duration-plus-fast);
+}
+input.switch:focus-visible + label.switch > .front,
+.push-an:focus-visible > .front {
 	transition-duration: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-bounceback-interpolator);
-}*/
+}
+.clock > .separator {
+	animation: blinker 1s var(--animation-interpolator) infinite 
+}
+
+.blinker {
+	animation: blinker 1s var(--animation-interpolator) infinite reverse;
+}
+}
+
+
+/*  common layout  */
 body {
 	margin: 0rem;
 	background: var(--background-color);
@@ -272,11 +348,8 @@ header .titlecontent {
 }
 
 .imagecontent {
-	/*padding-inline-start: 0rem;*/
-	
 	display: flex;
 	align-items: center;
-	justify-content: center;
 }
 
 kbd {
@@ -348,10 +421,10 @@ pre {
 	clip-path: inset(0 round calc(0.75 * var(--block-borderradius)));
 }
 .gallery-clipper {
-	clip-path: inset(0 round calc(0.5 * var(--block-borderradius)));
 	display: flex;
 	flex-flow: row nowrap;
 	overflow: auto;
+	
 	scrollbar-width: none;
 	scroll-snap-type: x mandatory;
 }
@@ -361,7 +434,7 @@ pre {
 .gallery-item {
 	max-inline-size: 80%;
 	max-block-size: 100%;
-	border-radius: calc(0.5 * var(--block-borderradius));
+	
 	scroll-snap-align: center;
 }
 
@@ -380,27 +453,12 @@ pre {
 	
 	border-radius: inherit;
 }
-.image .image-front {
-}
-.raisable:hover .image:not(.size-wide) .image-front {
-	transform: scale(1.1);
-}
-@media (prefers-reduced-motion) {
-.raisable:hover .image .image-front {
-	transform: none;
-}
-}
 .image .image-back {
 	position: absolute;
 	inset-block-start: 0;
 	inset-inline-start: 0;
-	
-	filter: var(--theme-blur-filter);
-	transform: translateY(0.5rem);
 }
-.raisable:hover .image .image-back {
-	filter: blur(0) opacity(0);
-}
+
 
 /*  icon appearance  */
 .icon {
@@ -442,8 +500,6 @@ pre {
 	border-radius: var(--borderradius);
 	
 	cursor: pointer;
-    transition-duration: var(--animation-duration-slow);
-	transition-timing-function: var(--animation-interpolator);
     transform: translateY(0.2rem);
 }
 .shadow {
@@ -474,32 +530,21 @@ pre {
 	border-radius: inherit;
 	background-color: var(--accent-color-lighter);
 	
-    will-change: transform;
-    transition-duration: var(--animation-duration-slow);
     transform: translateY(-0.25rem);
 }
 .push-an:hover {
-    transition-duration: var(--animation-duration-slow);
-	transition-timing-function: var(--animation-interaction-interpolator);
 	filter: brightness(110%);
 }
 .push-an:hover .front {
-    transition-duration: var(--animation-duration);
-	transition-timing-function: var(--animation-bounceback-interpolator);
 	transform: translateY(-0.3rem);
 }
 .push-an:hover .shadow {
-    transition-duration: var(--animation-duration);
-	transition-timing-function: var(--animation-bounceback-interpolator);
 	transform: translateY(0.15rem);
 }
 .push-an:active .front {
-    transition-duration: var(--animation-duration-plus-fast);
-	transition-timing-function: var(--animation-interaction-interpolator);
 	transform: translateY(-0.1rem);
 }
 .push-an:active .shadow {
-    transition-duration: var(--animation-duration-plus-fast);
 	transform: translateY(0.05rem);
 }
 .push-an:focus {
@@ -516,8 +561,6 @@ input.switch:focus-visible + label.switch > .front,
 .push-an:focus-visible > .front {
 	outline: solid calc(1.5 * var(--borderwidth)) var(--background-color);
 	outline-offset: calc(-3 * var(--borderwidth));
-	transition-duration: var(--animation-duration-fast);
-	transition-timing-function: var(--animation-bounceback-interpolator);
 }
 label.switch {
 	/*opacity: 0.75;*/
@@ -566,11 +609,4 @@ label.switch > .front::after {
 .clock {
 	display: flex;
 	flex-flow: row wrap;
-}
-.clock > .separator {
-	animation: blinker 1s var(--animation-interpolator) infinite 
-}
-
-.blinker {
-	animation: blinker 1s var(--animation-interpolator) infinite reverse;
 }

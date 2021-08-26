@@ -2,29 +2,11 @@
 
 /* https://mwichary.medium.com/dark-theme-in-a-day-3518dde2955a */
 /* media queries */
-@media (prefers-reduced-motion: no-preference) {
-:focus {
-	transition: outline-offset var(--animation-duration);
-	transition-timing-function: var(--animation-interpolator);
-  }
-}
-@media (prefers-reduced-motion) {
-:root {
-	--animation-duration: 0ms !important;
-	--3d-scale: 0 !important;
-	
-	--theme-block-shadow: none !important;
-	--theme-block-shadow-hover: none !important;
-	--theme-blur-filter: blur(0) opacity(0) !important;
-}
-}
-
 @media (min-width: 0em) {
 :root {
 	--adp-height: 1.5rem;
 }
 }
-
 @media (min-width: 35em) {
 :root {
 	--adp-height: 1rem;
