@@ -351,7 +351,19 @@ header .titlecontent {
 	display: flex;
 	align-items: center;
 }
-
+a {
+	display: inline-block;
+	
+	color: var(--accent-color-text);
+	text-decoration: underline var(--accent-color-text) solid;
+	text-underline-offset: calc(2 * var(--borderwidth));
+	text-decoration-thickness: var(--borderwidth);
+	
+	border-radius: calc(0.5 * var(--borderradius));
+}
+a:hover {
+	background-color: var(--bg-color-accented);
+}
 kbd {
 	padding-inline: 0.5rem;
 	
@@ -481,9 +493,7 @@ pre {
 	mask-image: var(--mask-svg);
 	-webkit-mask-image: var(--mask-svg);
 }
-.front .masked {
-	background-color: var(--background-color);
-}
+
 
 /*  icons  */
 .arrow {
@@ -502,6 +512,16 @@ pre {
 	cursor: pointer;
     transform: translateY(0.2rem);
 }
+.push-an:hover {
+	filter: brightness(110%);
+}
+.push-an:active {
+	filter: brightness(90%);
+}
+.push-an:focus {
+	outline: none;
+	/*outline-offset: var(--borderwidth);*/
+}
 .shadow {
 	position: absolute;
 	inset-block-start: 0;
@@ -512,6 +532,12 @@ pre {
 	border-radius: inherit;
 	background-color: var(--accent-color-10);
 	transform: translateY(0.1rem);
+}
+.push-an:hover .shadow {
+	transform: translateY(0.15rem);
+}
+.push-an:active .shadow {
+	transform: translateY(0.05rem);
 }
 .edge {
 	position: absolute;
@@ -532,25 +558,47 @@ pre {
 	
     transform: translateY(-0.25rem);
 }
-.push-an:hover {
-	filter: brightness(110%);
-}
 .push-an:hover .front {
 	transform: translateY(-0.3rem);
-}
-.push-an:hover .shadow {
-	transform: translateY(0.15rem);
 }
 .push-an:active .front {
 	transform: translateY(-0.1rem);
 }
-.push-an:active .shadow {
-	transform: translateY(0.05rem);
+
+
+/*  button colors  */
+.push-an.syn > .shadow,
+.push-an.con > .shadow {
+	background-color: hsla(0,0%,0%,0.05);
 }
-.push-an:focus {
-	outline: none;
-	/*outline-offset: var(--borderwidth);*/
+.push-an.syn:hover,
+.push-an.con:hover {
+	filter: brightness(90%);
 }
+.push-an.syn:hover,
+.push-an.con:hover {
+	filter: brightness(85%);
+}	
+.push-an.con > .edge {
+	background-color: var(--text-color-lighter);
+}
+.push-an.con > .front {
+	background-color: var(--text-color-darker);
+}
+
+.push-an.syn > .edge {
+	background-color: var(--bg-color-accented-darker);
+}
+.push-an.syn > .front {
+	background-color: var(--bg-color-accented-lighter);
+}
+.push-an.syn .content {
+	color: var(--text-color);
+}
+.push-an:not(.syn) .front .masked {
+	background-color: var(--background-color);
+}
+
 
 /*  switch style checkbox  */
 input.switch {
