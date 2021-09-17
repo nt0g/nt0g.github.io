@@ -49,7 +49,7 @@ label.switch {
 	justify-content: center;
 }
 }
-@media (min-width: 35em) {
+@media (min-width: 40em) {
 .block {
 	margin: 1rem 2rem 1rem 2rem;
 }
@@ -83,7 +83,7 @@ label.switch {
 	justify-content: flex-start;
 }
 .imagecontent {
-	flex-flow: row wrap;
+	flex-flow: row nowrap;
 	justify-content: space-between;
 }
 }
@@ -223,7 +223,7 @@ body {
 header,
 footer {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap;
 	align-items: center;
 	
 	z-index: 5;
@@ -346,7 +346,9 @@ header .titlecontent {
 	
 	hyphens: auto;
 }
-
+footer .textcontent {
+	font-size: var(--font-size-mono);
+}
 .imagecontent {
 	display: flex;
 	align-items: center;
@@ -409,28 +411,28 @@ pre {
 	max-inline-size: 5rem;
 	max-block-size: 5rem;
 	
-	border-radius: calc(0.5 * var(--block-borderradius));
+	border-radius: calc(0.25 * var(--block-borderradius));
 }
 .size-s.image > .image-clipper {
-	clip-path: inset(0 round calc(0.5 * var(--block-borderradius)));
+	clip-path: inset(0 round calc(0.25 * var(--block-borderradius)));
 }
 .size-m {
 	max-inline-size: 10rem;
 	max-block-size: 10rem;
 	
-	border-radius: calc(0.625 * var(--block-borderradius));
+	border-radius: calc(0.375 * var(--block-borderradius));
 }
 .image-clipper {
-	clip-path: inset(0 round calc(0.625 * var(--block-borderradius)));
+	clip-path: inset(0 round calc(0.375 * var(--block-borderradius)));
 }
 .size-l {
 	max-inline-size: 15rem;
 	max-block-size: 15rem;
 	
-	border-radius: calc(0.75 * var(--block-borderradius));
+	border-radius: calc(0.5 * var(--block-borderradius));
 }
 .size-l.image > .image-clipper {
-	clip-path: inset(0 round calc(0.75 * var(--block-borderradius)));
+	clip-path: inset(0 round calc(0.5 * var(--block-borderradius)));
 }
 .gallery-clipper {
 	display: flex;
