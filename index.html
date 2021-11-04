@@ -2,9 +2,10 @@
 
 <html>
 <head>
-<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
-<link rel="icon" type="image/png" href="images/favicon.ico" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+<link href="images/favicon.ico" rel="icon" type="image/png" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Rubik:wght@300..900&family=Manrope:wght@200..800&family=JetBrains+Mono:wght@300..600&display=swap');
 </style>
@@ -21,13 +22,13 @@
 		<nav class="spacer"></nav>
 		<nav class="bar">
 		<input id="colorSwitch" type="checkbox" class="switch" onchange="checkboxChange('colorSwitch','data-dark-mode','(prefers-color-scheme: dark)')" checked="false"/>
-		<label for="colorSwitch" class="switch push-an">			
+		<label for="colorSwitch" class="switch push-an sound">			
 		<span class="shadow"></span>
 		<span class="edge"></span>
 		<span class="front content"></span>
 		</label>
 		<input id="soundSwitch" type="checkbox" class="switch" onchange="checkboxChange('soundSwitch','data-mute',false)" checked="false"/>
-		<label for="soundSwitch" class="switch push-an">			
+		<label for="soundSwitch" class="switch push-an sound">			
 		<span class="shadow"></span>
 		<span class="edge"></span>
 		<span class="front content"></span>
@@ -41,24 +42,38 @@
 		</div>
 		</nav>
 	</header>
+	
+	<div class="block raised">
+	<input id="c-inp" type="checkbox" class="coll" />
+	<label for="c-inp" class="coll content titlecontent sound">А что тут у нас...</label>
+	<div id="c-div" class="content textcontent" loading="lazy">
+		<div class="image size-full">
+			<img class="image-front bgless" id="xyz" src="https://www2.irf.se/maggraphs/maglinux_xyz_abs.png">
+		</div>
+		<div class="image size-full bgless" loading="lazy">
+			<img class="image-front" id="k_ind" src="https://www2.irf.se/maggraphs/preliminary_k_index_last_24.png">
+		</div>
+	</div>
+	</div>
+	
 	<div class="block">
 	<div class="content imagecontent raisable">
 		<div class="image size-l">
-			<img class="image-back" src="images/1.png" alt="Травмай">
+			<img class="image-back" src="images/1.png">
 			<div class="image-clipper">
-			<img class="image-front" src="images/1.png" alt="Травмай">
+			<img class="image-front" src="images/1.png" alt="Сирень">
 			</div>
 		</div>
 		<div class="block image-info">
 			<div class="image-title content titlecontent">Заголовок слайда</div>
 			<div class="image-subtitle content textcontent">
 				<div class="content bar">
-				<button class="push-an" onclick="setSetting(0,'accent-hue','--accent-hue',randomVal(360))">
+				<button class="push-an sound" onclick="setSetting(0,'accent-hue','--accent-hue',randomVal(360))">
 					<span class="shadow"></span>
 					<span class="edge"></span>
 					<span class="front content"><div class="icon masked arrow"></div></span>
 				</button>
-				<button class="push-an" onclick="">
+				<button class="push-an sound" onclick="">
 					<span class="shadow"></span>
 					<span class="edge"></span>
 					<span class="front content">GitHub</span>
@@ -92,9 +107,9 @@
 	<div class="block">
 	<div class="content gallery raisable">
 		<div class="gallery-clipper">
-			<img class="gallery-item" id="first" src="images/g1.png" alt="Травмай" onclick="galleryScrollTo()">
-			<img class="gallery-item" id="second" src="images/g2.png" alt="Травмай" onclick="galleryScrollTo()">
-			<img class="gallery-item" id="third" src="images/g3.png" alt="Травмай" onclick="galleryScrollTo()">
+			<img class="gallery-item sound" id="first" src="images/g1.png" alt="Вышка" onclick="galleryScrollTo()">
+			<img class="gallery-item sound" id="second" src="images/g2.png" alt="Закат" onclick="galleryScrollTo()">
+			<img class="gallery-item sound" id="third" src="images/g3.png" alt="Яблоня" onclick="galleryScrollTo()">
 		</div>
 	</div>
 	</div>
@@ -102,9 +117,9 @@
 	<div class="block">
 	<div class="content imagecontent raisable">
 		<div class="image size-l">
-			<img class="image-back" src="images/2.png" alt="Травмай">
+			<img class="image-back" src="images/2.png">
 			<div class="image-clipper">
-			<img class="image-front" src="images/2.png" alt="Травмай">
+			<img class="image-front" src="images/2.png" alt="Божья корова">
 			</div>
 		</div>
 		<div class="block image-info">
@@ -131,9 +146,9 @@
 	<div class="block">
 	<div class="content imagecontent raisable">
 		<div class="image size-l">
-			<img class="image-back" src="images/3.png" alt="Травмай">
+			<img class="image-back" src="images/3.png">
 			<div class="image-clipper">
-			<img class="image-front" src="images/3.png" alt="Травмай">
+			<img class="image-front" src="images/3.png" alt="Фотоаппарат">
 			</div>
 		</div>
 		<div class="block image-info">
@@ -158,10 +173,14 @@
 	<footer>
 	<div class="content textcontent">Licensed under <a href="https://mit-license.org/">the MIT License</a> (это для суда).<br />
 	Спасибо <s>за счастливое детство</s> гражданам <br />
-	со <a href="https://stackoverflow.com/">Stack Overflow</a>, <a href="https://css-tricks.com/">CSS-Tricks</a> и лично <a href="https://joshwcomeau.com/">Joshua Comeau</a>.</div>	
+	со <a href="https://stackoverflow.com/">Stack Overflow</a>, <a href="https://css-tricks.com/">CSS-Tricks</a> и лично <a href="https://joshwcomeau.com/">Joshua Comeau</a>.<br />
+	Идея с темами — <a href="https://mwichary.medium.com/dark-theme-in-a-day-3518dde2955a">Marcin Wichary</a>.<br />
+	Данные магнитометра — <a href="https://www2.irf.se/Observatory/?link[Magnetometers]=Data/">Swedish Institute of Space Physics</a> <br />
+	(идея подрезана у ребят из <a href="https://astroalert.info/">AstroAlert</a>).<br />
+	Отдельное спасибо моим тестерам (я вас всех лю).</div>	
 	<nav class="spacer"></nav>
 	<form class="content bar horiz-bar h-bar-border" onsubmit="localStorage.clear();">
-		<button type="submit" class="push-an syn">
+		<button type="submit" class="push-an syn sound">
 			<span class="shadow"></span>
 			<span class="edge"></span>
 			<span class="front content">

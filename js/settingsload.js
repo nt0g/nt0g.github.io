@@ -11,21 +11,22 @@ function updateCheckbox(id,name,value,query) {
 	let hasQuery = window.matchMedia(query).matches;
 	let getAttr = document.documentElement.getAttribute(name) === 'true';
 
-		console.log(checkboxPending);
-		console.log(getAttr);
-		console.log(hasQuery);
+		console.group('Checkbox:', checkboxPending);
+		console.log('Attribute state:', getAttr);
+		console.log('Media query exists:', hasQuery);
 	if ((getAttr === true) || (!hasAttr && hasQuery)) {
 		checkboxPending.checked = true;
-		console.log('true');
+		console.log('Checkbox checked');
 	} else {
 		checkboxPending.checked = false;
-		console.log('false');
+		console.log('Checkbox unchecked');
 	}
+		console.groupEnd();
 }
-function resetCheckboxes() {
+function resetCheckboxes() { // for now
     for (index = 0; index < document.querySelectorAll('input.switch').length; index++) {
 		document.querySelectorAll('input.switch')[index].checked = false;
-		console.log('Reset');
+		console.log('Checkboxes reset to unchecked');
 	}
 }
 function loadSetting(type,id,name,value,prv) {
@@ -46,29 +47,27 @@ function loadSetting(type,id,name,value,prv) {
 	}
 	switch (name) {
 	case 'data-mute':
-		console.log('Mute');
-		muted = true;
+		console.log('Is mute:', value);
+		muted = value;
 		break;	
 	}
 }
 function initSettings() {
 	if (localStorage.length === 0) {
-			console.log('Empty');
+			console.log('Local storage empty');
 			resetCheckboxes();
 	} else {
 		for (i = 0; i < localStorage.length; i++) {
 			let varName = localStorage.key(i);
-//			console.log(i);
-//			console.log(varName);
 			let argSet = JSON.parse(localStorage.getItem(varName));
-//			console.log(argSet);
+			console.log('LS entry', i, ':', varName, argSet);
 			loadSetting(...argSet);
 		}
 	}
 }
 
 function initSounds() {
-	const cur =  document.querySelectorAll('.push-an');
+	const cur =  document.querySelectorAll('.sound');
     let length = cur.length;
     for (index = 0; index < length; index++) {
 		switch (cur[index].classList.contains('switch')) {
