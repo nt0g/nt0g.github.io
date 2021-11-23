@@ -43,19 +43,6 @@
 		</nav>
 	</header>
 	
-	<div class="block raised">
-	<input id="c-inp" type="checkbox" class="coll" />
-	<label for="c-inp" class="coll content titlecontent sound">А что тут у нас...</label>
-	<div id="c-div" class="content textcontent" loading="lazy">
-		<div class="image size-full">
-			<img class="image-front bgless" id="xyz" src="https://www2.irf.se/maggraphs/maglinux_xyz_abs.png">
-		</div>
-		<div class="image size-full bgless" loading="lazy">
-			<img class="image-front" id="k_ind" src="https://www2.irf.se/maggraphs/preliminary_k_index_last_24.png">
-		</div>
-	</div>
-	</div>
-	
 	<div class="block">
 	<div class="content imagecontent raisable">
 		<div class="image size-l">
@@ -107,9 +94,27 @@
 	<div class="block">
 	<div class="content gallery raisable">
 		<div class="gallery-clipper">
-			<img class="gallery-item sound" id="first" src="images/g1.png" alt="Вышка" onclick="galleryScrollTo()">
-			<img class="gallery-item sound" id="second" src="images/g2.png" alt="Закат" onclick="galleryScrollTo()">
-			<img class="gallery-item sound" id="third" src="images/g3.png" alt="Яблоня" onclick="galleryScrollTo()">
+			<div class="gallery-item sound">
+				<img class="gallery-item-image" src="images/g1.png">
+				<div class="gallery-item-title textcontent" id="first" alt="Вышка" onclick="galleryScrollTo()">
+				<div class="titlecontent">Зомбирующая вышка</div>
+				<div class="textcontent">2020</div>
+				</div>
+			</div>
+			<div class="gallery-item sound">
+				<img class="gallery-item-image" src="images/g2.png">
+				<div class="gallery-item-title textcontent" id="second" alt="Закат" onclick="galleryScrollTo()">
+				<div class="titlecontent">Закатный рассвет</div>
+				<div class="textcontent">Надо починить нажатия по заголовкам (слой добавить ещё один или что-нибудь такое)</div>
+				</div>
+			</div>
+			<div class="gallery-item sound">
+				<img class="gallery-item-image" src="images/g3.png">
+				<div class="gallery-item-title textcontent" id="third" alt="Яблоня" onclick="galleryScrollTo()">
+				<div class="titlecontent">Цветок сосны</div>
+				<div class="textcontent">Всё ещё 2020, да</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	</div>
@@ -158,15 +163,16 @@
 	</div>
 	</div>
 
-	<div class="block">
-	<div class="content titlecontent">Штука 3</div>
-	<div class="content textcontent">
-		Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-		Phasellus faucibus ut mi in pulvinar. Morbi diam augue, convallis in elementum sed, lobortis ac nisi. 
-		Cras accumsan urna tempus lorem viverra sodales. Pellentesque quis augue a augue tempor facilisis. 
-		Sed eget nulla at dolor pharetra tincidunt ut vel nunc. Nulla facilisi. 
-		Integer tempus sapien in ligula ullamcorper, rutrum fringilla magna tempus. <br /><br />
-		<p><a href="https://github.com/nt0g/">Мой GitHub, а то забодало уже постоянно опечатки делать.</a></p>
+	<div class="block raised">
+	<input id="c-inp" type="checkbox" class="coll" />
+	<label for="c-inp" class="coll content titlecontent sound">А что тут у нас...</label>
+	<div id="c-div" class="content textcontent" loading="lazy">
+		<div class="image size-full">
+			<img class="image-front bgless" id="xyz" src="https://www2.irf.se/maggraphs/maglinux_xyz_abs.png">
+		</div>
+		<div class="image size-full bgless" loading="lazy">
+			<img class="image-front" id="k_ind" src="https://www2.irf.se/maggraphs/preliminary_k_index_last_24.png">
+		</div>
 	</div>
 	</div>
 	
