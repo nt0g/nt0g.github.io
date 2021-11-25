@@ -22,13 +22,13 @@
 		<nav class="spacer"></nav>
 		<nav class="bar">
 		<input id="colorSwitch" type="checkbox" class="switch" onchange="checkboxChange('colorSwitch','data-dark-mode','(prefers-color-scheme: dark)')" checked="false"/>
-		<label for="colorSwitch" class="switch push-an sound">			
+		<label for="colorSwitch" class="switch push-an small sound">			
 		<span class="shadow"></span>
 		<span class="edge"></span>
 		<span class="front content"></span>
 		</label>
 		<input id="soundSwitch" type="checkbox" class="switch" onchange="checkboxChange('soundSwitch','data-mute',false)" checked="false"/>
-		<label for="soundSwitch" class="switch push-an sound">			
+		<label for="soundSwitch" class="switch push-an small sound">			
 		<span class="shadow"></span>
 		<span class="edge"></span>
 		<span class="front content"></span>
@@ -93,22 +93,22 @@
 	
 	<div class="block">
 	<div class="content gallery raisable">
-		<div class="gallery-clipper">
-			<div class="gallery-item sound">
+		<div class="gallery-clipper" tabindex="-1">
+			<div class="gallery-item sound" tabindex="0">
 				<img class="gallery-item-image" src="images/g1.png">
 				<div class="gallery-item-title textcontent" id="first" alt="Вышка" onclick="galleryScrollTo()">
 				<div class="titlecontent">Зомбирующая вышка</div>
 				<div class="textcontent">2020</div>
 				</div>
 			</div>
-			<div class="gallery-item sound">
+			<div class="gallery-item sound" tabindex="0">
 				<img class="gallery-item-image" src="images/g2.png">
 				<div class="gallery-item-title textcontent" id="second" alt="Закат" onclick="galleryScrollTo()">
 				<div class="titlecontent">Закатный рассвет</div>
 				<div class="textcontent">Надо починить нажатия по заголовкам (слой добавить ещё один или что-нибудь такое)</div>
 				</div>
 			</div>
-			<div class="gallery-item sound">
+			<div class="gallery-item sound" tabindex="0">
 				<img class="gallery-item-image" src="images/g3.png">
 				<div class="gallery-item-title textcontent" id="third" alt="Яблоня" onclick="galleryScrollTo()">
 				<div class="titlecontent">Цветок сосны</div>

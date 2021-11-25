@@ -20,6 +20,7 @@
 	clip-path: inset(0 round calc(0.25 * var(--block-borderradius)));
 	gap: 0.5rem;
 }
+.gallery-item,
 .gallery-item > *:is(.gallery-item-image, .gallery-item-title) {
 	border-radius: calc(0.25 * var(--block-borderradius));
 }
@@ -61,6 +62,7 @@ label.switch {
 	clip-path: inset(0 round calc(0.6 * var(--block-borderradius)));
 	gap: 1rem;
 }
+.gallery-item,
 .gallery-item > *:is(.gallery-item-image, .gallery-item-title) {
 	border-radius: calc(0.6 * var(--block-borderradius));
 }
@@ -98,6 +100,7 @@ label.switch {
 	clip-path: inset(0 round calc(0.5 * var(--block-borderradius)));
 	gap: 1.5rem;
 }
+.gallery-item,
 .gallery-item > *:is(.gallery-item-image, .gallery-item-title) {
 	border-radius: calc(0.5 * var(--block-borderradius));
 }
@@ -110,6 +113,12 @@ header .titlecontent {
 /*  AnImAtIoNs!  */
 @media (prefers-reduced-motion: no-preference) {
 :focus-visible {
+	transition-duration: var(--animation-duration-fast) !important;
+	transition-timing-function: var(--animation-bounceback-interpolator) !important;
+}
+input.switch:focus-visible + label.switch > .front,
+input.coll:focus-visible + label.coll,
+.push-an:focus-visible > .front {
 	transition-duration: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-bounceback-interpolator);
 }
@@ -169,11 +178,6 @@ a:active {
 }
 .push-an:active .shadow {
     transition-duration: var(--animation-duration-plus-fast);
-}
-input.switch:focus-visible + label.switch > .front,
-.push-an:focus-visible > .front {
-	transition-duration: var(--animation-duration-fast);
-	transition-timing-function: var(--animation-bounceback-interpolator);
 }
 #c-inp + label.coll + #c-div,
 #c-inp:checked + label.coll + #c-div {
@@ -324,7 +328,7 @@ footer .content {
 	color: var(--text-color-lighter);
 }
 
-button > .content {	
+*:is(button, .switch) > .content {	
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
@@ -695,27 +699,37 @@ input.switch {
 }
 input.switch:focus-visible + label.switch > .front,
 .push-an:focus-visible > .front {
-	outline: solid calc(1.5 * var(--borderwidth)) var(--background-color);
+	--outline-color: var(--background-color);
+	outline: solid calc(1.5 * var(--borderwidth)) var(--outline-color);
+	outline-offset: calc(-3 * var(--borderwidth));
+}
+.push-an.syn:focus-visible > .front {
+	--outline-color: var(--text-color);
+}
+input.coll:focus-visible + label.coll {
+	--outline-color: var(--text-color);
+	outline: solid calc(1.5 * var(--borderwidth)) var(--outline-color);
+	outline-offset: calc(-3 * var(--borderwidth));
+}
+a:focus-visible {
+	--outline-color: var(--accent-color-text);
+	outline: solid calc(1.5 * var(--borderwidth)) var(--outline-color);
+	outline-offset: var(--borderwidth);
+	text-decoration: none;
+}
+.gallery-item:focus-visible {
+	outline: solid calc(1.5 * var(--borderwidth)) white;
 	outline-offset: calc(-3 * var(--borderwidth));
 }
 label.switch {
 	/*opacity: 0.75;*/
 }
-label.switch > .front {
-	display: flex;
-	justify-content: center;
+.small > .front {
 	inline-size: 1rem;
 	block-size: 1rem;
-	/*border: solid var(--borderwidth) var(--accent-color-10);*/
 }
-label.switch > .content {
+.small > .content {
 	padding: 0.25rem 0.5rem;
-	
-	color: var(--background-color);
-	
-	font-family: var(--font-button);
-	font-size: var(--font-size);
-	font-weight: var(--font-weight-head);
 }
 .switch:checked + label.switch {
     filter: brightness(0.75) saturate(1.5);
@@ -751,7 +765,8 @@ label.switch > .front::after {
 	/*opacity: 1;*/
 }
 input.coll {
-	display: none;
+	position: absolute;
+	transform: scale(0);
 }
 label.coll {
 	border-radius: inherit;
