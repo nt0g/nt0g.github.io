@@ -20,8 +20,7 @@
 	clip-path: inset(0 round calc(0.25 * var(--block-borderradius)));
 	gap: 0.5rem;
 }
-.gallery-item,
-.gallery-item > *:is(.gallery-item-image, .gallery-item-title) {
+.gallery-item > *:is(.gallery-item-image, .gallery-item-title, .gallery-item-access) {
 	border-radius: calc(0.25 * var(--block-borderradius));
 }
 .content > .block > *:not(:only-child) { /*  */
@@ -62,8 +61,7 @@ label.switch {
 	clip-path: inset(0 round calc(0.6 * var(--block-borderradius)));
 	gap: 1rem;
 }
-.gallery-item,
-.gallery-item > *:is(.gallery-item-image, .gallery-item-title) {
+.gallery-item > *:is(.gallery-item-image, .gallery-item-title, .gallery-item-access) {
 	border-radius: calc(0.6 * var(--block-borderradius));
 }
 .content > .block > *:not(:only-child) { /*  */
@@ -100,8 +98,7 @@ label.switch {
 	clip-path: inset(0 round calc(0.5 * var(--block-borderradius)));
 	gap: 1.5rem;
 }
-.gallery-item,
-.gallery-item > *:is(.gallery-item-image, .gallery-item-title) {
+.gallery-item > *:is(.gallery-item-image, .gallery-item-title, .gallery-item-access) {
 	border-radius: calc(0.5 * var(--block-borderradius));
 }
 header .titlecontent {
@@ -476,7 +473,8 @@ pre {
 	scroll-snap-align: center;
 }
 .gallery-item-image,
-.gallery-item-title {
+.gallery-item-title,
+.gallery-item-access {
 	grid-area: 1/2;
 }
 .gallery-item > .gallery-item-image {
@@ -493,6 +491,18 @@ pre {
 	padding-inline: 1rem;
 	padding-block: 0.5rem;
 	background: linear-gradient(hsl(0 0% 0% / 0) 60%, hsl(0 0% 0% / 50%) 100%);
+	
+}
+.gallery-item > .gallery-item-title > .textcontent {
+	overflow: hidden;
+	max-block-size: 0;
+	transition-delay: 1s;
+	filter: opacity(0%);
+}
+.gallery-item:is(:hover, :active) > .gallery-item-title > .textcontent {
+	max-block-size: 4rem;
+	transition-delay: 0s;
+	filter: opacity(100%);
 }
 .gallery-item-title > * {
 	color: white;
@@ -717,7 +727,7 @@ a:focus-visible {
 	outline-offset: var(--borderwidth);
 	text-decoration: none;
 }
-.gallery-item:focus-visible {
+.gallery-item-access:focus-visible {
 	outline: solid calc(1.5 * var(--borderwidth)) white;
 	outline-offset: calc(-3 * var(--borderwidth));
 }
