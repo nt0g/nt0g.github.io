@@ -50,11 +50,13 @@ function checkboxChange(id,name,query) {
 	if (document.getElementById(id).checked) {
 		checkboxHandle('on',name);
 		setSetting('checkbox',id,name,true,query);
+		console.log(event.target.id, 'checked');
 		if (muted === false) new Audio(audioClickOn).play();
 	}
 	else {
 		checkboxHandle('off',name);
 		setSetting('checkbox',id,name,false,query);
+		console.log(event.target.id, 'unchecked');
 		if (muted === false) new Audio(audioClickOff).play();
 	}
 }

@@ -22,7 +22,8 @@
 
 
 :root,
-:root[data-dark-mode='false'] {
+:root[data-dark-mode='false'],
+:root[data-motion='false']  {
 	/* ThemeEngine2(tm) */
 	--hue: var(--accent-hue);
 	--accent-hue: 220;
@@ -146,7 +147,7 @@
 	--theme-blur-filter: blur(1rem) opacity(0.1);
 }
 }
-:root[data-dark-mode='true'] { /* should duplicate query vars */
+:root[data-dark-mode='true'] { /* duplicates query vars */
 	/* ThemeEngine2(tm) */
 	--saturation-theme: 0.5;
 	

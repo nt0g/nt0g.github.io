@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import url("vars.css");
-
+@import url("icons.css");
 
 
 /*  media queries  */
@@ -109,85 +109,84 @@ header .titlecontent {
 
 /*  AnImAtIoNs!  */
 @media (prefers-reduced-motion: no-preference) {
-:focus-visible {
+:root:not([data-motion='true']) :focus-visible {
 	transition-duration: var(--animation-duration-fast) !important;
 	transition-timing-function: var(--animation-bounceback-interpolator) !important;
 }
-input.switch:focus-visible + label.switch > .front,
-input.coll:focus-visible + label.coll,
-.push-an:focus-visible > .front {
+:root:not([data-motion='true']) input.switch:focus-visible + label.switch > .front,
+:root:not([data-motion='true']) input.coll:focus-visible + label.coll,
+:root:not([data-motion='true']) .push-an:focus-visible > .front {
 	transition-duration: var(--animation-duration-fast);
 	transition-timing-function: var(--animation-bounceback-interpolator);
 }
-:root.animated,
-:root.animated *:not(button),
-:root.animated *:not(button):before,
-:root.animated *:not(button):after {
+:root:not([data-motion='true']).animated,
+:root:not([data-motion='true']).animated *:not(button),
+:root:not([data-motion='true']).animated *:not(button):before,
+:root:not([data-motion='true']).animated *:not(button):after {
 	transition-property: all;
 	transition-duration: var(--animation-duration-plus-slow);
 	transition-timing-function: var(--animation-interpolator);
 }
-* {
+:root:not([data-motion='true']) * {
 	scroll-behavior: smooth;
 }
-a:hover {
+:root:not([data-motion='true']) a:hover {
 	text-underline-offset: calc(4 * var(--borderwidth));
 	text-decoration-thickness: var(--borderwidth);
 }
-a:active {
+:root:not([data-motion='true']) a:active {
 	text-underline-offset: var(--borderwidth);
 	text-decoration-thickness: var(--borderwidth);
 	
 	transition-duration: var(--animation-duration-fast) !important;
 }
-.raisable:hover .image:not(.size-wide) .image-front {
+:root:not([data-motion='true']) .raisable:hover .image:not(.size-wide) .image-front {
 	transform: scale(1.1);
 }
-.image .image-back {
+:root:not([data-motion='true']) .image .image-back {
 	filter: var(--theme-blur-filter);
 	transform: translateY(0.5rem);
 }
-.raisable:hover .image .image-back {
+:root:not([data-motion='true']) .raisable:hover .image .image-back {
 	filter: blur(0) opacity(0);
 }
-.push-an {
+:root:not([data-motion='true']) .push-an {
     transition-duration: var(--animation-duration-slow);
 	transition-timing-function: var(--animation-interpolator);
 }
-.front {
+:root:not([data-motion='true']) .front {
     transition-duration: var(--animation-duration-slow);
 }
-.push-an:hover {
+:root:not([data-motion='true']) .push-an:hover {
     transition-duration: var(--animation-duration-slow);
 	transition-timing-function: var(--animation-interaction-interpolator);
 }
-.push-an:hover .front {
+:root:not([data-motion='true']) .push-an:hover .front {
     transition-duration: var(--animation-duration);
 	transition-timing-function: var(--animation-bounceback-interpolator);
 }
-.push-an:hover .shadow {
+:root:not([data-motion='true']) .push-an:hover .shadow {
     transition-duration: var(--animation-duration);
 	transition-timing-function: var(--animation-bounceback-interpolator);
 }
-.push-an:active .front {
+:root:not([data-motion='true']) .push-an:active .front {
     transition-duration: var(--animation-duration-plus-fast);
 	transition-timing-function: var(--animation-interaction-interpolator);
 }
-.push-an:active .shadow {
+:root:not([data-motion='true']) .push-an:active .shadow {
     transition-duration: var(--animation-duration-plus-fast);
 }
-#c-inp + label.coll + #c-div,
-#c-inp:checked + label.coll + #c-div {
+:root:not([data-motion='true']) #c-inp + label.coll + #c-div,
+:root:not([data-motion='true']) #c-inp:checked + label.coll + #c-div {
 	transition-duration: var(--animation-duration-slow);
 }
-.clock > .separator {
+:root:not([data-motion='true']) .clock > .separator {
 	animation: blinker 1s var(--animation-interpolator) infinite 
 }
-.blinker {
+:root:not([data-motion='true']) .blinker {
 	animation: blinker 1s var(--animation-interpolator) infinite reverse;
 }
 }
-
 
 /*  common layout  */
 body {
@@ -584,12 +583,6 @@ html[data-dark-mode='false'] .bgless {
 }
 
 
-/*  icons  */
-.arrow {
-	--mask-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath d='M5.39,31.77c-1.31-1.31-1.31-3.41,0-4.71c0.65-0.65,1.5-0.98,2.36-0.98s1.7,0.33,2.36,0.98l11.57,11.57V3.34C21.67,1.5,23.16,0,25.01,0c1.84,0,3.34,1.49,3.34,3.34v35.29L39.9,27.05c1.31-1.31,3.41-1.31,4.71,0c1.31,1.31,1.31,3.41,0,4.71L27.36,49.02C26.73,49.64,25.89,50,25,50c-0.89,0-1.73-0.35-2.36-0.98L5.39,31.77z' /%3E%3C/svg%3E");
-}
-
-
 /*  stuff  */
 input {
   accent-color: var(--accent-color-lighter);
@@ -735,10 +728,12 @@ label.switch {
 	/*opacity: 0.75;*/
 }
 .small > .front {
+	justify-content: center;
 	inline-size: 1rem;
 	block-size: 1rem;
 }
 .small > .content {
+	--font-size-button: 16px; /* kostull */
 	padding: 0.25rem 0.5rem;
 }
 .switch:checked + label.switch {

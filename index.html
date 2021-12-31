@@ -25,13 +25,19 @@
 		<label for="colorSwitch" class="switch push-an small sound">			
 		<span class="shadow"></span>
 		<span class="edge"></span>
-		<span class="front content"></span>
+		<span class="front content"><div class="icon masked coloricon"></div></span>
+		</label>
+		<input id="motionSwitch" type="checkbox" class="switch" onchange="checkboxChange('motionSwitch','data-motion','(prefers-reduced-motion: reduce)')" checked="false"/>
+		<label for="motionSwitch" class="switch push-an small sound">			
+		<span class="shadow"></span>
+		<span class="edge"></span>
+		<span class="front content"><div class="icon masked motionicon"></div></span>
 		</label>
 		<input id="soundSwitch" type="checkbox" class="switch" onchange="checkboxChange('soundSwitch','data-mute',false)" checked="false"/>
 		<label for="soundSwitch" class="switch push-an small sound">			
 		<span class="shadow"></span>
 		<span class="edge"></span>
-		<span class="front content"></span>
+		<span class="front content"><div class="icon masked soundicon"></div></span>
 		</label>
 		</nav>
 		<nav class="hidden">
@@ -58,7 +64,7 @@
 				<button class="push-an sound" onclick="setSetting(0,'accent-hue','--accent-hue',randomVal(360))">
 					<span class="shadow"></span>
 					<span class="edge"></span>
-					<span class="front content"><div class="icon masked arrow"></div></span>
+					<span class="front content"><div class="icon masked arrowicon"></div></span>
 				</button>
 				<button class="push-an sound" onclick="">
 					<span class="shadow"></span>
