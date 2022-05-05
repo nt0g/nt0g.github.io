@@ -5,7 +5,7 @@ let audioClickOff = 'sounds/off.ogg';
 
 var muted = false;
 
-function updateCheckbox(id,name,value,query) {
+function updateCheckbox(id,name,value,query) {  // loads and sets chechboxes state
 	let checkboxPending = document.getElementById(id);
 	let hasAttr = document.documentElement.hasAttribute(name);
 	let hasQuery = window.matchMedia(query).matches;
@@ -29,7 +29,7 @@ function resetCheckboxes() { // for now
 		console.log('Checkboxes reset to unchecked');
 	}
 }
-function loadSetting(type,id,name,value,prv) {
+function loadSetting(type,id,name,value,prv) { // sets loaded settings
 	switch (type) {
 	case 0:
 		root.style.setProperty(name, value);
@@ -49,10 +49,10 @@ function loadSetting(type,id,name,value,prv) {
 	case 'data-mute':
 		console.log('Is mute:', value);
 		muted = value;
-		break;	
+		break;
 	}
 }
-function initSettings() {
+function initSettings() { // loads settings from local storage
 	if (localStorage.length === 0) {
 			console.log('Local storage empty');
 			resetCheckboxes();
@@ -66,7 +66,7 @@ function initSettings() {
 	}
 }
 
-function initSounds() {
+function initSounds() { // sets listeners to every element that should play a sound on click
 	const cur =  document.querySelectorAll('.sound');
     let length = cur.length;
     for (index = 0; index < length; index++) {
@@ -85,7 +85,7 @@ function initSounds() {
 	}
 }
 
-function initClock(){
+function initClock(){ // sets clock
 	setInterval(function() {
 		var minutes = new Date().getMinutes();
 		document.getElementById("minutes").innerHTML = (minutes < 10 ? '0' : '') + minutes;
@@ -96,7 +96,7 @@ function initClock(){
 
 
 
-function initAnimatorTimer() {
+function initAnimatorTimer() { // prohibits animation when site loads
 	window.setTimeout(function() {
 		document.documentElement.classList.add('animated')
 	}, 500)

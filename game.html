@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Повысь себя полностью</title>
+    <link href="images/favicon.ico" rel="icon" type="image/png" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Rubik:wght@300..900&family=Manrope:wght@200..800&family=JetBrains+Mono:wght@300..600&display=swap');
+    :root {
+	--accent-hue: 50 !important;
+	--saturation-theme: 1.25 !important;
+    }
+    .front {
+	color: var(--text-color) !important;
+	}
+}
+    </style>
+  </head>
+
+
+<body>
+<div class="wrapper">
+<div class="scroller">
+	<header>
+		<div class="content titlecontent">Повышатор</div>
+		<nav class="spacer"></nav>
+	</header>
+	<div class="block">
+	<div class="content textcontent">
+       <p>Повышений: <span id="promotion-count">0</span> </p>
+       <div class="content bar">
+       <button class="push-an" onclick="updateCount(1)">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front content">Получить повышение</span>
+        </button>
+        </div>
+    </div>
+	</div>
+</div>
+</div>
+<script>
+let i = 0;
+function updateCount(amount) {
+ i = i + 1;
+document.getElementById('promotion-count').innerText = i;
+}
+</script>
+</body>
+</html>
