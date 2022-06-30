@@ -465,21 +465,16 @@ pre {
 	display: grid;
 
 	min-inline-size: 80%;
-	/*max-inline-size: 80%;*/
-	/*inline-size: 80%;
-	max-block-size: 100%;*/ /*shrug*/
-	
 	scroll-snap-align: center;
 }
 .gallery-item-image,
 .gallery-item-title,
 .gallery-item-access {
-	grid-area: 1/2;
+	grid-area: 1/1;
 }
 .gallery-item > .gallery-item-image {
 	max-inline-size: 100%;
-
-	aspect-ratio: auto 1/1;
+	min-block-size: 100%;
 	object-fit: cover;
 }
 .gallery-item > .gallery-item-title {
