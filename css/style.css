@@ -463,9 +463,9 @@ pre {
 .gallery-item { /*  needs attention!  */
 	position: relative;
 	display: grid;
-	
+
 	min-inline-size: 80%;
-	max-inline-size: 80%;
+	/*max-inline-size: 80%;*/
 	/*inline-size: 80%;
 	max-block-size: 100%;*/ /*shrug*/
 	
@@ -477,8 +477,8 @@ pre {
 	grid-area: 1/2;
 }
 .gallery-item > .gallery-item-image {
-	inline-size: 100%;
-	
+	max-inline-size: 100%;
+
 	aspect-ratio: auto 1/1;
 	object-fit: cover;
 }
